@@ -1,43 +1,67 @@
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Grid } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
     flexGrow: 1,
   },
   title: {
     flexGrow: 1,
+    fontWeight: 700,
+    fontSize: "1.5rem",
+  },
+  description: {
+    flexGrow: 1,
   },
   link: {
     textDecoration: "none",
+    textTransform: "uppercase",
     color: "white",
+    fontWeight: 700,
   },
-}));
+});
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, siteDescription }) => {
   const styles = useStyles();
   return (
     <div className={styles.root}>
-      <AppBar position="sticky">
+      <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={styles.title}>
-            <Link to="/" className={styles.link}>
-              {siteTitle}
-            </Link>
-          </Typography>
-          <Button color="inherit" onClick={() => navigate("/music")}>
-            Music
-          </Button>
-          <Button color="inherit" onClick={() => navigate("/dev")}>
-            Dev
-          </Button>
-          <Button color="inherit" onClick={() => navigate("/blog")}>
-            Blog
-          </Button>
+          <Grid container spacing={1} alignItems="baseline">
+            <Grid item>
+              <Typography variant="h6" className={styles.title}>
+                <Link to="/" className={styles.link}>
+                  {siteTitle}
+                </Link>
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" className={styles.description}>
+                {siteDescription}
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container spacing={3} justify="flex-end" alignItems="center">
+            <Grid item>
+              <Link to="/music" className={styles.link}>
+                Music
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link to="/dev" className={styles.link}>
+                Dev
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link to="/blog" className={styles.link}>
+                Blog
+              </Link>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>
@@ -46,10 +70,12 @@ const Header = ({ siteTitle }) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  siteDescription: PropTypes.string,
 };
 
 Header.defaultProps = {
   siteTitle: ``,
+  siteDescription: ``,
 };
 
 export default Header;

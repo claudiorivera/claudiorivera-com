@@ -1,9 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { CssBaseline, Container } from "@material-ui/core";
+import { CssBaseline, Container, ThemeProvider } from "@material-ui/core";
+import Header from "./Header";
+import { createMuiTheme } from "@material-ui/core/styles";
 
-import Header from "./header";
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#0169e9",
+    },
+  },
+});
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -11,20 +19,26 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
   `);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        siteDescription={data.site.siteMetadata.description}
+      />
       <Container>
         <main>{children}</main>
-        <footer>© {new Date().getFullYear()} Claudio Rivera.</footer>
       </Container>
-    </>
+      <Container>
+        <footer>© {new Date().getFullYear()} Claudio Rivera</footer>
+      </Container>
+    </ThemeProvider>
   );
 };
 
