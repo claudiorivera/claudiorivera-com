@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Habit & Routine`,
-    description: `The official site of musician, drum tech, and developer, Claudio Rivera.`,
+    title: `Claudio Rivera`,
+    description: `Drummer | Drum Tech | Technology`,
     author: `Claudio Rivera`,
   },
   plugins: [
