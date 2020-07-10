@@ -3,68 +3,58 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Toolbar, Typography, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Grid, Button } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    padding: "1rem",
   },
   title: {
     flexGrow: 1,
     fontWeight: 700,
-    fontSize: "1.5rem",
+    color: "white",
+    lineHeight: "1.5rem",
+    letterSpacing: "-.05rem",
   },
   description: {
     flexGrow: 1,
   },
   link: {
     textDecoration: "none",
-    textTransform: "uppercase",
-    color: "white",
-    fontWeight: 700,
   },
 });
 
 const Header = ({ siteTitle, siteDescription }) => {
   const styles = useStyles();
   return (
-    <div className={styles.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Grid container spacing={1} alignItems="baseline">
-            <Grid item>
-              <Typography variant="h6" className={styles.title}>
-                <Link to="/" className={styles.link}>
-                  {siteTitle}
-                </Link>
+    <AppBar position="static" className={styles.root}>
+      <Toolbar>
+        <Grid container spacing={3} alignItems="baseline">
+          <Grid item>
+            <Link to="/" className={styles.link}>
+              <Typography variant="h5" className={styles.title}>
+                {siteTitle}
               </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body1" className={styles.description}>
-                {siteDescription}
-              </Typography>
-            </Grid>
+            </Link>
           </Grid>
-          <Grid container spacing={3} justify="flex-end" alignItems="center">
-            <Grid item>
-              <Link to="/music" className={styles.link}>
-                Music
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link to="/dev" className={styles.link}>
-                Dev
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link to="/blog" className={styles.link}>
-                Blog
-              </Link>
-            </Grid>
+          <Grid item>
+            <Typography variant="h6" className={styles.description}>
+              {siteDescription}
+            </Typography>
           </Grid>
-        </Toolbar>
-      </AppBar>
-    </div>
+        </Grid>
+        <Button color="inherit" component={Link} to="/music">
+          Music
+        </Button>
+        <Button color="inherit" component={Link} to="/dev">
+          Dev
+        </Button>
+        <Button color="inherit" component={Link} to="/blog">
+          Blog
+        </Button>
+      </Toolbar>
+    </AppBar>
   );
 };
 
