@@ -7,7 +7,6 @@ import { Typography } from "@material-ui/core";
 const DevPage = () => (
   <Layout>
     <SEO title="Dev" />
-    <Typography variant="h1">Dev</Typography>
     <Typography variant="body1">
       <p>Coming soon...</p>
 

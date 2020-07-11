@@ -1,7 +1,6 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React, { Fragment } from "react";
-
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Typography, Grid, Button } from "@material-ui/core";
 
@@ -28,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
     padding: theme.spacing(20, 0, 5),
     color: "white",
-    backgroundImage: "IMG_0011_wide.jpg",
+    backgroundImage: `url("/static/cd99cdc16a0214c172b830efb8d87973/14b42/IMG_0011_wide.jpg")`,
     textAlign: "center",
     marginBottom: "3rem",
   },
