@@ -1,13 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import {
-  CssBaseline,
-  Container,
-  ThemeProvider,
-  Typography,
-} from "@material-ui/core";
+import { CssBaseline, Container, ThemeProvider } from "@material-ui/core";
 import Header from "./Header";
+import Footer from "./Footer";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -47,11 +43,7 @@ const Layout = ({ children }) => {
       <Container maxWidth="sm">
         <main>{children}</main>
       </Container>
-      <Container>
-        <Typography variant="caption">
-          © {new Date().getFullYear()} Claudio Rivera
-        </Typography>
-      </Container>
+      <Footer />
     </ThemeProvider>
   );
 };
