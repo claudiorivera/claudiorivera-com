@@ -11,6 +11,7 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => (
       mozallowfullscreen="true"
       allowFullScreen
       width="100%"
+      height="300px"
     />
   </Container>
 );

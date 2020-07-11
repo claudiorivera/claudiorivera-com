@@ -6,7 +6,7 @@ const Audio = ({ audioSrcUrl, audioTitle, ...props }) => (
       src={audioSrcUrl}
       title={audioTitle}
       width="100%"
-      height="100%"
+      height="300px"
     ></iframe>
   </Container>
 );
