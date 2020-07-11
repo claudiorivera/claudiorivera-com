@@ -1,5 +1,6 @@
 import React from "react";
-
+import Video from "../components/Video";
+import Audio from "../components/Audio";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
@@ -7,26 +8,20 @@ const MusicPage = () => (
   <Layout>
     <SEO title="Music" />
     <h1>Video</h1>
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    <Video
+      videoSrcURL="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
+      videoTitle="YouTube playlist of random drum and music-related videos of mine."
+    />
     <h1>Audio</h1>
-    <figure>
-      <iframe
-        src="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
-        height="450"
-      ></iframe>
-    </figure>
+    <Audio
+      audioSrcUrl="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
+      audioTitle="Songs I've Played On"
+    />
     <h1>Selected Discography & Experience</h1>
     <p>
       <strong>
         <a
-          href="https://t.umblr.com/redirect?z=http%3A%2F%2Fwww.savestheday.com&amp;t=MjljMmRiYzZhZmEzOWI5ZjgyODcyNTFjMGVmMDMxYjFiMmUyZTFjZCxUbU4zdWpESg%3D%3D&amp;p=&amp;m=0"
+          href="http://www.savestheday.com"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -44,7 +39,7 @@ const MusicPage = () => (
     <p>
       <strong>
         <a
-          href="https://t.umblr.com/redirect?z=https%3A%2F%2Fbit.ly%2Fhabitandroutine&amp;t=ZDQ5ZmNjNWVmNmIxZjczYmY1OTAwZTU1NzIyMTU0Zjk2YTA5NDA4YyxUbU4zdWpESg%3D%3D&amp;p=&amp;m=0"
+          href="https://artist.landr.com/music/628810988617"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -63,7 +58,7 @@ const MusicPage = () => (
     <p>
       <strong>
         <a
-          href="https://t.umblr.com/redirect?z=https%3A%2F%2Fbit.ly%2Fhabitandroutine&amp;t=ZDQ5ZmNjNWVmNmIxZjczYmY1OTAwZTU1NzIyMTU0Zjk2YTA5NDA4YyxUbU4zdWpESg%3D%3D&amp;p=&amp;m=0"
+          href="https://artist.landr.com/music/628810708741"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -82,7 +77,7 @@ const MusicPage = () => (
     <p>
       <strong>
         <a
-          href="https://t.umblr.com/redirect?z=http%3A%2F%2Fwww.motioncitysoundtrack.com&amp;t=MGJmMTlmMjY1MmUyODkyYjJhNWYxNDkyYmI5ZGI2ZDQ4MjdmYjY5NixUbU4zdWpESg%3D%3D&amp;p=&amp;m=0"
+          href="https://motioncitysoundtrack.com/"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -101,7 +96,7 @@ const MusicPage = () => (
     <p>
       <strong>
         <a
-          href="https://t.umblr.com/redirect?z=http%3A%2F%2Fwww.savestheday.com&amp;t=MjljMmRiYzZhZmEzOWI5ZjgyODcyNTFjMGVmMDMxYjFiMmUyZTFjZCxUbU4zdWpESg%3D%3D&amp;p=&amp;m=0"
+          href="http://www.savestheday.com"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -120,7 +115,7 @@ const MusicPage = () => (
     <p>
       <strong>
         <a
-          href="https://t.umblr.com/redirect?z=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FJimmy_Robbins&amp;t=MjU2OGMyZTc3NDIzNWM3MTAwNDdiNWNmNjNlMzYxYjM4ZmIyNmU4YixUbU4zdWpESg%3D%3D&amp;p=&amp;m=0"
+          href="https://en.wikipedia.org/wiki/Jimmy_Robbins"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -138,7 +133,7 @@ const MusicPage = () => (
     <p>
       <strong>
         <a
-          href="https://t.umblr.com/redirect?z=https%3A%2F%2Fitunes.apple.com%2Fus%2Fartist%2Fsomerset%2Fid102288119&amp;t=ZGE2ZDJjYmQxYjU4YmE4OGU4OGFkMTNjNGI0YTI4ZjJmYTQ1ZDBlZSxUbU4zdWpESg%3D%3D&amp;p=&amp;m=0"
+          href="https://itunes.apple.com/us/artist/somerset/id102288119"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -159,7 +154,7 @@ const MusicPage = () => (
     <p>
       <strong>
         <a
-          href="https://t.umblr.com/redirect?z=https%3A%2F%2Fitunes.apple.com%2Fus%2Fartist%2Fsing-it-loud%2Fid265101134&amp;t=YTZiNmExZjdkOTM0YjE2ZjhjY2IzYmY1NWFiOWFkMTMwMmUxNWMwZCxUbU4zdWpESg%3D%3D&amp;p=&amp;m=0"
+          href="https://itunes.apple.com/us/artist/sing-it-loud/id265101134"
           target="_blank"
           rel="noreferrer noopener"
         >
