@@ -8,18 +8,17 @@ import { Typography } from "@material-ui/core";
 const MusicPage = () => (
   <Layout>
     <SEO title="Music" />
-    <Typography variant="h1">Music</Typography>
-    <Typography variant="h3">Video</Typography>
+    <Typography variant="h4">See</Typography>
     <Video
       videoSrcURL="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
       videoTitle="YouTube playlist of random drum and music-related videos of mine."
     />
-    <Typography variant="h3">Audio</Typography>
+    <Typography variant="h4">Hear</Typography>
     <Audio
       audioSrcUrl="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
       audioTitle="Songs I've Played On"
     />
-    <Typography variant="h3">Selected Discography & Experience</Typography>
+    <Typography variant="h4">Selected Discography & Experience</Typography>
     <Typography variant="body1">
       <p>
         <strong>

@@ -18,7 +18,7 @@ const theme = createMuiTheme({
         fontFamily: "'Work Sans', sans-serif",
       },
       h1: {
-        fontFamily: "'Work Sans', sans-serif",
+        fontFamily: "'Pacifico', sans-serif",
       },
     },
   },
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
         siteDescription={data.site.siteMetadata.description}
       />
-      <Container maxWidth="sm" style={{ minHeight: "50vh" }}>
+      <Container maxWidth="sm" style={{ minHeight: "75vh" }}>
         <main>{children}</main>
       </Container>
       <Footer />

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Claudio Rivera`,
-    description: `Drummer | Drum Tech | Technology`,
+    description: `Drummer | Drum Tech | Developer`,
     author: `Claudio Rivera`,
   },
   plugins: [
@@ -11,7 +11,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ["Work Sans"],
+        fonts: ["Work Sans", "Pacifico"],
         display: "swap",
       },
     },
@@ -22,7 +22,7 @@ module.exports = {
         short_name: `Claudio Rivera`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#000000`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `src/images/cr-profile-pic.png`,
       },
