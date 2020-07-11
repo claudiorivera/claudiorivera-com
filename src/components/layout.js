@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
         siteDescription={data.site.siteMetadata.description}
       />
-      <Container maxWidth="sm">
+      <Container maxWidth="sm" style={{ minHeight: "50vh" }}>
         <main>{children}</main>
       </Container>
       <Footer />
