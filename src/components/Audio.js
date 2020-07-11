@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-const Audio = ({ audioSrcUrl, audioTitle, ...props }) => (
+const Audio = ({ audioSrcUrl, audioTitle }) => (
   <Container>
     <iframe
       src={audioSrcUrl}

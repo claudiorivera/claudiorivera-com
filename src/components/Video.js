@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-const Video = ({ videoSrcURL, videoTitle, ...props }) => (
+const Video = ({ videoSrcURL, videoTitle }) => (
   <Container>
     <iframe
       src={videoSrcURL}

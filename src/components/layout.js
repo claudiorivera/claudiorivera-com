@@ -15,7 +15,10 @@ const theme = createMuiTheme({
   overrides: {
     MuiTypography: {
       body1: {
-        fontFamily: "Merriweather, 'Times New Roman', serif",
+        fontFamily: "'Work Sans', sans-serif",
+      },
+      h1: {
+        fontFamily: "'Work Sans', sans-serif",
       },
     },
   },

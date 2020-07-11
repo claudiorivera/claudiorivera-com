@@ -7,6 +7,7 @@ import SEO from "../components/SEO";
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <Typography variant="h1">Hello.</Typography>
     <Typography variant="body1">
       <p>
         My name is Claudio. I’ve been all over this beautiful Earth, playing
