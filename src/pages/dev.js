@@ -8,19 +8,15 @@ const DevPage = () => (
   <Layout>
     <SEO title="Dev" />
     <Typography variant="body1">
-      <p>Coming soon...</p>
-
-      <p>
-        In the meantime, visit{" "}
-        <a
-          href="https://github.com/claudiorivera"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          my GitHub profile
-        </a>
-        .
-      </p>
+      Coming soon... In the meantime, visit{" "}
+      <a
+        href="https://github.com/claudiorivera"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        my GitHub profile
+      </a>
+      !
     </Typography>
   </Layout>
 );
