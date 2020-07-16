@@ -1,8 +1,19 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import React, { Fragment } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Toolbar, Typography, Grid, Button } from "@material-ui/core";
+import React, { useState } from "react";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Grid,
+  Button,
+  useMediaQuery,
+  Menu,
+  MenuItem,
+  IconButton,
+} from "@material-ui/core";
+import { Menu as MenuIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles(() => ({
   navBar: {
@@ -31,45 +42,121 @@ const useStyles = makeStyles(() => ({
     color: "white",
   },
   pageName: {
+    position: "relative",
     textAlign: "center",
+    top: "60vh",
+  },
+  hideOnMobile: {
+    display: "none",
   },
 }));
 
+const menuLinks = [
+  {
+    title: "Home",
+    url: "/",
+  },
+  {
+    title: "Music",
+    url: "/music",
+  },
+  {
+    title: "Dev",
+    url: "/dev",
+  },
+  {
+    title: "Blog",
+    url: "/blog",
+  },
+];
+
 const Header = ({ siteTitle, siteDescription }) => {
   const styles = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const pageName = "Hello.";
+
+  // Responsive menu
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <Fragment>
-      <AppBar position="static" color="transparent" className={styles.navBar}>
-        <Toolbar>
-          <Grid container spacing={2} alignItems="baseline">
-            <Grid item>
-              <Link to="/" className={styles.link}>
-                <Typography variant="h5" className={styles.title}>
-                  {siteTitle}
-                </Typography>
-              </Link>
-            </Grid>
-            <Grid item>
-              <Typography variant="h6" className={styles.description}>
-                {siteDescription}
+    <AppBar position="static" color="transparent" className={styles.navBar}>
+      <Toolbar>
+        <Grid container spacing={2} alignItems="baseline">
+          <Grid item>
+            <Link to="/" className={styles.link}>
+              <Typography variant="h5" className={styles.title}>
+                {siteTitle}
               </Typography>
-            </Grid>
+            </Link>
           </Grid>
-          <Button color="inherit" component={Link} to="/music">
-            Music
-          </Button>
-          <Button color="inherit" component={Link} to="/dev">
-            Dev
-          </Button>
-          <Button color="inherit" component={Link} to="/blog">
-            Blog
-          </Button>
-        </Toolbar>
-      </AppBar>
+          <Grid item>
+            <Typography
+              variant="h6"
+              className={isMobile ? styles.hideOnMobile : styles.description}
+            >
+              {siteDescription}
+            </Typography>
+          </Grid>
+        </Grid>
+        {isMobile && (
+          <div>
+            <IconButton
+              aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              {menuLinks.map(({ title, url }, index) => (
+                <MenuItem
+                  key={index}
+                  onClick={handleClose}
+                  component={Link}
+                  to={url}
+                >
+                  {title}
+                </MenuItem>
+              ))}
+            </Menu>
+          </div>
+        )}
+        {!isMobile &&
+          menuLinks.map(({ title, url }, index) => (
+            <Button key={index} color="inherit" component={Link} to={url}>
+              {title}
+            </Button>
+          ))}
+      </Toolbar>
       <Typography variant="h1" className={styles.pageName}>
-        Hello.
+        {pageName}
       </Typography>
-    </Fragment>
+    </AppBar>
   );
 };
 
