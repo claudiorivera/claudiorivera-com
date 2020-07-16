@@ -1,10 +1,10 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-const Video = ({ videoSrcURL, videoTitle }) => (
+const YouTubeEmbed = ({ url, title }) => (
   <Container>
     <iframe
-      src={videoSrcURL}
-      title={videoTitle}
+      src={url}
+      title={title}
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       frameBorder="0"
       webkitallowfullscreen="true"
@@ -15,4 +15,4 @@ const Video = ({ videoSrcURL, videoTitle }) => (
     />
   </Container>
 );
-export default Video;
+export default YouTubeEmbed;

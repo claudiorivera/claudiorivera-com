@@ -1,6 +1,6 @@
 import React from "react";
-import Video from "../components/Video";
-import Audio from "../components/Audio";
+import YouTubeEmbed from "../components/YouTubeEmbed";
+import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import { Typography } from "@material-ui/core";
@@ -9,14 +9,14 @@ const MusicPage = () => (
   <Layout>
     <SEO title="Music" />
     <Typography variant="h4">See</Typography>
-    <Video
-      videoSrcURL="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
-      videoTitle="YouTube playlist of random drum and music-related videos of mine."
+    <YouTubeEmbed
+      url="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
+      title="YouTube playlist of random drum and music-related videos of mine."
     />
     <Typography variant="h4">Hear</Typography>
-    <Audio
-      audioSrcUrl="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
-      audioTitle="Songs I've Played On"
+    <AppleMusicEmbed
+      url="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
+      title="Songs I've Played On"
     />
     <Typography variant="h4">Selected Discography & Experience</Typography>
     <Typography variant="body1">
