@@ -1,19 +1,43 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Typography } from "@material-ui/core";
+import { graphql } from "gatsby";
+import BlogPost from "../components/BlogPost";
 
-const BlogPage = () => (
-  <Layout>
-    <SEO title="Blog" />
-    <Typography variant="body1">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem quisquam
-      dolorum, dignissimos molestiae excepturi voluptatum nobis distinctio ad
-      magni reprehenderit impedit quam dolore. Distinctio ratione rerum nulla
-      neque quas doloribus. Quasi doloribus rem sapiente mollitia veniam a et ea
-      debitis.
-    </Typography>
-  </Layout>
-);
+const BlogPage = ({ data }) => {
+  return (
+    <Layout>
+      <SEO title="Blog" />
+      {data.allMarkdownRemark.edges.map(({ node: post }) => (
+        <BlogPost key={post.id} post={post} />
+      ))}
+    </Layout>
+  );
+};
 
 export default BlogPage;
+
+export const query = graphql`
+  query posts {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            category
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          html
+        }
+      }
+    }
+  }
+`;
