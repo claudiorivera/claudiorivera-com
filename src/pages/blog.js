@@ -19,7 +19,8 @@ export default BlogPage;
 
 export const query = graphql`
   query posts {
-    allMarkdownRemark {
+    # https://www.gatsbyjs.org/docs/graphql-reference/#sort
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
