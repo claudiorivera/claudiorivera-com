@@ -13,6 +13,13 @@ The problem, as [described in the "Kata"](https://www.codewars.com/kata/545cedaa
 
 Of course, my first naive approach involved all kinds of desperate Regex patterns, and keeping a counter, and then checking whether the total count was at least 26 (one for each letter of the alphabet), but I had to abandon this path when I realized just how lost I had gotten.
 
-Fortunately, it didn't take much time to search online for a hint, and my pal "Google" led me to [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set), which immediately got me to [my solution](https://www.codewars.com/kata/reviews/54a5d4af37f43531e900002e/groups/5eecd6b5e5d13e000150e278). (Yes, I know I don't need the "i" flag, but I was so excited to submit my solution, that I accidentally left it in).
+Fortunately, it didn't take much time to search online for a hint, and my pal "Google" led me to [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set), which immediately got me to my solution:
+
+    const isPangram = (string) => {
+      return [...new Set(string.replace(/\s/g, "").toLowerCase().split(""))]
+        .length < 26
+        ? false
+        : true;
+    };
 
 I know every experienced coder will tell you that the best skill one can have is Googling the solution, and I strongly agree with that, but it also feels nice to be able to think up an algorithm all by myself. However, I won't beat myself up too much, because the next time I need to find unique values in a set, I'll know exactly where to look!
