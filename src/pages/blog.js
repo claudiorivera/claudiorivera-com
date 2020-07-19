@@ -1,48 +1,36 @@
-import React, { Fragment } from "react";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import React from "react";
 import { graphql } from "gatsby";
-import BlogPost from "../components/BlogPost";
-import { Divider } from "@material-ui/core";
+import Layout from "../components/Layout";
 
 const BlogPage = ({ data }) => {
+  console.log(data);
   return (
     <Layout>
-      <SEO title="Blog" />
-      {data.allMarkdownRemark.edges.map(({ node: post }) => (
-        <Fragment>
-          <BlogPost key={post.id} post={post} />
-          <Divider />
-        </Fragment>
-      ))}
+      <div>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div key={node.id}>{node.frontmatter.title}</div>
+        ))}
+      </div>
     </Layout>
   );
 };
 
-export default BlogPage;
-
 export const query = graphql`
-  query posts {
-    # https://www.gatsbyjs.org/docs/graphql-reference/#sort
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+  query {
+    allMarkdownRemark {
+      totalCount
       edges {
         node {
           id
           frontmatter {
             title
-            date
-            category
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            date(formatString: "DD MMMM, YYYY")
           }
-          html
+          excerpt
         }
       }
     }
   }
 `;
+
+export default BlogPage;
