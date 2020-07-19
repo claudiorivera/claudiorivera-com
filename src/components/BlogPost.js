@@ -7,7 +7,7 @@ const BlogPost = ({ post }) => {
 
   return (
     <Container>
-      <Typography variant="h6">{category}</Typography>
+      <Typography variant="overline">{category}</Typography>
       <Typography variant="h5">{date}</Typography>
       <Typography variant="h3">{title}</Typography>
       <Img fluid={featuredImage.childImageSharp.fluid} />

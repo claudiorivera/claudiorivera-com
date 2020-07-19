@@ -1,15 +1,19 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import { graphql } from "gatsby";
 import BlogPost from "../components/BlogPost";
+import { Divider } from "@material-ui/core";
 
 const BlogPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
       {data.allMarkdownRemark.edges.map(({ node: post }) => (
-        <BlogPost key={post.id} post={post} />
+        <Fragment>
+          <BlogPost key={post.id} post={post} />
+          <Divider />
+        </Fragment>
       ))}
     </Layout>
   );
