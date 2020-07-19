@@ -1,9 +1,8 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 
 const BlogPage = ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <div>
@@ -17,7 +16,7 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
