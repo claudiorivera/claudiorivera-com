@@ -55,6 +55,12 @@ module.exports = {
         icon: `src/images/cr-profile-pic.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-164475801-1",
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 };
