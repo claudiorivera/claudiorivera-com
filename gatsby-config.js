@@ -13,6 +13,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              noInlineHighlight: true,
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
@@ -21,9 +27,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-embed-video`,
             options: {
-              width: 800,
+              width: "100%",
               related: false,
-              noIframeBorder: true,
+              containerClass: `videoWrapper`,
             },
           },
         ],

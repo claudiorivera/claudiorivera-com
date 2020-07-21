@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "@material-ui/core";
 const YouTubeEmbed = ({ url, title }) => (
-  <Container>
+  <Container className="videoWrapper">
     <iframe
       src={url}
       title={title}
@@ -10,8 +10,6 @@ const YouTubeEmbed = ({ url, title }) => (
       webkitallowfullscreen="true"
       mozallowfullscreen="true"
       allowFullScreen
-      width="100%"
-      height="300px"
     />
   </Container>
 );
