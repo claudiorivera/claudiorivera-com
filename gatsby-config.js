@@ -18,6 +18,14 @@ module.exports = {
               maxWidth: 800,
             },
           },
+          {
+            resolve: `gatsby-remark-embed-video`,
+            options: {
+              width: 800,
+              related: false,
+              noIframeBorder: true,
+            },
+          },
         ],
       },
     },

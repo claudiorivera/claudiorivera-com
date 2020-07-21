@@ -5,7 +5,7 @@ featuredImage: "./images/IMG_0011_wide-2048x825.jpg"
 category: "music"
 ---
 
-https://www.youtube.com/watch?v=GQ5VFgWQqQg
+`youtube: https://www.youtube.com/watch?v=GQ5VFgWQqQg`
 
 Video: "Still Into You" - Drum cover by Claudio Rivera
 

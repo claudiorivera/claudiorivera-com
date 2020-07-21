@@ -5,7 +5,7 @@ featuredImage: "./images/81e2u8Uf-L._SL1425_.jpg"
 category: "music"
 ---
 
-https://www.youtube.com/watch?v=IMc\_r4Nb05Q
+`youtube: https://youtu.be/IMc_r4Nb05Q`
 
 Video: Recording "Gravity" by Motion City Soundtrack
 

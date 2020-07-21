@@ -7,7 +7,7 @@ category: "music"
 
 Inspired by all the fun videos that musicians are putting out (particularly [the Goldfinger ones](https://www.youtube.com/watch?v=h0rSYEoBMYM), since they're a band that's near and dear to me), I decided to challenge myself to do a similar quasi-live video. Here it is:
 
-https://youtu.be/gX\_lQrWY0kE
+`youtube: https://youtu.be/gX_lQrWY0kE`
 
 Since I'm not the greatest guitar player, I decided to stick to something that I could handle (or at least pass off as "good enough for punk music"). 😎
 
