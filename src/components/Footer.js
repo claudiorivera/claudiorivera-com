@@ -4,17 +4,24 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   footer: {
-    color: "grey",
+    color: "white",
     textAlign: "center",
+    backgroundColor: "#1e73be",
+    margin: 0,
+    marginTop: "4rem",
+    height: "4rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
 const Footer = () => {
   const styles = useStyles();
   return (
-    <Container className={styles.footer}>
+    <div className={styles.footer}>
       © {new Date().getFullYear()} Claudio Rivera. Made with Gatsby.
-    </Container>
+    </div>
   );
 };
 
