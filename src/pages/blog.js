@@ -1,21 +1,26 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 
 const BlogPage = ({ data }) => {
   return (
     <Layout>
-      <div>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>{node.frontmatter.title}</div>
-        ))}
-      </div>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <Fragment>
+          <Link key={node.id} to={node.fields.slug}>
+            <h1>{node.frontmatter.title}</h1>
+            <h2>{node.frontmatter.date}</h2>
+            <p>{node.excerpt}</p>
+          </Link>
+          <hr />
+        </Fragment>
+      ))}
     </Layout>
   );
 };
 
 export const query = graphql`
-  query {
+  {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
@@ -26,6 +31,9 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
           }
           excerpt
+          fields {
+            slug
+          }
         }
       }
     }
