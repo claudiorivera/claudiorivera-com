@@ -18,16 +18,9 @@ import { Menu as MenuIcon } from "@material-ui/icons";
 const useStyles = makeStyles(() => ({
   navBar: {
     padding: "1rem",
-    backgroundImage: `linear-gradient(
-      rgba(1, 105, 233, .75),
-      rgba(1, 105, 233, .75)
-    ),
-    url('/static/cd99cdc16a0214c172b830efb8d87973/14b42/IMG_0011_wide.jpg');`,
-    backgroundSize: "cover",
-    background: "center center",
-    color: "white",
     marginBottom: "3rem",
-    height: "100vh",
+    backgroundColor: "#1e73be",
+    color: "white",
   },
   title: {
     fontWeight: 700,
@@ -40,11 +33,6 @@ const useStyles = makeStyles(() => ({
   link: {
     textDecoration: "none",
     color: "white",
-  },
-  pageName: {
-    position: "relative",
-    textAlign: "center",
-    top: "60vh",
   },
   hideOnMobile: {
     display: "none",
@@ -74,7 +62,6 @@ const Header = ({ siteTitle, siteDescription }) => {
   const styles = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-  const pageName = "Hello.";
 
   // Responsive menu
   const [anchorEl, setAnchorEl] = useState(null);
@@ -153,9 +140,6 @@ const Header = ({ siteTitle, siteDescription }) => {
             </Button>
           ))}
       </Toolbar>
-      <Typography variant="h1" className={styles.pageName}>
-        {pageName}
-      </Typography>
     </AppBar>
   );
 };
