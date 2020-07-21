@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import { Typography } from "@material-ui/core";
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
@@ -13,7 +14,10 @@ const BlogPost = ({ data }) => {
         <h2>{post.frontmatter.date}</h2>
         <h3>{post.frontmatter.category}</h3>
         <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Typography
+          variant="body1"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </div>
     </Layout>
   );
