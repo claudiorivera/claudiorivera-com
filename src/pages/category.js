@@ -16,7 +16,7 @@ const CategoryPage = ({
   <Layout>
     <Helmet title={title} />
     <div>
-      <h1>Categories</h1>
+      <h1>Category List</h1>
       <ul>
         {group.map((category) => (
           <li key={category.fieldValue}>
