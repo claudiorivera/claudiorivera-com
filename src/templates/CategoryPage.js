@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { Link, graphql } from "gatsby";
+import Layout from "../components/Layout";
 
 const CategoryPage = ({ pageContext, data }) => {
   const { category } = pageContext;
@@ -11,7 +11,7 @@ const CategoryPage = ({ pageContext, data }) => {
   } in category "${category}"`;
 
   return (
-    <div>
+    <Layout>
       <h1>{categoryHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
@@ -29,7 +29,7 @@ const CategoryPage = ({ pageContext, data }) => {
               You'll come back to it!
             */}
       <Link to="/category">All categories</Link>
-    </div>
+    </Layout>
   );
 };
 
