@@ -1,6 +1,7 @@
 ---
 title: "Habit & Routine, Vol. 2"
 date: "2020-01-24"
+type: "post"
 featuredImage: "./images/Vol-2-Small.png"
 category: "music"
 ---

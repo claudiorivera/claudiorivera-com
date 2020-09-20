@@ -48,7 +48,7 @@ const MusicPage = ({ data }) => (
 export const query = graphql`
   {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "experience" } } }
+      filter: { frontmatter: { type: { eq: "experience" } } }
       sort: { order: DESC, fields: fileAbsolutePath }
     ) {
       edges {

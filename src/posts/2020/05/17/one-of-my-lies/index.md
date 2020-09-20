@@ -1,6 +1,7 @@
 ---
 title: '"One Of My Lies"'
 date: "2020-05-17"
+type: "post"
 featuredImage: "./images/Kerplunk.jpg"
 category: "music"
 ---

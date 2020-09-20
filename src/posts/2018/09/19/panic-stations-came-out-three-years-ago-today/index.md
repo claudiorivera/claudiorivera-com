@@ -1,6 +1,7 @@
 ---
 title: "Panic Stations"
 date: "2018-09-19"
+type: "post"
 featuredImage: "./images/81e2u8Uf-L._SL1425_.jpg"
 category: "music"
 ---

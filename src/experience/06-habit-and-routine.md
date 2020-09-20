@@ -1,7 +1,7 @@
 ---
-category: "experience"
 title: '"Habit & Routine"'
 link: "https://artist.landr.com/music/628810708741"
+type: "experience"
 label: "Self-released"
 years: "2019"
 ---

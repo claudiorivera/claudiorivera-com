@@ -1,6 +1,7 @@
 ---
 title: "Habit & Routine"
 date: "2019-09-24"
+type: "post"
 featuredImage: "./images/Vol-1-Small.png"
 category: "music"
 ---

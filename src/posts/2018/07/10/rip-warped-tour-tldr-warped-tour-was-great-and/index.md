@@ -1,6 +1,7 @@
 ---
 title: "RIP Warped Tour"
 date: "2018-07-10"
+type: "post"
 featuredImage: "./images/IMG_5560_FL.jpg"
 category: "music"
 ---
