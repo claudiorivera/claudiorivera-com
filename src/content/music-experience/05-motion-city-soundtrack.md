@@ -1,7 +1,7 @@
 ---
 title: "Motion City Soundtrack"
 link: "https://motioncitysoundtrack.com/"
-type: "experience"
+type: "music-experience"
 label: "Epitaph"
 years: "2013 - 2015"
 ---

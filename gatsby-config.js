@@ -38,8 +38,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `data`,
-        path: `src/data`,
+        name: `content`,
+        path: `src/content`,
       },
     },
     `gatsby-plugin-sharp`,

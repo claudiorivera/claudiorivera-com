@@ -1,7 +1,7 @@
 ---
 title: '"Habit & Routine, Vol. 2"'
 link: "https://artist.landr.com/music/628810988617"
-type: "experience"
+type: "music-experience"
 label: "Self-released"
 years: "2020"
 ---

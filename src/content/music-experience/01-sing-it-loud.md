@@ -1,7 +1,7 @@
 ---
 title: "Sing It Loud"
 link: "https://itunes.apple.com/us/artist/sing-it-loud/id265101134"
-type: "experience"
+type: "music-experience"
 label: "Epitaph"
 years: "2008"
 ---
