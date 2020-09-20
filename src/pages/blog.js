@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { Typography } from "@material-ui/core";
@@ -16,12 +16,12 @@ const BlogPage = ({ data }) => {
   return (
     <Layout>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Fragment>
+        <div key={node.id}>
           <div className={styles.center}>
             <Typography variant="overline">
               {node.frontmatter.category}
             </Typography>
-            <Link key={node.id} to={node.fields.slug}>
+            <Link to={node.fields.slug}>
               <h1>{node.frontmatter.title}</h1>
             </Link>
             <h2>{node.frontmatter.date}</h2>
@@ -32,7 +32,7 @@ const BlogPage = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: node.html }}
           />
           <hr />
-        </Fragment>
+        </div>
       ))}
     </Layout>
   );
@@ -46,6 +46,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
