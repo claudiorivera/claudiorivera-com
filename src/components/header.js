@@ -65,7 +65,7 @@ const Header = ({ siteTitle, siteDescription }) => {
 
   // Responsive menu
   const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  const isOpen = Boolean(anchorEl);
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -117,7 +117,7 @@ const Header = ({ siteTitle, siteDescription }) => {
                 vertical: "top",
                 horizontal: "right",
               }}
-              open={open}
+              open={isOpen}
               onClose={handleClose}
             >
               {menuLinks.map(({ title, url }, index) => (
