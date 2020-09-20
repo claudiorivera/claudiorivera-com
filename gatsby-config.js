@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Claudio Rivera`,
-    description: `Drummer | Drum Tech | Developer`,
+    description: `Drummer | Developer | Drum Tech`,
     author: `Claudio Rivera`,
   },
   plugins: [
@@ -38,22 +38,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `src/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `experience`,
-        path: `src/experience`,
+        name: `data`,
+        path: `src/data`,
       },
     },
     `gatsby-plugin-sharp`,
