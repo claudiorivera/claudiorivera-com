@@ -49,7 +49,7 @@ export const query = graphql`
   {
     allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "music-experience" } } }
-      sort: { order: DESC, fields: fileAbsolutePath }
+      sort: { order: ASC, fields: fileAbsolutePath }
     ) {
       edges {
         node {
