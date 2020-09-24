@@ -19,7 +19,14 @@ const Footer = () => {
   const styles = useStyles();
   return (
     <div className={styles.footer}>
-      © {new Date().getFullYear()} Claudio Rivera. Made with Gatsby.
+      &copy; {new Date().getFullYear()} Claudio Rivera. Made with Gatsby. &nbsp;
+      <a
+        href="https://github.com/claudiorivera/cr-com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        View Source
+      </a>
     </div>
   );
 };
