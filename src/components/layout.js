@@ -6,10 +6,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { createMuiTheme } from "@material-ui/core/styles";
 
+const colors = {
+  blue: "#0169e9",
+};
+
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#0169e9",
+      main: `${colors.blue}`,
     },
   },
   overrides: {
@@ -22,6 +26,7 @@ const theme = createMuiTheme({
       "@global": {
         a: {
           textDecoration: "none",
+          color: `${colors.blue}`,
         },
       },
     },

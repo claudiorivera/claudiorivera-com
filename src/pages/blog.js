@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
-import { Typography } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Img from "gatsby-image";
 
 const useStyles = makeStyles({
-  center: {
+  postInfo: {
     textAlign: "center",
   },
 });
@@ -16,8 +16,8 @@ const BlogPage = ({ data }) => {
   return (
     <Layout>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <div className={styles.center}>
+        <Container key={node.id}>
+          <div className={styles.postInfo}>
             <Typography variant="overline">
               {node.frontmatter.category}
             </Typography>
@@ -25,14 +25,14 @@ const BlogPage = ({ data }) => {
               <h1>{node.frontmatter.title}</h1>
             </Link>
             <h2>{node.frontmatter.date}</h2>
-            <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
           </div>
+          <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
           <Typography
             variant="body1"
             dangerouslySetInnerHTML={{ __html: node.html }}
           />
           <hr />
-        </div>
+        </Container>
       ))}
     </Layout>
   );
