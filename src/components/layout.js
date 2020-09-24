@@ -18,6 +18,13 @@ const theme = createMuiTheme({
         fontFamily: "'Merriweather', sans-serif",
       },
     },
+    MuiCssBaseline: {
+      "@global": {
+        a: {
+          textDecoration: "none",
+        },
+      },
+    },
   },
 });
 
