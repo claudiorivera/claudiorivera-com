@@ -10,7 +10,7 @@ const DevPage = ({ data }) => (
     <SEO title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
-        <a href={node.frontmatter.demo_link}>
+        <a href={node.frontmatter.demo_link} target="_blank" rel="noreferrer">
           <h1>{node.frontmatter.title}</h1>
         </a>
         <Img fluid={node.frontmatter.screenshot.childImageSharp.fluid} />
@@ -18,6 +18,9 @@ const DevPage = ({ data }) => (
           variant="body1"
           dangerouslySetInnerHTML={{ __html: node.html }}
         />
+        <a href={node.frontmatter.github_link} target="_blank" rel="noreferrer">
+          View Source
+        </a>
         <hr />
       </div>
     ))}
