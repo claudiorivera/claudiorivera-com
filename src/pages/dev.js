@@ -40,7 +40,7 @@ export const query = graphql`
             github_link
             screenshot {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }

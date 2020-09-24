@@ -44,10 +44,19 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
-        fonts: ["Merriweather"],
-        display: "swap",
+        fonts: [
+          {
+            family: "Merriweather",
+            weights: ["200..900"],
+          },
+          {
+            family: "Inter",
+            variable: true,
+            weights: ["200..900"],
+          },
+        ],
       },
     },
     {

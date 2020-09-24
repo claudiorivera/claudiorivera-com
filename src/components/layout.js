@@ -21,6 +21,12 @@ const theme = createMuiTheme({
       body1: {
         fontFamily: "'Merriweather', sans-serif",
       },
+      h2: {
+        fontFamily: "'Inter', sans-serif",
+        letterSpacing: "-.05rem",
+        fontWeight: 700,
+        fontVariantNumeric: "lining-nums",
+      },
     },
     MuiCssBaseline: {
       "@global": {
@@ -52,7 +58,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
         siteDescription={data.site.siteMetadata.description}
       />
-      <Container maxWidth="md">
+      <Container maxWidth="xl">
         <main>{children}</main>
       </Container>
       <Footer />
