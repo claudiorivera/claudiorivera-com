@@ -3,34 +3,13 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import { Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import DevPortfolioItem from "../components/DevPortfolioItem";
 
 const DevPage = ({ data }) => (
   <Layout>
     <SEO title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id}>
-        <a
-          href={node.frontmatter.demo_link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h1>{node.frontmatter.title}</h1>
-        </a>
-        <Img fluid={node.frontmatter.screenshot.childImageSharp.fluid} />
-        <Typography
-          variant="body1"
-          dangerouslySetInnerHTML={{ __html: node.html }}
-        />
-        <a
-          href={node.frontmatter.github_link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Source
-        </a>
-        <hr />
-      </div>
+      <DevPortfolioItem node={node} key={node.id} />
     ))}
     <Typography variant="h4">
       For more, please visit{" "}
