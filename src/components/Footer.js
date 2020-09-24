@@ -23,7 +23,7 @@ const Footer = () => {
       <a
         href="https://github.com/claudiorivera/cr-com"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         View Source
       </a>

@@ -10,7 +10,11 @@ const DevPage = ({ data }) => (
     <SEO title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
-        <a href={node.frontmatter.demo_link} target="_blank" rel="noreferrer">
+        <a
+          href={node.frontmatter.demo_link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <h1>{node.frontmatter.title}</h1>
         </a>
         <Img fluid={node.frontmatter.screenshot.childImageSharp.fluid} />
@@ -18,7 +22,11 @@ const DevPage = ({ data }) => (
           variant="body1"
           dangerouslySetInnerHTML={{ __html: node.html }}
         />
-        <a href={node.frontmatter.github_link} target="_blank" rel="noreferrer">
+        <a
+          href={node.frontmatter.github_link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View Source
         </a>
         <hr />
@@ -29,7 +37,7 @@ const DevPage = ({ data }) => (
       <a
         href="https://github.com/claudiorivera"
         target="_blank"
-        rel="noreferrer noopener"
+        rel="noopener noreferrer"
       >
         my GitHub profile
       </a>
