@@ -49,7 +49,7 @@ module.exports = {
         fonts: [
           {
             family: "Merriweather",
-            weights: ["200..900"],
+            weights: ["400"],
           },
           {
             family: "Inter",
