@@ -9,18 +9,14 @@ const DevPage = ({ data }) => (
   <Layout>
     <SEO title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <DevPortfolioItem node={node} key={node.id} />
+      <div>
+        <DevPortfolioItem node={node} key={node.id} />
+        <hr style={{ marginTop: "5rem", marginBottom: "5rem" }} />
+      </div>
     ))}
-    <Typography variant="h4">
+    <Typography variant="h2">
       For more, please visit{" "}
-      <a
-        href="https://github.com/claudiorivera"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        my GitHub profile
-      </a>
-      .
+      <a href="https://github.com/claudiorivera">my GitHub profile</a>.
     </Typography>
   </Layout>
 );
@@ -36,6 +32,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            description
             demo_link
             github_link
             screenshot {

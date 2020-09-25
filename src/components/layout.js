@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const colors = {
-  blue: "#0169e9",
+  blue: "#4770df",
 };
 
 const theme = createMuiTheme({
@@ -20,12 +20,21 @@ const theme = createMuiTheme({
     MuiTypography: {
       body1: {
         fontFamily: "'Merriweather', sans-serif",
+        fontSize: "1.2rem",
+      },
+      h1: {
+        fontFamily: "'Inter', sans-serif",
+        letterSpacing: "-.05rem",
+        lineHeight: "1.25",
+        fontWeight: 700,
+        fontSize: "3rem",
       },
       h2: {
         fontFamily: "'Inter', sans-serif",
         letterSpacing: "-.05rem",
+        lineHeight: "1.25",
         fontWeight: 700,
-        fontVariantNumeric: "lining-nums",
+        fontSize: "2rem",
       },
     },
     MuiCssBaseline: {
@@ -33,6 +42,12 @@ const theme = createMuiTheme({
         a: {
           textDecoration: "none",
           color: `${colors.blue}`,
+        },
+        ul: {
+          marginBottom: ".75rem",
+        },
+        li: {
+          marginBottom: ".75rem",
         },
       },
     },
