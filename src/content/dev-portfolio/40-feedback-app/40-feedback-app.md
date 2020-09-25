@@ -1,6 +1,6 @@
 ---
 title: "Feedback App"
-descrpition: "A multi-step feedback form built with the PERN stack and Redux."
+description: "A multi-step feedback form built with the PERN stack and Redux."
 demo_link: "https://claudiorivera-feedback-app.herokuapp.com/"
 github_link: "https://github.com/claudiorivera/redux-feedback-app"
 screenshot: "./images/feedback-app.png"
