@@ -1,27 +1,33 @@
 import React from "react";
 import Img from "gatsby-image";
-import { Container, Grid, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Link,
+  Typography,
+} from "@material-ui/core";
 
 const DevPortfolioItem = ({ node }) => {
   return (
     <Container>
       <Grid container alignItems="center" spacing={4}>
         <Grid item sm={6} xs={12}>
-          <a href={node.frontmatter.demo_link}>
+          <Link href={node.frontmatter.demo_link}>
             <Img fluid={node.frontmatter.screenshot.childImageSharp.fluid} />
-          </a>
+          </Link>
         </Grid>
         <Grid item sm={6} xs={12}>
-          <a href={node.frontmatter.demo_link}>
+          <Link href={node.frontmatter.demo_link}>
             <Typography variant="h1">{node.frontmatter.title}</Typography>
-          </a>
+          </Link>
           <Typography
             variant="body1"
             style={{
-              marginTop: "2rem",
-              marginBottom: "2rem",
-              padding: "2rem",
-              border: ".15rem #4770df solid",
+              marginTop: "1rem",
+              marginBottom: "1rem",
+              padding: "1rem",
             }}
           >
             {node.frontmatter.description}
@@ -31,7 +37,22 @@ const DevPortfolioItem = ({ node }) => {
             variant="body1"
             dangerouslySetInnerHTML={{ __html: node.html }}
           />
-          <a href={node.frontmatter.github_link}>View Source</a>
+          <Box display="flex" justifyContent="space-evenly" maxWidth="30rem">
+            <Button
+              variant="outlined"
+              color="primary"
+              href={node.frontmatter.demo_link}
+            >
+              Live Demo
+            </Button>
+            <Button
+              variant="outlined"
+              color="primary"
+              href={node.frontmatter.github_link}
+            >
+              View Source
+            </Button>
+          </Box>
         </Grid>
       </Grid>
     </Container>

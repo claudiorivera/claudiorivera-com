@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "@material-ui/core";
 
 const useStyles = makeStyles({
   footer: {
@@ -19,12 +20,9 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       &copy; {new Date().getFullYear()} Claudio Rivera. Made with Gatsby.&nbsp;
-      <a
-        style={{ color: "white" }}
-        href="https://github.com/claudiorivera/cr-com"
-      >
+      <Link href="https://github.com/claudiorivera/cr-com" color="inherit">
         View Source
-      </a>
+      </Link>
     </div>
   );
 };

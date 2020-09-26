@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Typography } from "@material-ui/core";
+import { Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
 import DevPortfolioItem from "../components/DevPortfolioItem";
 
@@ -9,15 +9,17 @@ const DevPage = ({ data }) => (
   <Layout>
     <SEO title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div>
+      <div key={node.id}>
         <DevPortfolioItem node={node} key={node.id} />
-        <hr style={{ marginTop: "5rem", marginBottom: "5rem" }} />
+        <hr />
       </div>
     ))}
-    <Typography variant="h2">
-      For more, please visit{" "}
-      <a href="https://github.com/claudiorivera">my GitHub profile</a>.
-    </Typography>
+    <Container maxWidth="sm">
+      <Typography variant="h2">
+        For more, please visit{" "}
+        <Link href="https://github.com/claudiorivera">my GitHub profile</Link>.
+      </Typography>
+    </Container>
   </Layout>
 );
 

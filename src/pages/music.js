@@ -3,7 +3,7 @@ import YouTubeEmbed from "../components/YouTubeEmbed";
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Container, Typography } from "@material-ui/core";
+import { Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
 
 const MusicPage = ({ data }) => (
@@ -28,10 +28,10 @@ const MusicPage = ({ data }) => (
         Selected Discography &amp; Experience
       </Typography>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Container>
-          <Typography key={node.id} variant="body1">
+        <Container key={node.id}>
+          <Typography variant="body1">
             <strong>
-              <a href={node.frontmatter.link}>{node.frontmatter.title}</a>
+              <Link href={node.frontmatter.link}>{node.frontmatter.title}</Link>
               &nbsp;
             </strong>
             ({node.frontmatter.label}) - ({node.frontmatter.years})

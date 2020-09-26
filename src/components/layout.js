@@ -8,12 +8,19 @@ import { createMuiTheme } from "@material-ui/core/styles";
 
 const colors = {
   blue: "#4770df",
+  red: "#EC0B43",
+  black: "#000000",
+  gray: "#808080",
+  white: "#000000",
 };
 
 const theme = createMuiTheme({
   palette: {
     primary: {
       main: `${colors.blue}`,
+    },
+    secondary: {
+      main: `${colors.red}`,
     },
   },
   overrides: {
@@ -39,16 +46,24 @@ const theme = createMuiTheme({
     },
     MuiCssBaseline: {
       "@global": {
-        a: {
-          textDecoration: "none",
-          color: `${colors.blue}`,
-        },
         ul: {
-          marginBottom: ".75rem",
+          marginBottom: "2rem",
         },
         li: {
-          marginBottom: ".75rem",
+          marginBottom: ".5rem",
         },
+        hr: {
+          border: 0,
+          height: "1px",
+          backgroundImage:
+            "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0))",
+          margin: "5rem 0 5rem",
+        },
+      },
+    },
+    MuiLink: {
+      root: {
+        textDecoration: "none",
       },
     },
   },
@@ -73,7 +88,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
         siteDescription={data.site.siteMetadata.description}
       />
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <main>{children}</main>
       </Container>
       <Footer />
