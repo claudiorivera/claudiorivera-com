@@ -7,11 +7,17 @@ import Footer from "./Footer";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const colors = {
-  blue: "#1e73be",
+  blue: "#0169e9",
+  indigo: "#4770df",
   red: "#EC0B43",
   black: "#000000",
   gray: "#808080",
   white: "#000000",
+};
+
+const fonts = {
+  serif: "PT Serif, serif",
+  sans: "'Inter', sans-serif",
 };
 
 const theme = createMuiTheme({
@@ -20,24 +26,25 @@ const theme = createMuiTheme({
       main: `${colors.blue}`,
     },
     secondary: {
-      main: `${colors.red}`,
+      main: `${colors.indigo}`,
     },
   },
   overrides: {
     MuiTypography: {
       body1: {
-        fontFamily: "'Merriweather', sans-serif",
-        fontSize: "1.2rem",
+        fontFamily: `${fonts.serif}`,
+        fontWeight: 400,
+        fontSize: "1.25rem",
       },
       h1: {
-        fontFamily: "'Inter', sans-serif",
+        fontFamily: `${fonts.sans}`,
         letterSpacing: "-.05rem",
         lineHeight: "1.25",
         fontWeight: 700,
         fontSize: "3rem",
       },
       h2: {
-        fontFamily: "'Inter', sans-serif",
+        fontFamily: `${fonts.sans}`,
         letterSpacing: "-.05rem",
         lineHeight: "1.25",
         fontWeight: 700,
@@ -47,13 +54,17 @@ const theme = createMuiTheme({
     MuiCssBaseline: {
       "@global": {
         a: {
-          color: "#1e73be",
+          color: `${colors.indigo}`,
+          textDecoration: "none",
+          "&:hover": {
+            textDecoration: "underline",
+          },
         },
         ul: {
-          marginBottom: "2rem",
+          marginBottom: "1rem",
         },
         li: {
-          marginBottom: ".5rem",
+          marginBottom: ".25rem",
         },
         hr: {
           border: 0,
@@ -67,6 +78,7 @@ const theme = createMuiTheme({
     MuiLink: {
       root: {
         textDecoration: "none",
+        color: `${colors.indigo}`,
       },
     },
   },

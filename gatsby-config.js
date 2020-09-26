@@ -48,7 +48,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: "Merriweather",
+            family: "PT Serif",
             weights: ["400"],
           },
           {

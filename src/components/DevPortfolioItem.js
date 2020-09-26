@@ -40,14 +40,14 @@ const DevPortfolioItem = ({ node }) => {
           <Box display="flex" justifyContent="space-evenly" maxWidth="30rem">
             <Button
               variant="outlined"
-              color="primary"
+              color="secondary"
               href={node.frontmatter.demo_link}
             >
               Live Demo
             </Button>
             <Button
               variant="outlined"
-              color="primary"
+              color="secondary"
               href={node.frontmatter.github_link}
             >
               View Source

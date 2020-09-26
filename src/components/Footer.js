@@ -5,7 +5,7 @@ import { Link } from "@material-ui/core";
 const useStyles = makeStyles({
   footer: {
     color: "white",
-    backgroundColor: "#1e73be",
+    backgroundColor: "#0169e9",
     margin: 0,
     marginTop: "4rem",
     height: "7rem",
