@@ -19,7 +19,6 @@ const useStyles = makeStyles(() => ({
   navBar: {
     padding: "1rem",
     marginBottom: "3rem",
-    backgroundColor: "#1e73be",
     color: "white",
   },
   title: {
@@ -75,7 +74,7 @@ const Header = ({ siteTitle, siteDescription }) => {
   };
 
   return (
-    <AppBar position="static" color="transparent" className={styles.navBar}>
+    <AppBar position="static" color="primary" className={styles.navBar}>
       <Toolbar>
         <Grid container spacing={2} alignItems="baseline">
           <Grid item>

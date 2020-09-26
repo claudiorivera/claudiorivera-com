@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const colors = {
-  blue: "#4770df",
+  blue: "#1e73be",
   red: "#EC0B43",
   black: "#000000",
   gray: "#808080",
@@ -46,6 +46,9 @@ const theme = createMuiTheme({
     },
     MuiCssBaseline: {
       "@global": {
+        a: {
+          color: "#1e73be",
+        },
         ul: {
           marginBottom: "2rem",
         },
