@@ -103,9 +103,10 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
         siteDescription={data.site.siteMetadata.description}
       />
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <main>{children}</main>
       </Container>
+      <hr />
       <Footer />
     </ThemeProvider>
   );

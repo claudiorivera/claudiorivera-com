@@ -3,15 +3,18 @@ import Img from "gatsby-image";
 import {
   Box,
   Button,
-  Container,
   Grid,
   Link,
   Typography,
+  useMediaQuery,
 } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 const DevPortfolioItem = ({ node }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
-    <Container>
+    <Box mt={!isMobile ? "10rem" : ""}>
       <Grid container alignItems="center" spacing={4}>
         <Grid item sm={6} xs={12}>
           <Link href={node.frontmatter.demo_link}>
@@ -55,7 +58,7 @@ const DevPortfolioItem = ({ node }) => {
           </Box>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Container, Link, Typography } from "@material-ui/core";
+import { Box, Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
 import DevPortfolioItem from "../components/DevPortfolioItem";
 
@@ -15,10 +15,13 @@ const DevPage = ({ data }) => (
       </div>
     ))}
     <Container maxWidth="sm">
-      <Typography variant="h2">
-        For more, please visit{" "}
-        <Link href="https://github.com/claudiorivera">my GitHub profile</Link>.
-      </Typography>
+      <Box m={2}>
+        <Typography variant="h1">
+          For more, please visit{" "}
+          <Link href="https://github.com/claudiorivera">my GitHub profile</Link>
+          .
+        </Typography>
+      </Box>
     </Container>
   </Layout>
 );

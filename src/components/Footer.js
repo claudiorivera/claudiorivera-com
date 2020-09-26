@@ -1,29 +1,22 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "@material-ui/core";
-
-const useStyles = makeStyles({
-  footer: {
-    color: "white",
-    backgroundColor: "#0169e9",
-    margin: 0,
-    marginTop: "4rem",
-    height: "7rem",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+import { Box, Link } from "@material-ui/core";
 
 const Footer = () => {
-  const styles = useStyles();
   return (
-    <div className={styles.footer}>
-      &copy; {new Date().getFullYear()} Claudio Rivera. Made with Gatsby.&nbsp;
-      <Link href="https://github.com/claudiorivera/cr-com" color="inherit">
-        View Source
-      </Link>
-    </div>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      p={4}
+      m={4}
+      textAlign="center"
+    >
+      <div>
+        &copy; {new Date().getFullYear()} Claudio Rivera. Made with
+        Gatsby.&nbsp;
+      </div>
+      <Link href="https://github.com/claudiorivera/cr-com">View Source</Link>
+    </Box>
   );
 };
 
