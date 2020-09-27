@@ -15,10 +15,6 @@ import Header from "./Header";
 const colors = {
   blue: "#0169e9",
   indigo: "#4770df",
-  red: "#EC0B43",
-  black: "#000000",
-  gray: "#808080",
-  white: "#000000",
 };
 
 const fonts = {
@@ -136,12 +132,17 @@ const Layout = ({ children }) => {
         title="background"
         fluid={data.file.childImageSharp.fluid}
         overlayColor={`${colors.blue}bf`}
-        height={isMobile ? "15vh" : "75vh"}
+        height={isMobile ? "15vh" : "50vh"}
       >
         <Header
           siteTitle={data.site.siteMetadata.title}
           siteDescription={data.site.siteMetadata.description}
         />
+        {!isMobile && (
+          <h1 style={{ position: "absolute", bottom: 0, color: "white" }}>
+            Hi.
+          </h1>
+        )}
       </BackgroundImg>
       <Container maxWidth="md">
         <main>{children}</main>

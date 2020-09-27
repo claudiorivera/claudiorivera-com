@@ -2,6 +2,7 @@ import { Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
+import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
 
@@ -68,5 +69,35 @@ export const query = graphql`
     }
   }
 `;
+
+BlogPage.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+              date: PropTypes.string.isRequired,
+              category: PropTypes.string.isRequired,
+              featuredImage: PropTypes.shape({
+                childImageSharp: PropTypes.shape({
+                  fluid: PropTypes.shape({
+                    src: PropTypes.string.isRequired,
+                  }).isRequired,
+                }).isRequired,
+              }).isRequired,
+            }).isRequired,
+            html: PropTypes.string.isRequired,
+            fields: PropTypes.shape({
+              slug: PropTypes.string.isRequired,
+            }),
+          }).isRequired,
+        }).isRequired
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default BlogPage;

@@ -1,5 +1,6 @@
 // https://markoskon.com/gatsby-background-image-example/#usage
 import Img from "gatsby-image";
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
@@ -34,6 +35,8 @@ const Content = styled.div`
   top: 0;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 const BackgroundImg = ({
@@ -55,5 +58,22 @@ const BackgroundImg = ({
     <Content className={className}>{children}</Content>
   </Parent>
 );
+
+BackgroundImg.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  height: PropTypes.string,
+  mobileHeight: PropTypes.string,
+  overlayColor: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+BackgroundImg.defaultProps = {
+  height: null,
+  mobileHeight: null,
+  overlayColor: "transparent",
+  children: null,
+  className: null,
+};
 
 export default BackgroundImg;

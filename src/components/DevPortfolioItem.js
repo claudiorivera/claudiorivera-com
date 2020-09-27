@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import Img from "gatsby-image";
 import {
@@ -65,6 +66,26 @@ const DevPortfolioItem = ({ node }) => {
       </Grid>
     </Box>
   );
+};
+
+DevPortfolioItem.propTypes = {
+  node: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      demo_link: PropTypes.string.isRequired,
+      github_link: PropTypes.string.isRequired,
+      screenshot: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+          fluid: PropTypes.shape({
+            src: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+    html: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default DevPortfolioItem;

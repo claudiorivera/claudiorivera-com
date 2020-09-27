@@ -77,7 +77,7 @@ const Header = ({ siteTitle, siteDescription }) => {
       color="transparent"
       position="relative"
       className={styles.navBar}
-      elevation="0"
+      elevation={0}
     >
       <Toolbar>
         <Grid container spacing={2} alignItems="baseline">

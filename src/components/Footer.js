@@ -6,7 +6,7 @@ const Footer = () => (
     display="flex"
     flexDirection="column"
     justifyContent="center"
-    p={8}
+    p={7}
     mt={7}
     textAlign="center"
     bgcolor="primary.main"
