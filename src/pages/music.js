@@ -8,7 +8,7 @@ import SEO from "../components/SEO";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 
 const MusicPage = ({ data }) => (
-  <Layout>
+  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Music">
     <SEO title="Music" />
     <Container>
       <Typography variant="h1">See</Typography>
@@ -50,6 +50,13 @@ const MusicPage = ({ data }) => (
 
 export const query = graphql`
   {
+    file(relativePath: { eq: "joe-lemke-cr-behind-kit.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "music-experience" } } }
       sort: { order: ASC, fields: fileAbsolutePath }
@@ -72,6 +79,13 @@ export const query = graphql`
 
 MusicPage.propTypes = {
   data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({

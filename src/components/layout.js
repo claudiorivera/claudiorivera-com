@@ -5,6 +5,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
@@ -105,21 +106,14 @@ const theme = createMuiTheme({
   },
 });
 
-const Layout = ({ children }) => {
+const Layout = ({ children, coverTitle, coverImage }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const data = useStaticQuery(graphql`
-    query coverPhotoAndSiteMetadataQuery {
+    query siteMetadataQuery {
       site {
         siteMetadata {
           title
           description
-        }
-      }
-      file(relativePath: { eq: "cr-drum-cover-photo.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
         }
       }
     }
@@ -130,17 +124,26 @@ const Layout = ({ children }) => {
       <CssBaseline />
       <BackgroundImg
         title="background"
-        fluid={data.file.childImageSharp.fluid}
+        fluid={coverImage}
         overlayColor={`${colors.blue}bf`}
-        height={isMobile ? "15vh" : "50vh"}
+        height={isMobile ? "15vh" : "100vh"}
       >
         <Header
           siteTitle={data.site.siteMetadata.title}
           siteDescription={data.site.siteMetadata.description}
         />
-        {!isMobile && (
-          <h1 style={{ position: "absolute", bottom: 0, color: "white" }}>
-            Hi.
+        {!isMobile && coverImage && (
+          <h1
+            style={{
+              position: "absolute",
+              bottom: 0,
+              color: "white",
+              textAlign: "center",
+            }}
+          >
+            {coverTitle}
+            <br />
+            <ArrowDownwardIcon />
           </h1>
         )}
       </BackgroundImg>
@@ -154,6 +157,8 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  coverTitle: PropTypes.string,
+  coverImage: PropTypes.object,
 };
 
 export default Layout;

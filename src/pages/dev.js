@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 const DevPage = ({ data }) => (
-  <Layout>
+  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
     <SEO title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
@@ -29,6 +29,13 @@ const DevPage = ({ data }) => (
 
 export const query = graphql`
   {
+    file(relativePath: { eq: "ferenc-almasi-L8KQIPCODV8-unsplash.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "dev-portfolio" } } }
       sort: { order: ASC, fields: fileAbsolutePath }
@@ -58,6 +65,13 @@ export const query = graphql`
 
 DevPage.propTypes = {
   data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({

@@ -19,6 +19,7 @@ const useStyles = makeStyles(() => ({
   navBar: {
     padding: "1rem",
     color: "white",
+    marginTop: "2vh",
   },
   title: {
     fontSize: "2.4rem",
@@ -83,10 +84,7 @@ const Header = ({ siteTitle, siteDescription }) => {
         <Grid container spacing={2} alignItems="baseline">
           <Grid item>
             <Link to="/" className={styles.link}>
-              <Typography
-                variant={isMobile ? "h1" : "h4"}
-                className={styles.title}
-              >
+              <Typography variant="h4" className={styles.title}>
                 {siteTitle}
               </Typography>
             </Link>

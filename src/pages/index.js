@@ -1,11 +1,12 @@
 import { Container, Typography } from "@material-ui/core";
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({ data }) => (
+  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Hello.">
     <SEO title="Home" />
     <Container>
       <Typography variant="body1" paragraph>
@@ -26,5 +27,29 @@ const IndexPage = () => (
     </Container>
   </Layout>
 );
+
+export const query = graphql`
+  query coverImage {
+    file(relativePath: { eq: "joe-lemke-cr-cover-photo.jpeg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default IndexPage;

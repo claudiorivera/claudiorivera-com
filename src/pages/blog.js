@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 const BlogPage = ({ data }) => {
   const styles = useStyles();
   return (
-    <Layout>
+    <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Blog">
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Container key={node.id}>
           <div className={styles.postInfo}>
@@ -41,6 +41,13 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   {
+    file(relativePath: { eq: "patrick-fore-0gkw_9fy0eQ-unsplash.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { type: { eq: "post" } } }
@@ -72,6 +79,13 @@ export const query = graphql`
 
 BlogPage.propTypes = {
   data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
