@@ -18,7 +18,6 @@ import { Menu as MenuIcon } from "@material-ui/icons";
 const useStyles = makeStyles(() => ({
   navBar: {
     padding: "1rem",
-    marginBottom: "3rem",
     color: "white",
   },
   title: {
@@ -74,7 +73,7 @@ const Header = ({ siteTitle, siteDescription }) => {
   };
 
   return (
-    <AppBar position="static" color="primary" className={styles.navBar}>
+    <AppBar color="transparent" className={styles.navBar} elevation="0">
       <Toolbar>
         <Grid container spacing={2} alignItems="baseline">
           <Grid item>

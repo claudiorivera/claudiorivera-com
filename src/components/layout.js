@@ -5,6 +5,8 @@ import { CssBaseline, Container, ThemeProvider } from "@material-ui/core";
 import Header from "./Header";
 import Footer from "./Footer";
 import { createMuiTheme } from "@material-ui/core/styles";
+// import Img from "gatsby-image";
+import BackgroundImg from "./BackgroundImg";
 
 const colors = {
   blue: "#0169e9",
@@ -86,11 +88,18 @@ const theme = createMuiTheme({
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query coverPhotoAndSiteMetadataQuery {
       site {
         siteMetadata {
           title
           description
+        }
+      }
+      file(relativePath: { eq: "cr-drum-cover-photo.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
@@ -99,10 +108,17 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header
-        siteTitle={data.site.siteMetadata.title}
-        siteDescription={data.site.siteMetadata.description}
-      />
+      <BackgroundImg
+        title="background"
+        fluid={data.file.childImageSharp.fluid}
+        overlayColor={`${colors.blue}bf`}
+        height="100vh"
+      >
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+          siteDescription={data.site.siteMetadata.description}
+        />
+      </BackgroundImg>
       <Container maxWidth="md">
         <main>{children}</main>
       </Container>
