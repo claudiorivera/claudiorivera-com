@@ -32,9 +32,6 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: `${fonts.sans}`,
-    letterSpacing: "-.05rem",
-    lineHeight: "1.25",
-    fontWeight: 700,
   },
   overrides: {
     MuiTypography: {
@@ -128,7 +125,6 @@ const Layout = ({ children }) => {
       <Container maxWidth="md">
         <main>{children}</main>
       </Container>
-      <hr />
       <Footer />
     </ThemeProvider>
   );

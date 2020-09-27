@@ -7,14 +7,20 @@ const Footer = () => {
       display="flex"
       flexDirection="column"
       justifyContent="center"
-      p={4}
-      m={4}
+      p={8}
+      mt={7}
       textAlign="center"
+      bgcolor="primary.main"
+      color="white"
     >
       <Typography variant="h5">
-        &copy; {new Date().getFullYear()} Claudio Rivera. Made with
-        Gatsby.&nbsp;
-        <Link href="https://github.com/claudiorivera/cr-com">View Source</Link>
+        Made by me with Gatsby.&nbsp;
+        <a
+          href="https://github.com/claudiorivera/cr-com"
+          style={{ color: "white" }}
+        >
+          View Source
+        </a>
       </Typography>
     </Box>
   );
