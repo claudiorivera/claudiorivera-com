@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
   },
   title: {
     fontWeight: 700,
-    lineHeight: "1.5rem",
+    lineHeight: "2.4rem",
     letterSpacing: "-.05rem",
   },
   description: {
@@ -73,7 +73,12 @@ const Header = ({ siteTitle, siteDescription }) => {
   };
 
   return (
-    <AppBar color="transparent" className={styles.navBar} elevation="0">
+    <AppBar
+      color="transparent"
+      position="relative"
+      className={styles.navBar}
+      elevation="0"
+    >
       <Toolbar>
         <Grid container spacing={2} alignItems="baseline">
           <Grid item>
