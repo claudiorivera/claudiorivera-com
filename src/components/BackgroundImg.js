@@ -68,6 +68,7 @@ BackgroundImg.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
 };
+
 BackgroundImg.defaultProps = {
   height: null,
   mobileHeight: null,
