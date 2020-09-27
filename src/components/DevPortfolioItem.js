@@ -14,7 +14,7 @@ const DevPortfolioItem = ({ node }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
-    <Box mt={!isMobile ? "10rem" : ""}>
+    <Box my={!isMobile ? "12rem" : ""}>
       <Grid container alignItems="center" spacing={4}>
         <Grid item sm={6} xs={12}>
           <Link href={node.frontmatter.demo_link}>

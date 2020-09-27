@@ -1,11 +1,13 @@
 // https://markoskon.com/gatsby-background-image-example/#usage
-import React from "react";
 import Img from "gatsby-image";
+import React from "react";
 import styled from "styled-components";
 
 const Parent = styled.div`
   position: relative;
   background-color: ${({ bc }) => bc};
+  margin-bottom: 5rem;
+  box-shadow: 0 5px 25px 5px #0000004d;
 `;
 
 const FakeBgImage = styled(Img)`

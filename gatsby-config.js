@@ -55,13 +55,13 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: "PT Serif",
-            weights: ["400"],
-          },
-          {
             family: "Inter",
             variable: true,
             weights: ["200..900"],
+          },
+          {
+            family: "EB Garamond",
+            weights: ["400"],
           },
         ],
       },

@@ -1,12 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
-import { CssBaseline, Container, ThemeProvider } from "@material-ui/core";
-import Header from "./Header";
-import Footer from "./Footer";
+import { Container, CssBaseline, ThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
-// import Img from "gatsby-image";
+import { graphql, useStaticQuery } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
 import BackgroundImg from "./BackgroundImg";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const colors = {
   blue: "#0169e9",
@@ -18,8 +17,8 @@ const colors = {
 };
 
 const fonts = {
-  serif: "PT Serif, serif",
-  sans: "'Inter', sans-serif",
+  serif: "EB Garamond, serif",
+  sans: "Inter, sans-serif",
 };
 
 const theme = createMuiTheme({
@@ -31,42 +30,49 @@ const theme = createMuiTheme({
       main: `${colors.indigo}`,
     },
   },
+  typography: {
+    fontFamily: `${fonts.sans}`,
+    letterSpacing: "-.05rem",
+    lineHeight: "1.25",
+    fontWeight: 700,
+  },
   overrides: {
     MuiTypography: {
       body1: {
         fontFamily: `${fonts.serif}`,
-        fontWeight: 400,
-        fontSize: "1.25rem",
+        fontSize: "2.2rem",
       },
       h1: {
-        fontFamily: `${fonts.sans}`,
-        letterSpacing: "-.05rem",
-        lineHeight: "1.25",
+        fontWeight: 700,
+        fontSize: "5rem",
+      },
+      h2: {
         fontWeight: 700,
         fontSize: "3rem",
       },
-      h2: {
-        fontFamily: `${fonts.sans}`,
-        letterSpacing: "-.05rem",
-        lineHeight: "1.25",
-        fontWeight: 700,
-        fontSize: "2rem",
+      overline: {
+        fontSize: "1.5rem",
       },
     },
     MuiCssBaseline: {
       "@global": {
+        html: {
+          fontSize: "62.5%",
+        },
+        h1: {
+          fontSize: "6rem",
+          marginTop: "1rem",
+          marginBottom: "1rem",
+        },
+        h2: {
+          fontSize: "1.5rem",
+        },
         a: {
           color: `${colors.indigo}`,
           textDecoration: "none",
           "&:hover": {
             textDecoration: "underline",
           },
-        },
-        ul: {
-          marginBottom: "1rem",
-        },
-        li: {
-          marginBottom: ".25rem",
         },
         hr: {
           border: 0,

@@ -1,19 +1,19 @@
+import {
+  AppBar,
+  Button,
+  Grid,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+} from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Menu as MenuIcon } from "@material-ui/icons";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Grid,
-  Button,
-  useMediaQuery,
-  Menu,
-  MenuItem,
-  IconButton,
-} from "@material-ui/core";
-import { Menu as MenuIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles(() => ({
   navBar: {
@@ -21,12 +21,14 @@ const useStyles = makeStyles(() => ({
     color: "white",
   },
   title: {
+    fontSize: "2.4rem",
     fontWeight: 700,
-    lineHeight: "2.4rem",
-    letterSpacing: "-.05rem",
+    letterSpacing: "-0.04em",
   },
   description: {
-    letterSpacing: "-.05rem",
+    letterSpacing: "-.04em",
+    fontSize: "1.8rem",
+    fontWeight: 500,
   },
   link: {
     textDecoration: "none",
@@ -138,7 +140,13 @@ const Header = ({ siteTitle, siteDescription }) => {
         )}
         {!isMobile &&
           menuLinks.map(({ title, url }, index) => (
-            <Button key={index} color="inherit" component={Link} to={url}>
+            <Button
+              key={index}
+              color="inherit"
+              component={Link}
+              to={url}
+              size="large"
+            >
               {title}
             </Button>
           ))}

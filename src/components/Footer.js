@@ -1,5 +1,5 @@
+import { Box, Link, Typography } from "@material-ui/core";
 import React from "react";
-import { Box, Link } from "@material-ui/core";
 
 const Footer = () => {
   return (
@@ -11,11 +11,11 @@ const Footer = () => {
       m={4}
       textAlign="center"
     >
-      <div>
+      <Typography variant="h5">
         &copy; {new Date().getFullYear()} Claudio Rivera. Made with
         Gatsby.&nbsp;
-      </div>
-      <Link href="https://github.com/claudiorivera/cr-com">View Source</Link>
+        <Link href="https://github.com/claudiorivera/cr-com">View Source</Link>
+      </Typography>
     </Box>
   );
 };
