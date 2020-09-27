@@ -29,8 +29,8 @@ const IndexPage = ({ data }) => (
 );
 
 export const query = graphql`
-  query coverImage {
-    file(relativePath: { eq: "joe-lemke-cr-cover-photo.jpeg" }) {
+  {
+    file(relativePath: { eq: "joe-lemke-cr-cover-photo.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
