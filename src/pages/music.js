@@ -1,10 +1,10 @@
+import { Container, Link, Typography } from "@material-ui/core";
+import { graphql } from "gatsby";
 import React from "react";
-import YouTubeEmbed from "../components/YouTubeEmbed";
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Container, Link, Typography } from "@material-ui/core";
-import { graphql } from "gatsby";
+import YouTubeEmbed from "../components/YouTubeEmbed";
 
 const MusicPage = ({ data }) => (
   <Layout>

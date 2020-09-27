@@ -1,9 +1,9 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import Layout from "../components/Layout";
 import { Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
+import React from "react";
+import Layout from "../components/Layout";
 
 const useStyles = makeStyles({
   postInfo: {

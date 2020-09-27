@@ -1,5 +1,6 @@
-import React from "react";
 import { Container } from "@material-ui/core";
+import React from "react";
+
 const YouTubeEmbed = ({ url, title }) => (
   <Container className="videoWrapper">
     <iframe
@@ -13,4 +14,5 @@ const YouTubeEmbed = ({ url, title }) => (
     />
   </Container>
 );
+
 export default YouTubeEmbed;

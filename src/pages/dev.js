@@ -1,9 +1,9 @@
-import React from "react";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
 import { Box, Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
+import React from "react";
 import DevPortfolioItem from "../components/DevPortfolioItem";
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 const DevPage = ({ data }) => (
   <Layout>
