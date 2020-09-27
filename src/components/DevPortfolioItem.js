@@ -15,8 +15,8 @@ const DevPortfolioItem = ({ node }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
     <Box my={!isMobile ? "7rem" : ""}>
-      <Grid container alignItems="center" spacing={4}>
-        <Grid item sm={6} xs={12}>
+      <Grid container alignItems="center" spacing={1} justify="space-between">
+        <Grid item md={6} sm={12}>
           <Link href={node.frontmatter.demo_link}>
             <Typography variant="h1" align="center" gutterBottom>
               {node.frontmatter.title}
@@ -37,7 +37,7 @@ const DevPortfolioItem = ({ node }) => {
             {node.frontmatter.description}
           </Typography>
         </Grid>
-        <Grid item sm={6} xs={12}>
+        <Grid item md={5} sm={12}>
           <Typography variant="h2">Technologies Used:</Typography>
           <Typography
             variant="body1"
