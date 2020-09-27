@@ -27,8 +27,6 @@ const useStyles = makeStyles(() => ({
   },
   description: {
     letterSpacing: "-.04em",
-    fontSize: "1.8rem",
-    fontWeight: 500,
   },
   link: {
     textDecoration: "none",
@@ -85,15 +83,18 @@ const Header = ({ siteTitle, siteDescription }) => {
         <Grid container spacing={2} alignItems="baseline">
           <Grid item>
             <Link to="/" className={styles.link}>
-              <Typography variant="h5" className={styles.title}>
+              <Typography
+                variant={isMobile ? "h1" : "h4"}
+                className={styles.title}
+              >
                 {siteTitle}
               </Typography>
             </Link>
           </Grid>
           <Grid item>
             <Typography
-              variant="h6"
-              className={isMobile ? styles.hideOnMobile : styles.description}
+              variant={isMobile ? "h5" : "h4"}
+              className={styles.description}
             >
               {siteDescription}
             </Typography>

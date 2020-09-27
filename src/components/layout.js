@@ -1,4 +1,9 @@
-import { Container, CssBaseline, ThemeProvider } from "@material-ui/core";
+import {
+  Container,
+  CssBaseline,
+  ThemeProvider,
+  useMediaQuery,
+} from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
@@ -86,10 +91,26 @@ const theme = createMuiTheme({
         color: `${colors.indigo}`,
       },
     },
+    MuiButton: {
+      textSizeLarge: {
+        fontSize: "1.5rem",
+      },
+    },
+    MuiSvgIcon: {
+      root: {
+        fontSize: "3rem",
+      },
+    },
+    MuiMenuItem: {
+      root: {
+        fontSize: "1.5rem",
+      },
+    },
   },
 });
 
 const Layout = ({ children }) => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const data = useStaticQuery(graphql`
     query coverPhotoAndSiteMetadataQuery {
       site {
@@ -115,7 +136,7 @@ const Layout = ({ children }) => {
         title="background"
         fluid={data.file.childImageSharp.fluid}
         overlayColor={`${colors.blue}bf`}
-        height="100vh"
+        height={isMobile ? "15vh" : "75vh"}
       >
         <Header
           siteTitle={data.site.siteMetadata.title}
