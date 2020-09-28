@@ -1,39 +1,14 @@
-import { Container, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
+import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
+import BlogPost from "../components/BlogPost";
 import Layout from "../components/Layout";
 
-const useStyles = makeStyles({
-  postInfo: {
-    textAlign: "center",
-  },
-});
-
 const BlogPage = ({ data }) => {
-  const styles = useStyles();
   return (
     <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Blog">
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Container key={node.id}>
-          <div className={styles.postInfo}>
-            <Typography variant="overline">
-              {node.frontmatter.category}
-            </Typography>
-            <Link to={node.fields.slug}>
-              <h1>{node.frontmatter.title}</h1>
-            </Link>
-            <h2>{node.frontmatter.date}</h2>
-          </div>
-          <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
-          <Typography
-            variant="body1"
-            dangerouslySetInnerHTML={{ __html: node.html }}
-          />
-          <hr />
-        </Container>
+        <BlogPost key={node.id} node={node} />
       ))}
     </Layout>
   );
