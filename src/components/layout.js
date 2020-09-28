@@ -141,7 +141,7 @@ const Layout = ({ children, coverTitle, coverImage }) => {
               textAlign: "center",
             }}
           >
-            {coverTitle}
+            {coverTitle || ""}
             <br />
             <ArrowDownwardIcon />
           </h1>
