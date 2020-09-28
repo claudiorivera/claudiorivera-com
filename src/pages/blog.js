@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import React from "react";
 import BlogPost from "../components/BlogPost";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 const BlogPage = ({ data }) => {
   return (
     <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Blog">
+      <SEO title="Blog" />
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <BlogPost key={node.id} node={node} />
       ))}
