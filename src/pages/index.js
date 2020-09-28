@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 const IndexPage = ({ data }) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Hello.">
+  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Hello">
     <SEO title="Home" />
     <Container>
       <Typography variant="body1" paragraph>
