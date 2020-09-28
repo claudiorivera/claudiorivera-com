@@ -64,13 +64,13 @@ export const query = graphql`
       edges {
         node {
           id
-          html
           frontmatter {
             title
             label
             years
             link
           }
+          html
         }
       }
     }
@@ -91,13 +91,13 @@ MusicPage.propTypes = {
         PropTypes.shape({
           node: PropTypes.shape({
             id: PropTypes.string.isRequired,
-            html: PropTypes.string.isRequired,
             frontmatter: PropTypes.shape({
               title: PropTypes.string.isRequired,
               label: PropTypes.string.isRequired,
               years: PropTypes.string.isRequired,
               link: PropTypes.string.isRequired,
             }).isRequired,
+            html: PropTypes.string.isRequired,
           }).isRequired,
         }).isRequired
       ).isRequired,
