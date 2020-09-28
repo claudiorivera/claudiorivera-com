@@ -107,7 +107,7 @@ const Header = ({ siteTitle, siteDescription }) => {
               onClick={handleMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon fontSize="large" />
             </IconButton>
             <Menu
               id="menu-appbar"

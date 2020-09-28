@@ -101,11 +101,8 @@ const theme = createMuiTheme({
       },
     },
     MuiSvgIcon: {
-      root: {
-        fontSize: "3rem",
-      },
       fontSizeLarge: {
-        fontSize: "5rem",
+        fontSize: "4rem",
       },
     },
     MuiMenuItem: {
