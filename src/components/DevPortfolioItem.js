@@ -28,7 +28,7 @@ const DevPortfolioItem = ({ node }) => {
           </Link>
           <Typography
             align="center"
-            variant="body1"
+            variant="body2"
             style={{
               marginTop: "1rem",
               marginBottom: "1rem",
