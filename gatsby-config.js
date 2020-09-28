@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Claudio Rivera`,
-    description: `Drummer | Developer`,
+    description: `Drummer | Developer | Drum Tech`,
     author: `Claudio Rivera`,
     siteUrl: `https://claudiorivera.com`,
   },
