@@ -1,9 +1,9 @@
 ---
+type: "post"
 title: "RIP Warped Tour"
 date: "2018-07-10"
-type: "post"
-featuredImage: "./images/IMG_5560_FL.jpg"
 category: "music"
+featuredImage: "./images/IMG_5560_FL.jpg"
 ---
 
 **tl;dr** Warped Tour was great, and holds a very special place in my heart.

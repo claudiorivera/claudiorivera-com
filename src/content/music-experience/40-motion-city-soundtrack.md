@@ -1,9 +1,9 @@
 ---
-title: "Motion City Soundtrack"
-link: "https://motioncitysoundtrack.com/"
 type: "music-experience"
+title: "Motion City Soundtrack"
 label: "Epitaph"
 years: "2013 - 2015"
+link: "https://motioncitysoundtrack.com/"
 ---
 
 - Drummer

@@ -1,9 +1,9 @@
 ---
+type: "post"
 title: "JavaScript Set"
 date: "2020-06-19"
-type: "post"
-featuredImage: "./images/scott-walsh-CQl3Y5bV6FA-unsplash-scaled.jpg"
 category: "tech"
+featuredImage: "./images/scott-walsh-CQl3Y5bV6FA-unsplash-scaled.jpg"
 ---
 
 As part of my learning regimen, I've been doing a daily code challenge on [Codewars](https://codewars.com). So far, it's been going very smoothly, and I can often think up an algorithm and get it coded in under an hour--with some solutions coming to me immediately.

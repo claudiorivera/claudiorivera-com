@@ -1,9 +1,9 @@
 ---
-title: "Somerset"
-link: "https://itunes.apple.com/us/artist/somerset/id102288119"
 type: "music-experience"
+title: "Somerset"
 label: "Punknews"
 years: "2002 - 2008"
+link: "https://itunes.apple.com/us/artist/somerset/id102288119"
 ---
 
 - Drummer

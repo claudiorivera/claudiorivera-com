@@ -1,9 +1,9 @@
 ---
+type: "post"
 title: "Panic Stations"
 date: "2018-09-19"
-type: "post"
-featuredImage: "./images/81e2u8Uf-L._SL1425_.jpg"
 category: "music"
+featuredImage: "./images/81e2u8Uf-L._SL1425_.jpg"
 ---
 
 “[Panic Stations](<https://en.wikipedia.org/wiki/Panic_Stations_(album)>)” came out three years ago today! Here’s me recording one of my favorite songs to play from that album.

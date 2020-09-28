@@ -1,9 +1,9 @@
 ---
-title: '"Habit & Routine"'
-link: "https://artist.landr.com/music/628810708741"
 type: "music-experience"
+title: '"Habit & Routine"'
 label: "Self-released"
 years: "2019"
+link: "https://artist.landr.com/music/628810708741"
 ---
 
 - Performed drums, vocals, and guitars
