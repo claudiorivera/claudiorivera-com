@@ -4,14 +4,14 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
-const Parent = styled.div`
+const Container = styled.div`
   position: relative;
   background-color: ${({ bc }) => bc};
   margin-bottom: 5rem;
   box-shadow: 0 5px 25px 5px #0000004d;
 `;
 
-const FakeBgImage = styled(Img)`
+const Image = styled(Img)`
   position: absolute;
   top: 0;
   left: 0;
@@ -48,15 +48,15 @@ const BackgroundImg = ({
   children,
   className,
 }) => (
-  <Parent bc={overlayColor}>
-    <FakeBgImage
+  <Container bc={overlayColor}>
+    <Image
       fluid={fluid}
       title={title}
       height={height}
       mobileHeight={mobileHeight}
     />
     <Content className={className}>{children}</Content>
-  </Parent>
+  </Container>
 );
 
 BackgroundImg.propTypes = {
