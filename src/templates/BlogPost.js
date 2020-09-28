@@ -1,19 +1,19 @@
 import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
 import { Typography } from "@material-ui/core";
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout
+      coverImage={post.frontmatter.featuredImage.childImageSharp.fluid}
+      coverTitle={post.frontmatter.title}
+    >
       <div>
-        <h1>{post.frontmatter.title}</h1>
         <h2>{post.frontmatter.date}</h2>
-        <h3>{post.frontmatter.category}</h3>
-        <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
+        <Typography variant="overline">{post.frontmatter.category}</Typography>
         <Typography
           variant="body1"
           dangerouslySetInnerHTML={{ __html: post.html }}
