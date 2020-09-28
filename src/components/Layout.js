@@ -93,6 +93,9 @@ const theme = createMuiTheme({
       },
     },
     MuiButton: {
+      outlinedSizeLarge: {
+        fontSize: "1.75rem",
+      },
       textSizeLarge: {
         fontSize: "1.5rem",
       },
@@ -100,6 +103,9 @@ const theme = createMuiTheme({
     MuiSvgIcon: {
       root: {
         fontSize: "3rem",
+      },
+      fontSizeLarge: {
+        fontSize: "5rem",
       },
     },
     MuiMenuItem: {
@@ -147,12 +153,12 @@ const Layout = ({ children, coverTitle, coverImage }) => {
           >
             {coverTitle || ""}
             <br />
-            <ArrowDownwardIcon />
+            <ArrowDownwardIcon fontSize="large" />
           </h1>
         )}
       </BackgroundImg>
       <Container maxWidth="md">
-        <main>{children}</main>
+        <main id="main">{children}</main>
       </Container>
       <Footer />
     </ThemeProvider>
