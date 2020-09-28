@@ -3,6 +3,7 @@ module.exports = {
     title: `Claudio Rivera`,
     description: `Drummer | Developer`,
     author: `Claudio Rivera`,
+    siteUrl: `https://claudiorivera.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
