@@ -12,6 +12,6 @@ The main content (blog posts, development portfolio items, and musical experienc
 
 - Blog pagination
 - Blog category pages
-- Style the music page better (this is a carry-over from my original Wordpress site)
-- Find a way to use Material-UI without so many style overrides (by way of theming correctly)
+- Better styling for Music page
+- Improve Material-UI theme/style implementation
 - Look into using MDX or perhaps another way of incorporating Material-UI components in the Markdown content, so there won't be as many global overrides.
