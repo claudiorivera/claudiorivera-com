@@ -6,10 +6,9 @@ module.exports = {
     siteUrl: `https://claudiorivera.com`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-remark-images`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -51,7 +50,6 @@ module.exports = {
         path: `src/images`,
       },
     },
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
@@ -86,6 +84,7 @@ module.exports = {
         trackingId: "UA-164475801-1",
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
   ],
 };
