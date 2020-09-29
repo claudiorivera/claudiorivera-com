@@ -4,20 +4,20 @@ import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 
-const BlogPost = ({ node }) => {
+const BlogPost = ({ post }) => {
   return (
-    <Container key={node.id}>
+    <Container key={post.id}>
       <div style={{ textAlign: "center" }}>
-        <Typography variant="overline">{node.frontmatter.category}</Typography>
-        <Link to={node.fields.slug}>
-          <h1>{node.frontmatter.title}</h1>
+        <Typography variant="overline">{post.frontmatter.category}</Typography>
+        <Link to={post.fields.slug}>
+          <h1>{post.frontmatter.title}</h1>
         </Link>
-        <h2>{node.frontmatter.date}</h2>
+        <h2>{post.frontmatter.date}</h2>
       </div>
-      <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+      <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
       <Typography
         variant="body1"
-        dangerouslySetInnerHTML={{ __html: node.html }}
+        dangerouslySetInnerHTML={{ __html: post.html }}
       />
       <hr />
     </Container>
@@ -25,26 +25,24 @@ const BlogPost = ({ node }) => {
 };
 
 BlogPost.propTypes = {
-  node: PropTypes.shape({
-    node: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
-        featuredImage: PropTypes.shape({
-          childImageSharp: PropTypes.shape({
-            fluid: PropTypes.shape({
-              src: PropTypes.string.isRequired,
-            }).isRequired,
+  post: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      featuredImage: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+          fluid: PropTypes.shape({
+            src: PropTypes.string.isRequired,
           }).isRequired,
         }).isRequired,
       }).isRequired,
-      html: PropTypes.string.isRequired,
-      fields: PropTypes.shape({
-        slug: PropTypes.string.isRequired,
-      }),
     }).isRequired,
+    html: PropTypes.string.isRequired,
+    fields: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+    }),
   }).isRequired,
 };
 

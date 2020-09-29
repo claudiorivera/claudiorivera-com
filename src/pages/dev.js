@@ -2,16 +2,16 @@ import { Box, Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import DevPortfolioItem from "../components/DevPortfolioItem";
+import PortfolioItem from "../components/PortfolioItem";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 const DevPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
     <SEO title="Dev" />
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id}>
-        <DevPortfolioItem node={node} key={node.id} />
+    {data.allMarkdownRemark.edges.map(({ node: portfolioItem }) => (
+      <div key={portfolioItem.id}>
+        <PortfolioItem portfolioItem={portfolioItem} />
         <hr />
       </div>
     ))}
