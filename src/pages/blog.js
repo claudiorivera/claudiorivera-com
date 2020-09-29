@@ -5,16 +5,12 @@ import BlogPost from "../components/BlogPost";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-// https://github.com/gatsbyjs/gatsby/issues/17914#issuecomment-690954264
-import { withTwoPassRendering } from "../util/withTwoPassRendering";
-const BlogPostWithTwoPassRendering = withTwoPassRendering(BlogPost);
-
 const BlogPage = ({ data }) => {
   return (
     <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Blog">
       <SEO title="Blog" />
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <BlogPostWithTwoPassRendering key={node.id} node={node} />
+      {data.allMarkdownRemark.edges.map(({ node: post }) => (
+        <BlogPost key={post.id} post={post} />
       ))}
     </Layout>
   );
