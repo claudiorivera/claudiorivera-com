@@ -11,20 +11,22 @@ import {
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 
-const DevPortfolioItem = ({ node }) => {
+const PortfolioItem = ({ portfolioItem }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
     <Box my={!isMobile ? "7rem" : ""}>
       <Grid container alignItems="center" spacing={1} justify="space-between">
         <Grid item md={6} sm={12}>
-          <Link href={node.frontmatter.demo_link}>
+          <Link href={portfolioItem.frontmatter.demo_link}>
             <Typography variant="h1" align="center" gutterBottom>
-              {node.frontmatter.title}
+              {portfolioItem.frontmatter.title}
             </Typography>
           </Link>
-          <Link href={node.frontmatter.demo_link}>
-            <Img fluid={node.frontmatter.screenshot.childImageSharp.fluid} />
+          <Link href={portfolioItem.frontmatter.demo_link}>
+            <Img
+              fluid={portfolioItem.frontmatter.screenshot.childImageSharp.fluid}
+            />
           </Link>
           <Typography
             align="center"
@@ -35,21 +37,21 @@ const DevPortfolioItem = ({ node }) => {
               padding: "1rem",
             }}
           >
-            {node.frontmatter.description}
+            {portfolioItem.frontmatter.description}
           </Typography>
         </Grid>
         <Grid item md={5} sm={12}>
           <Typography variant="h2">Technologies Used:</Typography>
           <Typography
             variant="body1"
-            dangerouslySetInnerHTML={{ __html: node.html }}
+            dangerouslySetInnerHTML={{ __html: portfolioItem.html }}
           />
           <Box display="flex" justifyContent="space-evenly" width="100%" mt={8}>
             <Button
               size="large"
               variant="outlined"
               color="secondary"
-              href={node.frontmatter.demo_link}
+              href={portfolioItem.frontmatter.demo_link}
             >
               Live Demo
             </Button>
@@ -57,7 +59,7 @@ const DevPortfolioItem = ({ node }) => {
               size="large"
               variant="outlined"
               color="secondary"
-              href={node.frontmatter.github_link}
+              href={portfolioItem.frontmatter.github_link}
             >
               View Source
             </Button>
@@ -68,8 +70,8 @@ const DevPortfolioItem = ({ node }) => {
   );
 };
 
-DevPortfolioItem.propTypes = {
-  node: PropTypes.shape({
+PortfolioItem.propTypes = {
+  portfolioItem: PropTypes.shape({
     id: PropTypes.string.isRequired,
     frontmatter: PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -88,4 +90,4 @@ DevPortfolioItem.propTypes = {
   }).isRequired,
 };
 
-export default DevPortfolioItem;
+export default PortfolioItem;
