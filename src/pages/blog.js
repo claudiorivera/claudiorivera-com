@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 // https://github.com/gatsbyjs/gatsby/issues/17914#issuecomment-690954264
-import { withTwoPassRendering } from "../components/withTwoPassRendering";
+import { withTwoPassRendering } from "../util/withTwoPassRendering";
 const BlogPostWithTwoPassRendering = withTwoPassRendering(BlogPost);
 
 const BlogPage = ({ data }) => {

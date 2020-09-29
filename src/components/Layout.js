@@ -14,7 +14,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 // https://github.com/gatsbyjs/gatsby/issues/17914#issuecomment-690954264
-import { withTwoPassRendering } from "./withTwoPassRendering";
+import { withTwoPassRendering } from "../util/withTwoPassRendering";
 const FooterWithTwoPassRendering = withTwoPassRendering(Footer);
 
 const colors = {
