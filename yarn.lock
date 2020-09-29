@@ -12882,6 +12882,11 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-obfuscate@^3.6.8:
+  version "3.6.8"
+  resolved "https://registry.yarnpkg.com/react-obfuscate/-/react-obfuscate-3.6.8.tgz#31deede7ad8e69672165ec38b4d662135c6bdb5f"
+  integrity sha512-Pc47sbOJEGqOQ65y22ZFwCGHlSwGn0tykl+sQ64wHy/ALcyZxK6zsNYD8Fp3YBcU2EhmJPSKR7BypBYtnAqqyA==
+
 react-reconciler@^0.24.0:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.24.0.tgz#5a396b2c2f5efe8554134a5935f49f546723f2dd"

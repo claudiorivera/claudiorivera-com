@@ -1,5 +1,6 @@
 import { Box, Typography } from "@material-ui/core";
 import React from "react";
+import Obfuscate from "react-obfuscate";
 
 const Footer = () => (
   <Box
@@ -20,6 +21,15 @@ const Footer = () => (
       >
         View Source
       </a>
+      . Email{" "}
+      <Obfuscate
+        style={{ color: "white" }}
+        email="me@claudiorivera.com"
+        headers={{
+          subject: "Hi Claudio",
+        }}
+      />
+      .
     </Typography>
   </Box>
 );
