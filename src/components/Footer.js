@@ -19,8 +19,9 @@ const Footer = () => (
         href="https://github.com/claudiorivera/cr-com"
         style={{ color: "white" }}
       >
-        <span>View&nbsp;Source.</span>
-      </a>{" "}
+        <span>View&nbsp;Source</span>
+      </a>
+      {". "}
       <span>
         Email&nbsp;
         <Obfuscate
