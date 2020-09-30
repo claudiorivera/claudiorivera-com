@@ -19,11 +19,10 @@ const Footer = () => (
         href="https://github.com/claudiorivera/cr-com"
         style={{ color: "white" }}
       >
-        <div style={{ whiteSpace: "nowrap" }}>View Source</div>
-      </a>
-      .{" "}
-      <div style={{ whiteSpace: "nowrap" }}>
-        Email{" "}
+        <span>View&nbsp;Source.</span>
+      </a>{" "}
+      <span>
+        Email&nbsp;
         <Obfuscate
           style={{ color: "white" }}
           email="me@claudiorivera.com"
@@ -32,7 +31,7 @@ const Footer = () => (
           }}
         />
         .
-      </div>
+      </span>
     </Typography>
   </Box>
 );
