@@ -19,17 +19,20 @@ const Footer = () => (
         href="https://github.com/claudiorivera/cr-com"
         style={{ color: "white" }}
       >
-        View&nbsp;Source
+        <span>View Source</span>
       </a>
-      . Email&nbsp;
-      <Obfuscate
-        style={{ color: "white" }}
-        email="me@claudiorivera.com"
-        headers={{
-          subject: "Hi Claudio",
-        }}
-      />
-      .
+      .{" "}
+      <span>
+        Email{" "}
+        <Obfuscate
+          style={{ color: "white" }}
+          email="me@claudiorivera.com"
+          headers={{
+            subject: "Hi Claudio",
+          }}
+        />
+        .
+      </span>
     </Typography>
   </Box>
 );
