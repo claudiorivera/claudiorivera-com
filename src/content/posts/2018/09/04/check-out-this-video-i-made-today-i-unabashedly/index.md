@@ -1,5 +1,4 @@
 ---
-type: "post"
 title: '"Still Into You" - Drum Cover'
 date: "2018-09-04"
 category: "music"

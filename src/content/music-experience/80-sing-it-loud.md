@@ -1,5 +1,4 @@
 ---
-type: "music-experience"
 title: "Sing It Loud"
 label: "Epitaph"
 years: "2008"

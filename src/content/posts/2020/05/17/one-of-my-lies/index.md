@@ -1,5 +1,4 @@
 ---
-type: "post"
 title: '"One Of My Lies"'
 date: "2020-05-17"
 category: "music"

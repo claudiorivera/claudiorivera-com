@@ -1,5 +1,4 @@
 ---
-type: "music-experience"
 title: "Motion City Soundtrack"
 label: "Epitaph"
 years: "2013 - 2015"

@@ -1,5 +1,4 @@
 ---
-type: "post"
 title: "JavaScript Set"
 date: "2020-06-19"
 category: "tech"

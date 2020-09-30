@@ -1,5 +1,4 @@
 ---
-type: "dev-portfolio"
 title: "Game Night"
 description: "A full-stack (MERN) web app to host or join board game nights."
 demo_link: "http://game-night.claudiorivera.com/"

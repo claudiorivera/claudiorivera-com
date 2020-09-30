@@ -1,5 +1,4 @@
 ---
-type: "post"
 title: "New Year"
 date: "2018-02-17"
 category: "music"

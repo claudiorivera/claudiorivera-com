@@ -1,5 +1,4 @@
 ---
-type: "post"
 title: "Panic Stations"
 date: "2018-09-19"
 category: "music"

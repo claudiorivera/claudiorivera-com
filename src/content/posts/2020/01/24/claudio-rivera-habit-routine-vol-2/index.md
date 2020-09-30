@@ -1,5 +1,4 @@
 ---
-type: "post"
 title: "Habit & Routine, Vol. 2"
 date: "2020-01-24"
 category: "music"

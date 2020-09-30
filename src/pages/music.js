@@ -59,7 +59,7 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "music-experience" } } }
+      filter: { fields: { collection: { eq: "music-experience" } } }
       sort: { order: ASC, fields: fileAbsolutePath }
     ) {
       edges {

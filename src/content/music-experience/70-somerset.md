@@ -1,5 +1,4 @@
 ---
-type: "music-experience"
 title: "Somerset"
 label: "Punknews"
 years: "2002 - 2008"

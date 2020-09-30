@@ -1,5 +1,4 @@
 ---
-type: "dev-portfolio"
 title: "Photo Gallery"
 description: "A full-stack (PERN) photo gallery web app."
 demo_link: "http://photo-gallery.claudiorivera.com/"

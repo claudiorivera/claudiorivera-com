@@ -1,5 +1,4 @@
 ---
-type: "music-experience"
 title: '"Habit & Routine, Vol. 2"'
 label: "Self-released"
 years: "2020"

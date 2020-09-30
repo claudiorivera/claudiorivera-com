@@ -1,5 +1,4 @@
 ---
-type: "music-experience"
 title: "Saves The Day"
 label: "Equal Vision"
 years: "2010 - 2013"

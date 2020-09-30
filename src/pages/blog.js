@@ -27,7 +27,7 @@ export const query = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { type: { eq: "post" } } }
+      filter: { fields: { collection: { eq: "posts" } } }
       skip: $skip
     ) {
       edges {

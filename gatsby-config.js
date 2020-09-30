@@ -48,8 +48,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `src/content`,
+        name: `posts`,
+        path: `src/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `dev-portfolio`,
+        path: `src/content/dev-portfolio`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `music-experience`,
+        path: `src/content/music-experience`,
       },
     },
     {

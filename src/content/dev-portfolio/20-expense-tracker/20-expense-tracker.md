@@ -1,5 +1,4 @@
 ---
-type: "dev-portfolio"
 title: "Expense Tracker"
 description: "A full-stack (MERN) web app to track income and expenses."
 demo_link: "http://expense-tracker.claudiorivera.com/"

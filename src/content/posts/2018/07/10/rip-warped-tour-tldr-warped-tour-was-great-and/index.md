@@ -1,5 +1,4 @@
 ---
-type: "post"
 title: "RIP Warped Tour"
 date: "2018-07-10"
 category: "music"

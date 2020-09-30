@@ -37,7 +37,7 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "dev-portfolio" } } }
+      filter: { fields: { collection: { eq: "dev-portfolio" } } }
       sort: { order: ASC, fields: fileAbsolutePath }
     ) {
       edges {

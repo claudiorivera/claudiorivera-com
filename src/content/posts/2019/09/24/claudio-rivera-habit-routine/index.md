@@ -1,5 +1,4 @@
 ---
-type: "post"
 title: "Habit & Routine"
 date: "2019-09-24"
 category: "music"

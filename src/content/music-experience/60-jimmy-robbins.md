@@ -1,5 +1,4 @@
 ---
-type: "music-experience"
 title: "Jimmy Robbins"
 label: "Universal/Motown"
 years: "2009"
