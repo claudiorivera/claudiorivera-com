@@ -17,6 +17,7 @@ const BlogPost = ({ post }) => {
       <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
       <Typography
         variant="body1"
+        component="div"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
       <hr />

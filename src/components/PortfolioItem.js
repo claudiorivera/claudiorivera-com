@@ -44,6 +44,7 @@ const PortfolioItem = ({ portfolioItem }) => {
           <Typography variant="h2">Technologies Used:</Typography>
           <Typography
             variant="body1"
+            component="div"
             dangerouslySetInnerHTML={{ __html: portfolioItem.html }}
           />
           <Box display="flex" justifyContent="space-evenly" width="100%" mt={8}>

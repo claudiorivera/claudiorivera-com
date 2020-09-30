@@ -40,6 +40,7 @@ const MusicPage = ({ data }) => (
 
           <Typography
             variant="body1"
+            component="div"
             dangerouslySetInnerHTML={{ __html: node.html }}
           />
         </Container>
