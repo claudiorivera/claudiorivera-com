@@ -13,10 +13,6 @@ import BackgroundImg from "./BackgroundImg";
 import Footer from "./Footer";
 import Header from "./Header";
 
-// https://github.com/gatsbyjs/gatsby/issues/17914#issuecomment-690954264
-import { withTwoPassRendering } from "../util/withTwoPassRendering";
-const FooterWithTwoPassRendering = withTwoPassRendering(Footer);
-
 const colors = {
   blue: "#0169e9",
   indigo: "#4770df",
@@ -161,7 +157,7 @@ const Layout = ({ children, coverTitle, coverImage }) => {
       <Container maxWidth="md">
         <main id="main">{children}</main>
       </Container>
-      <FooterWithTwoPassRendering />
+      <Footer />
     </ThemeProvider>
   );
 };
