@@ -11,14 +11,13 @@ const BlogPost = ({ data }) => {
       coverImage={post.frontmatter.featuredImage.childImageSharp.fluid}
       coverTitle={post.frontmatter.title}
     >
-      <div>
-        <h2>{post.frontmatter.date}</h2>
-        <Typography variant="overline">{post.frontmatter.category}</Typography>
-        <Typography
-          variant="body1"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </div>
+      <h2>{post.frontmatter.date}</h2>
+      <Typography variant="overline">{post.frontmatter.category}</Typography>
+      <Typography
+        variant="body1"
+        component="div"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
     </Layout>
   );
 };

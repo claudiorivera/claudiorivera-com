@@ -36,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  // Create individual blog post pages (ie. claudiorivera.com/2020/06/19/javascript-set)
   data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
@@ -46,9 +47,13 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  // Create blog index and paginate (ie. claudiorivera.com/blog/page-2)
   const postsPerPage = 3;
   const numPages = Math.ceil(data.allMarkdownRemark.totalCount / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
+    const currentPage = i + 1;
+    const prevPage = currentPage - 1;
+    const nextPage = currentPage + 1;
     createPage({
       path: i === 0 ? `/blog` : `/blog/page-${i + 1}`,
       component: path.resolve(`./src/templates/BlogPosts.js`),
@@ -56,7 +61,9 @@ exports.createPages = async ({ graphql, actions }) => {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
-        currentPage: i + 1,
+        currentPage,
+        prevPage,
+        nextPage,
       },
     });
   });

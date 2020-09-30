@@ -1,23 +1,44 @@
-import { graphql } from "gatsby";
+import { Container, Typography } from "@material-ui/core";
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
-import BlogPost from "../components/BlogPost";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-const BlogPage = ({ data }) => {
+const BlogPosts = ({ data, pageContext }) => {
   return (
     <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Blog">
       <SEO title="Blog" />
       {data.allMarkdownRemark.edges.map(({ node: post }) => (
-        <BlogPost key={post.id} post={post} />
+        <>
+          <Container key={post.id}>
+            <div style={{ textAlign: "center" }}>
+              <Typography variant="overline">
+                {post.frontmatter.category}
+              </Typography>
+              <Link to={post.fields.slug}>
+                <h1>{post.frontmatter.title}</h1>
+              </Link>
+              <h2>{post.frontmatter.date}</h2>
+            </div>
+            <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
+            <Typography
+              variant="body1"
+              component="div"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+          </Container>
+          <hr />
+        </>
       ))}
+      <div>test</div>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query backgroundImageAndMarkdownQuery($skip: Int! = 0, $limit: Int! = 5) {
+  query backgroundImageAndMarkdownQuery($skip: Int!, $limit: Int!) {
     file(relativePath: { eq: "patrick-fore-0gkw_9fy0eQ-unsplash.jpg" }) {
       childImageSharp {
         fluid {
@@ -56,7 +77,7 @@ export const query = graphql`
   }
 `;
 
-BlogPage.propTypes = {
+BlogPosts.propTypes = {
   data: PropTypes.shape({
     file: PropTypes.shape({
       childImageSharp: PropTypes.shape({
@@ -93,4 +114,4 @@ BlogPage.propTypes = {
   }).isRequired,
 };
 
-export default BlogPage;
+export default BlogPosts;
