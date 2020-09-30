@@ -17,7 +17,7 @@ const BlogPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query backgroundImageAndMarkdownQuery($skip: Int! = 0) {
+  query backgroundImageAndMarkdownQuery($skip: Int! = 0, $limit: Int! = 5) {
     file(relativePath: { eq: "patrick-fore-0gkw_9fy0eQ-unsplash.jpg" }) {
       childImageSharp {
         fluid {
@@ -28,6 +28,7 @@ export const query = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { collection: { eq: "posts" } } }
+      limit: $limit
       skip: $skip
     ) {
       edges {

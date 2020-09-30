@@ -21,9 +21,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const result = await graphql(`
-    query {
+  const { data } = await graphql(`
+    {
       allMarkdownRemark(filter: { fields: { collection: { eq: "posts" } } }) {
+        totalCount
         edges {
           node {
             fields {
@@ -34,12 +35,28 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+  data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/BlogPost.js`),
       context: {
         slug: node.fields.slug,
+      },
+    });
+  });
+
+  const postsPerPage = 3;
+  const numPages = Math.ceil(data.allMarkdownRemark.totalCount / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/page-${i + 1}`,
+      component: path.resolve(`./src/templates/BlogPosts.js`),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
       },
     });
   });
