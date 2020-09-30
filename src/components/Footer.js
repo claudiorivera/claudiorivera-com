@@ -14,14 +14,14 @@ const Footer = () => (
     color="white"
   >
     <Typography variant="h5">
-      Made by me with Gatsby.&nbsp;
+      Made by me with Gatsby.{" "}
       <a
         href="https://github.com/claudiorivera/cr-com"
         style={{ color: "white" }}
       >
-        View Source
+        View&nbsp;Source
       </a>
-      . Email{" "}
+      . Email&nbsp;
       <Obfuscate
         style={{ color: "white" }}
         email="me@claudiorivera.com"
