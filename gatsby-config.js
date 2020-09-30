@@ -97,7 +97,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
-        display: `minimal-ui`,
+        display: `browser`,
         icon: `src/images/cr-profile-pic.png`,
       },
     },
