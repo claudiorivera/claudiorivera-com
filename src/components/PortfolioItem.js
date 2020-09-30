@@ -28,15 +28,7 @@ const PortfolioItem = ({ portfolioItem }) => {
               fluid={portfolioItem.frontmatter.screenshot.childImageSharp.fluid}
             />
           </Link>
-          <Typography
-            align="center"
-            variant="body2"
-            style={{
-              marginTop: "1rem",
-              marginBottom: "1rem",
-              padding: "1rem",
-            }}
-          >
+          <Typography align="center" variant="body2">
             {portfolioItem.frontmatter.description}
           </Typography>
         </Grid>

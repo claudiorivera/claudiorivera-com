@@ -44,6 +44,9 @@ const theme = createMuiTheme({
       body2: {
         fontFamily: `${fonts.serif}`,
         fontSize: "1.75rem",
+        marginTop: "1rem",
+        marginBottom: "1rem",
+        padding: "1rem",
       },
       h1: {
         fontWeight: 700,
