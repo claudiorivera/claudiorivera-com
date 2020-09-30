@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://claudiorivera.com`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
