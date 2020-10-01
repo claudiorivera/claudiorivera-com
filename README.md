@@ -10,8 +10,7 @@ The main content (blog posts, development portfolio items, and musical experienc
 
 # Future Improvements
 
-- Blog pagination
 - Blog category pages
 - Better styling for Music page
-- Improve Material-UI theme/style implementation
+- Improve Material-UI theme/style implementation (My styles/theme seem quite clunky right now, and I'm sure I'm using it wrong)
 - Look into using MDX or perhaps another way of incorporating Material-UI components in the Markdown content, so there won't be as many global overrides.
