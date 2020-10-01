@@ -1,43 +1,42 @@
 // https://markoskon.com/gatsby-background-image-example/#usage
+import { styled } from "@material-ui/core";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
-import styled from "styled-components";
 
-const Container = styled.div`
-  position: relative;
-  background-color: ${({ bc }) => bc};
-  margin-bottom: 5rem;
-  box-shadow: 0 5px 25px 5px #0000004d;
-`;
+const Container = styled("div")({
+  backgroundColor: ({ bc }) => bc,
+  position: "relative",
+  marginBottom: "5rem",
+  boxShadow: "0 5px 25px 5px #0000004d",
+});
 
-const Image = styled(Img)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: ${({ height }) => height};
-  z-index: -1;
+const Content = styled("div")({
+  position: "absolute",
+  top: 0,
+  height: "100%",
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+});
 
-  & > img {
-    object-fit: cover !important;
-    object-position: 0% 0% !important;
-    font-family: "object-fit: cover !important; object-position: 0% 0% !important;";
-  }
-
-  @media screen and (max-width: 600px) {
-    height: ${({ mobileHeight }) => mobileHeight};
-  }
-`;
-
-const Content = styled.div`
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
+const Image = styled(Img)({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  zIndex: "-1",
+  height: ({ height }) => height,
+  "& > img": {
+    objectFit: "cover !important",
+    objectPosition: "0% 0% !important",
+    fontFamily:
+      "object-fit: cover !important; object-position: 0% 0% !important",
+  },
+  "@media screen and (max-width: 600px)": {
+    height: ({ mobileHeight }) => mobileHeight,
+  },
+});
 
 const BackgroundImg = ({
   fluid,
