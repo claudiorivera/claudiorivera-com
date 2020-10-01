@@ -56,6 +56,10 @@ const theme = createMuiTheme({
         fontWeight: 700,
         fontSize: "3rem",
       },
+      h3: {
+        fontWeight: 700,
+        fontSize: "1.5rem",
+      },
       overline: {
         fontSize: "1.5rem",
       },

@@ -2,7 +2,8 @@ import { Container, Typography } from "@material-ui/core";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { Fragment } from "react";
+import BlogPagination from "../components/BlogPagination";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
@@ -11,8 +12,8 @@ const BlogPosts = ({ data, pageContext }) => {
     <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Blog">
       <SEO title="Blog" />
       {data.allMarkdownRemark.edges.map(({ node: post }) => (
-        <>
-          <Container key={post.id}>
+        <Fragment key={post.id}>
+          <Container>
             <div style={{ textAlign: "center" }}>
               <Typography variant="overline">
                 {post.frontmatter.category}
@@ -30,9 +31,9 @@ const BlogPosts = ({ data, pageContext }) => {
             />
           </Container>
           <hr />
-        </>
+        </Fragment>
       ))}
-      <div>test</div>
+      <BlogPagination pageContext={pageContext} />
     </Layout>
   );
 };
