@@ -28,10 +28,16 @@ const Image = styled(Img)({
   zIndex: "-1",
   height: ({ height }) => height,
   "& > img": {
-    objectFit: "cover !important",
-    objectPosition: "0% 0% !important",
-    fontFamily:
-      "object-fit: cover !important; object-position: 0% 0% !important",
+    objectFit: {
+      cover: "!important",
+    },
+    objectPosition: `0% 0% !important`,
+    fontFamily: {
+      objectFit: {
+        cover: "!important",
+        objectPosition: "0% 0% !important",
+      },
+    },
   },
   "@media screen and (max-width: 600px)": {
     height: ({ mobileHeight }) => mobileHeight,
