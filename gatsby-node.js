@@ -1,18 +1,18 @@
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `content` });
+  if (node.internal.type === "MarkdownRemark") {
+    const slug = createFilePath({ node, getNode, basePath: "content" });
     createNodeField({
       node,
-      name: `slug`,
+      name: "slug",
       value: slug,
     });
     createNodeField({
       node,
-      name: `collection`,
+      name: "collection",
       value: getNode(node.parent).sourceInstanceName,
     });
   }
@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
   data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/BlogPost.js`),
+      component: path.resolve("./src/templates/BlogPost.js"),
       context: {
         slug: node.fields.slug,
       },
@@ -55,8 +55,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const prevPage = currentPage - 1;
     const nextPage = currentPage + 1;
     createPage({
-      path: i === 0 ? `/blog` : `/blog/page-${i + 1}`,
-      component: path.resolve(`./src/templates/BlogPosts.js`),
+      path: i === 0 ? "/blog" : `/blog/page-${i + 1}`,
+      component: path.resolve("./src/templates/BlogPosts.js"),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,

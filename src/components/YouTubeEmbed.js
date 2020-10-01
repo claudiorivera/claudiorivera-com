@@ -17,8 +17,8 @@ const YouTubeEmbed = ({ url, title }) => (
 );
 
 YouTubeEmbed.defaultProps = {
-  url: ``,
-  title: ``,
+  url: "",
+  title: "",
 };
 
 YouTubeEmbed.propTypes = {

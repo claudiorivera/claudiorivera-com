@@ -8,8 +8,8 @@ const AppleMusicEmbed = ({ url, title }) => (
 );
 
 AppleMusicEmbed.defaultProps = {
-  url: ``,
-  title: ``,
+  url: "",
+  title: "",
 };
 
 AppleMusicEmbed.propTypes = {

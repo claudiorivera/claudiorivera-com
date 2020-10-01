@@ -31,7 +31,7 @@ const Image = styled(Img)({
     objectFit: {
       cover: "!important",
     },
-    objectPosition: `0% 0% !important`,
+    objectPosition: "0% 0% !important",
     fontFamily: {
       objectFit: {
         cover: "!important",
