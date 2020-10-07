@@ -7,6 +7,7 @@ screenshot: "./images/photo-gallery.png"
 ---
 
 - React
-- Next.JS Serverless API Routes
+- Next.JS
+  - Serverless API Routes
 - MongoDB
   - Mongoose
