@@ -7,7 +7,7 @@ screenshot: "./images/expense-tracker.png"
 ---
 
 - React
-  - Material-UI
+- Material-UI
 - Vercel Serverless API Routes
 - MongoDB
-  - Mongoose
+- Mongoose

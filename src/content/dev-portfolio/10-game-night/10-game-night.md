@@ -7,15 +7,14 @@ screenshot: "./images/game-night.png"
 ---
 
 - React
-  - Context/Hooks
-  - Moment
-  - React Router
-  - Axios
-  - Material-UI
-  - [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser)
+- Context/Hooks
+- Moment
+- React Router
+- Material-UI
 - Express
-  - Session
-  - Passport
+- Express Session
+- Passport
 - MongoDB
-  - Mongoose
+- Mongoose
+- [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser)
 - [BoardGameGeek API2](https://boardgamegeek.com/wiki/page/BGG_XML_API2)

@@ -7,6 +7,6 @@ screenshot: "./images/feedback-app.png"
 ---
 
 - React
-  - Redux
+- Redux
 - Express
 - PostgreSQL
