@@ -1,11 +1,12 @@
 ---
 title: "Photo Gallery"
-description: "A full-stack (PERN) photo gallery web app."
-demo_link: "http://photo-gallery.claudiorivera.com/"
+description: "A full-stack photo gallery web app."
+demo_link: "https://photo-gallery.claudiorivera.com/"
 github_link: "https://github.com/claudiorivera/react-photo-gallery"
 screenshot: "./images/photo-gallery.png"
 ---
 
 - React
-- Express
-- PostgreSQL
+- Next.JS Serverless API Routes
+- MongoDB
+  - Mongoose
