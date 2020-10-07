@@ -10,4 +10,3 @@ screenshot: "./images/expense-tracker.png"
 - Material-UI
 - Vercel Serverless API Routes
 - MongoDB
-- Mongoose

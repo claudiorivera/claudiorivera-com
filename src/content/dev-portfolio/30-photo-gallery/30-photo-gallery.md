@@ -10,4 +10,4 @@ screenshot: "./images/photo-gallery.png"
 - Next.JS
 - Vercel Serverless API Routes
 - MongoDB
-- Mongoose
+- [SWR](https://swr.vercel.app)
