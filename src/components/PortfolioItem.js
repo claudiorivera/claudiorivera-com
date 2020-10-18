@@ -1,6 +1,3 @@
-import PropTypes from "prop-types";
-import React from "react";
-import Img from "gatsby-image";
 import {
   Box,
   Button,
@@ -10,13 +7,16 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
+import Img from "gatsby-image";
+import PropTypes from "prop-types";
+import React from "react";
 
 const PortfolioItem = ({ portfolioItem }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
     <Box my={!isMobile ? "7rem" : ""}>
-      <Grid container alignItems="center" spacing={1} justify="space-between">
+      <Grid container spacing={2} justify="center">
         <Grid item md={6} sm={12}>
           <Link href={portfolioItem.frontmatter.demo_link}>
             <Typography variant="h1" align="center" gutterBottom>
@@ -32,31 +32,35 @@ const PortfolioItem = ({ portfolioItem }) => {
             {portfolioItem.frontmatter.description}
           </Typography>
         </Grid>
-        <Grid item md={5} sm={12}>
+        <Grid item md={6} sm={12}>
           <Typography variant="h2">Technologies Used:</Typography>
           <Typography
             variant="body1"
             component="div"
             dangerouslySetInnerHTML={{ __html: portfolioItem.html }}
           />
-          <Box display="flex" justifyContent="space-evenly" width="100%" mt={8}>
-            <Button
-              size="large"
-              variant="outlined"
-              color="secondary"
-              href={portfolioItem.frontmatter.demo_link}
-            >
-              Live Demo
-            </Button>
-            <Button
-              size="large"
-              variant="outlined"
-              color="secondary"
-              href={portfolioItem.frontmatter.github_link}
-            >
-              View Source
-            </Button>
-          </Box>
+          <Grid container direction="row" justify="space-evenly" spacing={2}>
+            <Grid item>
+              <Button
+                size="large"
+                variant="outlined"
+                color="secondary"
+                href={portfolioItem.frontmatter.demo_link}
+              >
+                Live Demo
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button
+                size="large"
+                variant="outlined"
+                color="secondary"
+                href={portfolioItem.frontmatter.github_link}
+              >
+                View Source
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Box>
