@@ -12,7 +12,7 @@ screenshot: "./images/game-night.png"
 - Material-UI
 - MongoDB
 - [SWR](https://swr.vercel.app)
-- [NextAuth.js](https://next-auth.js.org)
+- [NextAuth.js](https://next-auth.js.org) (GitHub OAuth)
 - [Moment](https://momentjs.com)
 - [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser)
 - [BoardGameGeek API2](https://boardgamegeek.com/wiki/page/BGG_XML_API2)
