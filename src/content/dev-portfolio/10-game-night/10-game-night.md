@@ -8,7 +8,7 @@ screenshot: "./images/game-night.png"
 
 - React
 - [Next.js](https://nextjs.org)
-- Serverless API Routes
+- Serverless Functions
 - Material-UI
 - MongoDB
 - [SWR](https://swr.vercel.app)
