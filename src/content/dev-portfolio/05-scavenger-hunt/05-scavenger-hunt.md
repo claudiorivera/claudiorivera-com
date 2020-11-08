@@ -7,6 +7,7 @@ screenshot: "./images/scavenger-hunt.png"
 ---
 
 - React
+- TypeScript
 - [Next.js](https://nextjs.org)
 - Serverless Functions
 - [next-connect](https://github.com/hoangvvo/next-connect)
