@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => (
         Sabian, and DW.
       </Typography>
       <Typography variant="body1" paragraph>
-        I am also a full stack web developer looking for work. Please visit my{" "}
+        I am also a software developer. Please visit my{" "}
         <Link to="/dev">development</Link> page for more info.
       </Typography>
     </Container>

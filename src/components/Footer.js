@@ -32,7 +32,15 @@ const Footer = () => (
           }}
         />
         .
-      </span>
+      </span>{" "}
+      Connect with me on{" "}
+      <a
+        href="https://www.linkedin.com/in/atclaudiorivera/"
+        style={{ color: "white" }}
+      >
+        LinkedIn
+      </a>
+      .
     </Typography>
   </Box>
 );
