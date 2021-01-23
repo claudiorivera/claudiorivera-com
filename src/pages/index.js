@@ -15,10 +15,7 @@ const IndexPage = ({ data }) => (
         records with rad bands.
       </Typography>
       <Typography variant="body1" paragraph>
-        I’m available for drumming sessions, live gigs, touring, drums/keys
-        tech, monitor tech, producing, mixing, or anything else you can throw at
-        me. Email me for availability and rates. I’m endorsed by Promark, Evans,
-        Sabian, and DW.
+        I’m endorsed by Promark, Evans, Sabian, and DW.
       </Typography>
       <Typography variant="body1" paragraph>
         I am also a software developer. Please visit my{" "}
