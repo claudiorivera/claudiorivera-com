@@ -14,12 +14,11 @@ const Footer = () => (
     color="white"
   >
     <Typography variant="h5">
-      Made by me with Gatsby.{" "}
       <a
         href="https://github.com/claudiorivera/cr-com"
         style={{ color: "white" }}
       >
-        <span>View&nbsp;Source</span>
+        <span>Made by me with Gatsby</span>
       </a>
       {". "}
       <span>
