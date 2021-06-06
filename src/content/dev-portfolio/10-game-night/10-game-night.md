@@ -1,7 +1,7 @@
 ---
 title: "Game Night"
 description: "A full-stack web app to host or join board game nights."
-demo_link: "https://gamenight.claudiorivera.com/"
+demo_link: "https://game-night.claudiorivera.com/"
 github_link: "https://github.com/claudiorivera/game-night"
 screenshot: "./images/game-night.png"
 ---
