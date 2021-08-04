@@ -4,7 +4,7 @@ import {
   ThemeProvider,
   useMediaQuery,
 } from "@material-ui/core";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
@@ -23,7 +23,7 @@ const fonts = {
   sans: "Inter, sans-serif",
 };
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: `${colors.blue}`,
