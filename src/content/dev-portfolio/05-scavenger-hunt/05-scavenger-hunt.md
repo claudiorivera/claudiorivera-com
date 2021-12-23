@@ -6,13 +6,12 @@ github_link: "https://github.com/claudiorivera/scavenger-hunt"
 screenshot: "./images/scavenger-hunt.png"
 ---
 
-- React
-- TypeScript
+- [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
 - [Next.js](https://nextjs.org)
-- Serverless Functions
 - [next-connect](https://github.com/hoangvvo/next-connect)
-- MongoDB
-- [NextAuth.js](https://next-auth.js.org) for GitHub OAuth and "Magic Link" email login
+- [MongoDB](https://www.mongodb.com)
+- [NextAuth.js](https://next-auth.js.org)
 - [SWR](https://swr.vercel.app)
-- Material-UI
+- [Material-UI](https://material-ui.com)
 - [Cloudinary](https://cloudinary.com/)
