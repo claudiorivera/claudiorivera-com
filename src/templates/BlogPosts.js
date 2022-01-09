@@ -5,12 +5,12 @@ import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 import BlogPagination from "../components/BlogPagination";
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 
 const BlogPosts = ({ data, pageContext }) => {
   return (
     <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Blog">
-      <SEO title="Blog" />
+      <Seo title="Blog" />
       {data.allMarkdownRemark.edges.map(({ node: post }) => (
         <Fragment key={post.id}>
           <Container>

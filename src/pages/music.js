@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 import React from "react";
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 
 const MusicPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Music">
-    <SEO title="Music" />
+    <Seo title="Music" />
     <Container>
       <Typography variant="h1">See</Typography>
       <YouTubeEmbed
