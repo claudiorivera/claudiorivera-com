@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import React from "react";
 import PortfolioItem from "../components/PortfolioItem";
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 
 const DevPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
-    <SEO title="Dev" />
+    <Seo title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node: portfolioItem }) => (
       <div key={portfolioItem.id}>
         <PortfolioItem portfolioItem={portfolioItem} />
