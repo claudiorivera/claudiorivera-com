@@ -3,12 +3,10 @@ import { graphql } from "gatsby";
 import React from "react";
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
-import Seo from "../components/Seo";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 
 const MusicPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Music">
-    <Seo title="Music" />
     <Container>
       <Typography variant="h1">See</Typography>
       <YouTubeEmbed

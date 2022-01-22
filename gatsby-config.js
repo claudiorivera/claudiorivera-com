@@ -99,7 +99,6 @@ module.exports = {
         trackingId: "UA-164475801-1",
       },
     },
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
   ],
 };

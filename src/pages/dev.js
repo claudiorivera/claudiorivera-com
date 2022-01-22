@@ -3,11 +3,9 @@ import { graphql } from "gatsby";
 import React from "react";
 import PortfolioItem from "../components/PortfolioItem";
 import Layout from "../components/Layout";
-import Seo from "../components/Seo";
 
 const DevPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
-    <Seo title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node: portfolioItem }) => (
       <div key={portfolioItem.id}>
         <PortfolioItem portfolioItem={portfolioItem} />

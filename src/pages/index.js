@@ -2,11 +2,9 @@ import { Container, Typography } from "@material-ui/core";
 import { graphql, Link } from "gatsby";
 import React from "react";
 import Layout from "../components/Layout";
-import Seo from "../components/Seo";
 
 const IndexPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Hello">
-    <Seo title="Home" />
     <Container>
       <Typography variant="body1" paragraph>
         My name is Claudio. I’ve been all over this beautiful Earth, playing
