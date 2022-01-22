@@ -13,7 +13,7 @@ const BlogPagination = ({ pageContext }) => {
     pageContext.prevPage === 1 ? "/" : `/page-${pageContext.prevPage}`;
   return (
     <Container maxWidth="sm">
-      <Grid container justify="space-between">
+      <Grid container justifyContent="space-between">
         <Grid item>
           <Typography variant="h3">
             <StyledLink

@@ -15,7 +15,7 @@ const PortfolioItem = ({ portfolioItem }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
     <Box my={!isMobile ? "7rem" : ""}>
-      <Grid container spacing={2} justify="center">
+      <Grid container spacing={2} justifyContent="center">
         <Grid item md={6} sm={12}>
           <Link href={portfolioItem.frontmatter.demo_link}>
             <Typography variant="h1" align="center" gutterBottom>
@@ -38,7 +38,12 @@ const PortfolioItem = ({ portfolioItem }) => {
             component="div"
             dangerouslySetInnerHTML={{ __html: portfolioItem.html }}
           />
-          <Grid container direction="row" justify="space-evenly" spacing={2}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="space-evenly"
+            spacing={2}
+          >
             <Grid item>
               <Button
                 size="large"
