@@ -1,6 +1,5 @@
 import { Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
-import PropTypes from "prop-types";
 import React from "react";
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
@@ -77,33 +76,5 @@ export const query = graphql`
     }
   }
 `;
-
-MusicPage.propTypes = {
-  data: PropTypes.shape({
-    file: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-              label: PropTypes.string.isRequired,
-              years: PropTypes.string.isRequired,
-              link: PropTypes.string.isRequired,
-            }).isRequired,
-            html: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired
-      ).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default MusicPage;

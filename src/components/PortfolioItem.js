@@ -8,7 +8,6 @@ import {
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import Img from "gatsby-image";
-import PropTypes from "prop-types";
 import React from "react";
 
 const PortfolioItem = ({ portfolioItem }) => {
@@ -65,26 +64,6 @@ const PortfolioItem = ({ portfolioItem }) => {
       </Grid>
     </Box>
   );
-};
-
-PortfolioItem.propTypes = {
-  portfolioItem: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      demo_link: PropTypes.string.isRequired,
-      github_link: PropTypes.string.isRequired,
-      screenshot: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-          fluid: PropTypes.shape({
-            src: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    html: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default PortfolioItem;
