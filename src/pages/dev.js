@@ -35,7 +35,7 @@ export const query = graphql`
     }
     allMarkdownRemark(
       filter: { fields: { collection: { eq: "dev-portfolio" } } }
-      sort: { order: ASC, fields: fileAbsolutePath }
+      sort: { order: ASC, fields: frontmatter___order }
     ) {
       edges {
         node {
