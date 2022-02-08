@@ -15,7 +15,7 @@ const Footer = () => (
   >
     <Typography variant="h5">
       <a
-        href="https://github.com/claudiorivera/cr-com"
+        href="https://github.com/claudiorivera/claudiorivera-com"
         style={{ color: "white" }}
       >
         <span>Made by me with Gatsby</span>
