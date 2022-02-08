@@ -1,15 +1,12 @@
 import { Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
-import PropTypes from "prop-types";
 import React from "react";
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
-import Seo from "../components/Seo";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 
 const MusicPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Music">
-    <Seo title="Music" />
     <Container>
       <Typography variant="h1">See</Typography>
       <YouTubeEmbed
@@ -77,33 +74,5 @@ export const query = graphql`
     }
   }
 `;
-
-MusicPage.propTypes = {
-  data: PropTypes.shape({
-    file: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-              label: PropTypes.string.isRequired,
-              years: PropTypes.string.isRequired,
-              link: PropTypes.string.isRequired,
-            }).isRequired,
-            html: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired
-      ).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default MusicPage;

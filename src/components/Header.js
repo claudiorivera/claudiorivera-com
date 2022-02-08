@@ -12,7 +12,6 @@ import {
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Menu as MenuIcon } from "@material-ui/icons";
 import { Link } from "gatsby";
-import PropTypes from "prop-types";
 import React, { useState } from "react";
 
 const useStyles = makeStyles(() => ({
@@ -152,16 +151,6 @@ const Header = ({ siteTitle, siteDescription }) => {
       </Toolbar>
     </AppBar>
   );
-};
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-  siteDescription: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: "",
-  siteDescription: "",
 };
 
 export default Header;

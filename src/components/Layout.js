@@ -7,7 +7,6 @@ import {
 import { createTheme } from "@material-ui/core/styles";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { graphql, useStaticQuery } from "gatsby";
-import PropTypes from "prop-types";
 import React from "react";
 import BackgroundImg from "./BackgroundImg";
 import Footer from "./Footer";
@@ -167,12 +166,6 @@ const Layout = ({ children, coverTitle, coverImage }) => {
       <Footer />
     </ThemeProvider>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  coverTitle: PropTypes.string,
-  coverImage: PropTypes.object,
 };
 
 export default Layout;
