@@ -1,8 +1,8 @@
 import { Box, Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
 import React from "react";
-import PortfolioItem from "../components/PortfolioItem";
 import Layout from "../components/Layout";
+import PortfolioItem from "../components/PortfolioItem";
 
 const DevPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
