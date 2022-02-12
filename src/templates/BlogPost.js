@@ -1,7 +1,8 @@
+import { Typography } from "@material-ui/core";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
-import { graphql } from "gatsby";
-import { Typography } from "@material-ui/core";
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
@@ -22,10 +23,8 @@ const BlogPost = ({ data }) => {
   );
 };
 
-export default BlogPost;
-
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -43,3 +42,34 @@ export const query = graphql`
     }
   }
 `;
+
+BlogPost.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+              date: PropTypes.string.isRequired,
+              category: PropTypes.string.isRequired,
+              featuredImage: PropTypes.shape({
+                childImageSharp: PropTypes.shape({
+                  fluid: PropTypes.shape({
+                    src: PropTypes.string.isRequired,
+                  }).isRequired,
+                }).isRequired,
+              }).isRequired,
+            }).isRequired,
+            html: PropTypes.string.isRequired,
+            fields: PropTypes.shape({
+              slug: PropTypes.string.isRequired,
+            }),
+          }).isRequired,
+        }).isRequired
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+export default BlogPost;

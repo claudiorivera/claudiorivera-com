@@ -4,12 +4,26 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
+type StyledLinkProps = {
+  disabled: boolean;
+};
 const StyledLink = styled(({ disabled, ...other }) => <Link {...other} />)({
-  pointerEvents: (props) => (props.disabled ? "none" : ""),
-  opacity: (props) => (props.disabled ? ".5" : ""),
+  pointerEvents: ({ disabled }: StyledLinkProps) =>
+    disabled ? "none" : "auto",
+  opacity: ({ disabled }) => (disabled ? ".5" : ""),
 });
 
-const BlogPagination = ({ pageContext }) => {
+type BlogPaginationProps = {
+  pageContext: {
+    currentPage: number;
+    limit: number;
+    nextPage: number;
+    numPages: number;
+    prevPage: number;
+    skip: number;
+  };
+};
+const BlogPagination = ({ pageContext }: BlogPaginationProps) => {
   const prevPage =
     pageContext.prevPage === 1 ? "/" : `/page-${pageContext.prevPage}`;
   return (

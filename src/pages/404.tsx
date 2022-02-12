@@ -1,13 +1,27 @@
 import { graphql } from "gatsby";
+import { FluidObject } from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
 
-const NotFoundPage = ({ data }) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Uh Oh!">
-    <h1>There's nothing here. Sorry about that.</h1>
-  </Layout>
-);
+type NotFoundPageProps = {
+  data: {
+    file: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+  };
+};
+const NotFoundPage = ({ data }: NotFoundPageProps) => {
+  if (!data.file) return null;
+
+  return (
+    <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Uh Oh!">
+      <h1>There's nothing here. Sorry about that.</h1>
+    </Layout>
+  );
+};
 
 export const query = graphql`
   {

@@ -1,16 +1,16 @@
 import { styled } from "@material-ui/core";
-import Img from "gatsby-image";
+import Img, { FluidObject } from "gatsby-image";
 import PropTypes from "prop-types";
 import React, { ReactNode } from "react";
 
 type ContainerProps = {
-  bc: string;
+  overlayColor: string;
 };
 const Container = styled("div")({
-  backgroundColor: ({ bc }: ContainerProps) => bc,
+  backgroundColor: ({ overlayColor }: ContainerProps) => overlayColor,
   position: "relative",
   marginBottom: "5rem",
-  boxShadow: "0 5px 25px 5px #0000004d",
+  boxShadow: "0 5px 25px 5px #0000004d;",
 });
 
 const Content = styled("div")({
@@ -24,7 +24,6 @@ const Content = styled("div")({
 
 type ImageProps = {
   height: string;
-  mobileHeight: string;
 };
 const Image = styled(Img)({
   position: "absolute",
@@ -35,59 +34,37 @@ const Image = styled(Img)({
   height: ({ height }: ImageProps) => height,
   "& > img": {
     objectFit: "cover",
-    objectPosition: "0% 0%",
+    objectPosition: "0% 0%;",
     fontFamily: "object-fit: cover; object-position: 0% 0%;",
-  },
-  "@media screen and (max-width: 600px)": {
-    height: ({ mobileHeight }) => mobileHeight,
   },
 });
 
 type BackgroundImgProps = {
-  fluid: any;
+  fluid: FluidObject;
   title: string;
   height: string;
-  mobileHeight?: string;
-  className?: string;
-  overlayColor: string;
+  overlayColor?: string;
   children: ReactNode;
 };
 const BackgroundImg = ({
   fluid,
   title,
   height,
-  mobileHeight,
-  overlayColor,
+  overlayColor = "transparent",
   children,
-  className,
 }: BackgroundImgProps) => (
-  <Container bc={overlayColor}>
-    <Image
-      fluid={fluid}
-      title={title}
-      height={height}
-      mobileHeight={mobileHeight}
-    />
-    <Content className={className}>{children}</Content>
+  <Container overlayColor={overlayColor}>
+    <Image fluid={fluid} title={title} height={height} />
+    <Content>{children}</Content>
   </Container>
 );
 
 BackgroundImg.propTypes = {
   fluid: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
-  height: PropTypes.string,
-  mobileHeight: PropTypes.string,
+  height: PropTypes.string.isRequired,
   overlayColor: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
-
-BackgroundImg.defaultProps = {
-  height: null,
-  mobileHeight: null,
-  overlayColor: "transparent",
-  children: null,
-  className: null,
+  children: PropTypes.node.isRequired,
 };
 
 export default BackgroundImg;

@@ -57,7 +57,14 @@ const menuLinks = [
   },
 ];
 
-const Header = ({ siteTitle, siteDescription }) => {
+type HeaderProps = {
+  siteTitle: string;
+  siteDescription: string;
+};
+const Header = ({
+  siteTitle = "Claudio Rivera",
+  siteDescription = "Drummer | Developer",
+}: HeaderProps) => {
   const styles = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
@@ -157,11 +164,6 @@ const Header = ({ siteTitle, siteDescription }) => {
 Header.propTypes = {
   siteTitle: PropTypes.string,
   siteDescription: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: "",
-  siteDescription: "",
 };
 
 export default Header;

@@ -1,12 +1,36 @@
 import { Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
+import { FluidObject } from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 
-const MusicPage = ({ data }) => (
+type MusicPageProps = {
+  data: {
+    file: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          id: string;
+          frontmatter: {
+            title: string;
+            label: string;
+            years: string;
+            link: string;
+          };
+          html: string;
+        };
+      }[];
+    };
+  };
+};
+const MusicPage = ({ data }: MusicPageProps) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Music">
     <Container>
       <Typography variant="h1">See</Typography>

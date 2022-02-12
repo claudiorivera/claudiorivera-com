@@ -2,23 +2,24 @@ import { Container } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React from "react";
 
-const YouTubeEmbed = ({ url, title }) => (
-  <Container className="videoWrapper">
-    <iframe
-      src={url}
-      title={title}
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      frameBorder="0"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      allowFullScreen
-    />
-  </Container>
-);
+type YouTubeEmbedProps = {
+  url: string;
+  title: string;
+};
+const YouTubeEmbed = ({ url, title }: YouTubeEmbedProps) => {
+  if (!url || !title) return null;
 
-YouTubeEmbed.defaultProps = {
-  url: "",
-  title: "",
+  return (
+    <Container className="videoWrapper">
+      <iframe
+        src={url}
+        title={title}
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        frameBorder="0"
+        allowFullScreen
+      />
+    </Container>
+  );
 };
 
 YouTubeEmbed.propTypes = {

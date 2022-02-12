@@ -1,29 +1,64 @@
 import { Box, Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
+import { FluidObject } from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
 import PortfolioItem from "../components/PortfolioItem";
 
-const DevPage = ({ data }) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
-    {data.allMarkdownRemark.edges.map(({ node: portfolioItem }) => (
-      <div key={portfolioItem.id}>
-        <PortfolioItem portfolioItem={portfolioItem} />
-        <hr />
-      </div>
-    ))}
-    <Container maxWidth="sm">
-      <Box m={2}>
-        <Typography variant="h1">
-          For more, please visit{" "}
-          <Link href="https://github.com/claudiorivera">my GitHub profile</Link>
-          .
-        </Typography>
-      </Box>
-    </Container>
-  </Layout>
-);
+type DevPageProps = {
+  data: {
+    file: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          id: string;
+          frontmatter: {
+            title: string;
+            description: string;
+            demo_link: string;
+            github_link: string;
+            screenshot: {
+              childImageSharp: {
+                fluid: FluidObject;
+              };
+            };
+          };
+          html: string;
+        };
+      }[];
+    };
+  };
+};
+const DevPage = ({ data }: DevPageProps) => {
+  if (!data.file || !data.allMarkdownRemark) return null;
+
+  return (
+    <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
+      {data.allMarkdownRemark.edges.map(({ node: portfolioItem }) => (
+        <div key={portfolioItem.id}>
+          <PortfolioItem portfolioItem={portfolioItem} />
+          <hr />
+        </div>
+      ))}
+      <Container maxWidth="sm">
+        <Box m={2}>
+          <Typography variant="h1">
+            For more, please visit{" "}
+            <Link href="https://github.com/claudiorivera">
+              my GitHub profile
+            </Link>
+            .
+          </Typography>
+        </Box>
+      </Container>
+    </Layout>
+  );
+};
 
 export const query = graphql`
   {

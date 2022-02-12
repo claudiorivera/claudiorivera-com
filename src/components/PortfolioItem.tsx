@@ -7,11 +7,27 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
-import Img from "gatsby-image";
+import Img, { FluidObject } from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 
-const PortfolioItem = ({ portfolioItem }) => {
+type PortfolioItemProps = {
+  portfolioItem: {
+    frontmatter: {
+      title: string;
+      description: string;
+      demo_link: string;
+      github_link: string;
+      screenshot: {
+        childImageSharp: {
+          fluid: FluidObject;
+        };
+      };
+    };
+    html: string;
+  };
+};
+const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
