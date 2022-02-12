@@ -135,7 +135,12 @@ const Layout = ({ children, coverTitle, coverImage }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BackgroundImg fluid={coverImage} height={isMobile ? "15vh" : "100vh"}>
+      <BackgroundImg
+        title="background"
+        fluid={coverImage}
+        overlayColor={`${colors.blue}bf`}
+        height={isMobile ? "15vh" : "100vh"}
+      >
         <Header
           siteTitle={data.site.siteMetadata.title}
           siteDescription={data.site.siteMetadata.description}
