@@ -1,5 +1,6 @@
 import { Box, Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
 import PortfolioItem from "../components/PortfolioItem";
@@ -59,5 +60,40 @@ export const query = graphql`
     }
   }
 `;
+
+DevPage.propTypes = {
+  data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+              description: PropTypes.string.isRequired,
+              demo_link: PropTypes.string.isRequired,
+              github_link: PropTypes.string.isRequired,
+              screenshot: PropTypes.shape({
+                childImageSharp: PropTypes.shape({
+                  fluid: PropTypes.shape({
+                    src: PropTypes.string.isRequired,
+                  }).isRequired,
+                }).isRequired,
+              }).isRequired,
+            }).isRequired,
+            html: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default DevPage;

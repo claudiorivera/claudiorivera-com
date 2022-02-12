@@ -1,4 +1,5 @@
 import { graphql } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
 
@@ -19,5 +20,17 @@ export const query = graphql`
     }
   }
 `;
+
+NotFoundPage.propTypes = {
+  data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default NotFoundPage;
