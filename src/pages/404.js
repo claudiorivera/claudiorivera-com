@@ -2,9 +2,11 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 const NotFoundPage = ({ data }) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Uh Oh!">
+    <Seo title="404: Not found" />
     <h1>There's nothing here. Sorry about that.</h1>
   </Layout>
 );
