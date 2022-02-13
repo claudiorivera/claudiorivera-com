@@ -1,5 +1,6 @@
 import { Container, Typography } from "@material-ui/core";
 import { graphql, Link } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
 
@@ -33,5 +34,17 @@ export const query = graphql`
     }
   }
 `;
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default IndexPage;

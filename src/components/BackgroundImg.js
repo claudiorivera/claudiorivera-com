@@ -1,6 +1,7 @@
 // https://markoskon.com/gatsby-background-image-example/#usage
 import { styled } from "@material-ui/core";
 import Img from "gatsby-image";
+import PropTypes from "prop-types";
 import React from "react";
 
 const Container = styled("div")({
@@ -62,5 +63,23 @@ const BackgroundImg = ({
     <Content className={className}>{children}</Content>
   </Container>
 );
+
+BackgroundImg.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  height: PropTypes.string,
+  mobileHeight: PropTypes.string,
+  overlayColor: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+
+BackgroundImg.defaultProps = {
+  height: null,
+  mobileHeight: null,
+  overlayColor: "transparent",
+  children: null,
+  className: null,
+};
 
 export default BackgroundImg;
