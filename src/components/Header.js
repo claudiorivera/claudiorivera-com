@@ -155,13 +155,13 @@ const Header = ({ siteTitle, siteDescription }) => {
 };
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
   siteDescription: PropTypes.string,
+  siteTitle: PropTypes.string,
 };
 
 Header.defaultProps = {
-  siteTitle: "",
-  siteDescription: "",
+  siteDescription: "The official home of Claudio Rivera",
+  siteTitle: "Claudio Rivera",
 };
 
 export default Header;

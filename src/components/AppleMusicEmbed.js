@@ -7,11 +7,6 @@ const AppleMusicEmbed = ({ url, title }) => (
   </div>
 );
 
-AppleMusicEmbed.defaultProps = {
-  url: "",
-  title: "",
-};
-
 AppleMusicEmbed.propTypes = {
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

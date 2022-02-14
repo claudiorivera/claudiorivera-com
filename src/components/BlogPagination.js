@@ -11,7 +11,7 @@ const StyledLink = styled(({ disabled, ...other }) => <Link {...other} />)({
 
 const BlogPagination = ({ pageContext }) => {
   const prevPage =
-    pageContext.prevPage === 1 ? "/" : `/page-${pageContext.prevPage}`;
+    pageContext.prevPage === 1 ? "" : `page-${pageContext.prevPage}`;
   return (
     <Container maxWidth="sm">
       <Grid container justifyContent="space-between">
@@ -19,7 +19,7 @@ const BlogPagination = ({ pageContext }) => {
           <Typography variant="h3">
             <StyledLink
               disabled={pageContext.prevPage <= 0}
-              to={`/blog${prevPage}`}
+              to={`/blog/${prevPage}`}
             >
               <ArrowBack /> Previous {`${pageContext.limit}`} Posts
             </StyledLink>
@@ -42,7 +42,6 @@ const BlogPagination = ({ pageContext }) => {
 
 BlogPagination.propTypes = PropTypes.shape({
   pageContext: PropTypes.shape({
-    currentPage: PropTypes.number,
     limit: PropTypes.number.isRequired,
     nextPage: PropTypes.number.isRequired,
     numPages: PropTypes.number.isRequired,

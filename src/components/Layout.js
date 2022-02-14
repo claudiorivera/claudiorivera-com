@@ -120,14 +120,14 @@ const theme = createTheme({
   },
 });
 
-const Layout = ({ children, coverTitle, coverImage }) => {
+const Layout = ({ children, coverImage, coverTitle }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const data = useStaticQuery(graphql`
     query siteMetadataQuery {
       site {
         siteMetadata {
-          title
           description
+          title
         }
       }
     }
@@ -137,21 +137,21 @@ const Layout = ({ children, coverTitle, coverImage }) => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BackgroundImg
-        title="background"
         fluid={coverImage}
-        overlayColor={`${colors.blue}bf`}
         height={isMobile ? "15vh" : "100vh"}
+        overlayColor={`${colors.blue}bf`}
+        title="background"
       >
         <Header
-          siteTitle={data.site.siteMetadata.title}
           siteDescription={data.site.siteMetadata.description}
+          siteTitle={data.site.siteMetadata.title}
         />
         {!isMobile && coverImage && (
           <h1
             style={{
-              position: "absolute",
               bottom: 0,
               color: "white",
+              position: "absolute",
               textAlign: "center",
             }}
           >
@@ -171,8 +171,8 @@ const Layout = ({ children, coverTitle, coverImage }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  coverTitle: PropTypes.string,
-  coverImage: PropTypes.object,
+  coverImage: PropTypes.object.isRequired,
+  coverTitle: PropTypes.string.isRequired,
 };
 
 export default Layout;

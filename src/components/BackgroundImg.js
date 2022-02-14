@@ -39,47 +39,26 @@ const Image = styled(Img)({
       },
     },
   },
-  "@media screen and (max-width: 600px)": {
-    height: ({ mobileHeight }) => mobileHeight,
-  },
 });
 
-const BackgroundImg = ({
-  fluid,
-  title,
-  height,
-  mobileHeight,
-  overlayColor,
-  children,
-  className,
-}) => (
+const BackgroundImg = ({ children, fluid, height, overlayColor, title }) => (
   <Container bc={overlayColor}>
-    <Image
-      fluid={fluid}
-      title={title}
-      height={height}
-      mobileHeight={mobileHeight}
-    />
-    <Content className={className}>{children}</Content>
+    <Image fluid={fluid} height={height} title={title} />
+    <Content>{children}</Content>
   </Container>
 );
 
 BackgroundImg.propTypes = {
+  children: PropTypes.node.isRequired,
   fluid: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
   height: PropTypes.string,
-  mobileHeight: PropTypes.string,
   overlayColor: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
 BackgroundImg.defaultProps = {
-  height: null,
-  mobileHeight: null,
+  height: "100%",
   overlayColor: "transparent",
-  children: null,
-  className: null,
 };
 
 export default BackgroundImg;

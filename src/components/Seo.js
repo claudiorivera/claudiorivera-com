@@ -50,9 +50,10 @@ const Seo = ({ description, lang, meta, title }) => {
 };
 
 Seo.defaultProps = {
+  description: "The official home of Claudio Rivera",
   lang: "en",
   meta: [],
-  description: "",
+  title: "Claudio Rivera",
 };
 
 Seo.propTypes = {
