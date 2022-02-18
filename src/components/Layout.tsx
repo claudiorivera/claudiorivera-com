@@ -7,8 +7,9 @@ import {
 import { createTheme } from "@material-ui/core/styles";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { graphql, useStaticQuery } from "gatsby";
+import { FluidObject } from "gatsby-image";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { ReactNode } from "react";
 import BackgroundImg from "./BackgroundImg";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -120,9 +121,21 @@ const theme = createTheme({
   },
 });
 
-const Layout = ({ children, coverImage, coverTitle }) => {
+type LayoutProps = {
+  children: ReactNode;
+  coverImage: FluidObject;
+  coverTitle?: string;
+};
+const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<{
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+      };
+    };
+  }>(graphql`
     query siteMetadataQuery {
       site {
         siteMetadata {

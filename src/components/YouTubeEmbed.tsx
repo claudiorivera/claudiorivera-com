@@ -2,7 +2,11 @@ import { Container } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React from "react";
 
-const YouTubeEmbed = ({ url, title }) => (
+type YouTubeEmbedProps = {
+  url: string;
+  title: string;
+};
+const YouTubeEmbed = ({ url, title }: YouTubeEmbedProps) => (
   <Container className="videoWrapper">
     <iframe
       src={url}

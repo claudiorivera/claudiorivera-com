@@ -3,8 +3,20 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const Seo = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+type SeoProps = {
+  title: string;
+  description: string;
+  lang: string;
+};
+const Seo = ({ description, lang, title }: SeoProps) => {
+  const { site } = useStaticQuery<{
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+      };
+    };
+  }>(
     graphql`
       query {
         site {
@@ -44,7 +56,7 @@ const Seo = ({ description, lang, meta, title }) => {
           property: "og:type",
           content: "website",
         },
-      ].concat(meta)}
+      ]}
     />
   );
 };
@@ -52,14 +64,12 @@ const Seo = ({ description, lang, meta, title }) => {
 Seo.defaultProps = {
   description: "The official home of Claudio Rivera",
   lang: "en",
-  meta: [],
   title: "Claudio Rivera",
 };
 
 Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 };
 

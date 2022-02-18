@@ -4,9 +4,13 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
+type StyledLinkProps = {
+  disabled: boolean;
+};
 const StyledLink = styled(({ disabled, ...other }) => <Link {...other} />)({
-  pointerEvents: (props) => (props.disabled ? "none" : ""),
-  opacity: (props) => (props.disabled ? ".5" : ""),
+  pointerEvents: ({ disabled }: StyledLinkProps) =>
+    disabled ? "none" : "auto",
+  opacity: ({ disabled }: StyledLinkProps) => (disabled ? ".5" : ""),
 });
 
 const BlogPagination = ({ pageContext }) => {
