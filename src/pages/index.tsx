@@ -1,11 +1,21 @@
 import { Container, Typography } from "@material-ui/core";
 import { graphql, Link } from "gatsby";
+import { FluidObject } from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
-const IndexPage = ({ data }) => (
+type IndexPageProps = {
+  data: {
+    file: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+  };
+};
+const IndexPage = ({ data }: IndexPageProps) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Hello">
     <Seo title="Home" />
     <Container>

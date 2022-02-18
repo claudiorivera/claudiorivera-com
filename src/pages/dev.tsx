@@ -2,11 +2,26 @@ import { Box, Container, Link, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import PortfolioItem from "../components/PortfolioItem";
+import PortfolioItem, { PortfolioItemType } from "../components/PortfolioItem";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { FluidObject } from "gatsby-image";
 
-const DevPage = ({ data }) => (
+type DevPageProps = {
+  data: {
+    file: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+    allMarkdownRemark: {
+      edges: {
+        node: PortfolioItemType;
+      }[];
+    };
+  };
+};
+const DevPage = ({ data }: DevPageProps) => (
   <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
     <Seo title="Dev" />
     {data.allMarkdownRemark.edges.map(({ node: portfolioItem }) => (

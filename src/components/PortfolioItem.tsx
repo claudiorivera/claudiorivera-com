@@ -11,21 +11,23 @@ import Img, { FluidObject } from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 
-type PortfolioItemProps = {
-  portfolioItem: {
-    frontmatter: {
-      title: string;
-      description: string;
-      demo_link: string;
-      github_link: string;
-      screenshot: {
-        childImageSharp: {
-          fluid: FluidObject;
-        };
+export type PortfolioItemType = {
+  id?: string;
+  frontmatter: {
+    title: string;
+    description: string;
+    demo_link: string;
+    github_link: string;
+    screenshot: {
+      childImageSharp: {
+        fluid: FluidObject;
       };
     };
-    html: string;
   };
+  html: string;
+};
+type PortfolioItemProps = {
+  portfolioItem: PortfolioItemType;
 };
 const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
   const theme = useTheme();
