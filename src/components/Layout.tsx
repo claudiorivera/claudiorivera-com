@@ -7,7 +7,9 @@ import {
 import { createTheme } from "@material-ui/core/styles";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { graphql, useStaticQuery } from "gatsby";
-import React from "react";
+import { FluidObject } from "gatsby-image";
+import PropTypes from "prop-types";
+import React, { ReactNode } from "react";
 import BackgroundImg from "./BackgroundImg";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -119,14 +121,26 @@ const theme = createTheme({
   },
 });
 
-const Layout = ({ children, coverTitle, coverImage }) => {
+type LayoutProps = {
+  children: ReactNode;
+  coverImage: FluidObject;
+  coverTitle?: string;
+};
+const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<{
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+      };
+    };
+  }>(graphql`
     query siteMetadataQuery {
       site {
         siteMetadata {
-          title
           description
+          title
         }
       }
     }
@@ -136,21 +150,21 @@ const Layout = ({ children, coverTitle, coverImage }) => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BackgroundImg
-        title="background"
         fluid={coverImage}
-        overlayColor={`${colors.blue}bf`}
         height={isMobile ? "15vh" : "100vh"}
+        overlayColor={`${colors.blue}bf`}
+        title="background"
       >
         <Header
-          siteTitle={data.site.siteMetadata.title}
           siteDescription={data.site.siteMetadata.description}
+          siteTitle={data.site.siteMetadata.title}
         />
         {!isMobile && coverImage && (
           <h1
             style={{
-              position: "absolute",
               bottom: 0,
               color: "white",
+              position: "absolute",
               textAlign: "center",
             }}
           >
@@ -166,6 +180,12 @@ const Layout = ({ children, coverTitle, coverImage }) => {
       <Footer />
     </ThemeProvider>
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  coverImage: PropTypes.object.isRequired,
+  coverTitle: PropTypes.string.isRequired,
 };
 
 export default Layout;

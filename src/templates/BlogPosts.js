@@ -1,13 +1,16 @@
 import { Container, Typography } from "@material-ui/core";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
+import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 import BlogPagination from "../components/BlogPagination";
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 const BlogPosts = ({ data, pageContext }) => {
   return (
     <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Blog">
+      <Seo title="Blog" />
       {data.allMarkdownRemark.edges.map(({ node: post }) => (
         <Fragment key={post.id}>
           <Container>
@@ -74,5 +77,42 @@ export const query = graphql`
     }
   }
 `;
+
+BlogPosts.propTypes = {
+  data: PropTypes.shape({
+    file: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({
+          src: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+              date: PropTypes.string.isRequired,
+              category: PropTypes.string.isRequired,
+              featuredImage: PropTypes.shape({
+                childImageSharp: PropTypes.shape({
+                  fluid: PropTypes.shape({
+                    src: PropTypes.string.isRequired,
+                  }).isRequired,
+                }).isRequired,
+              }).isRequired,
+            }).isRequired,
+            html: PropTypes.string.isRequired,
+            fields: PropTypes.shape({
+              slug: PropTypes.string.isRequired,
+            }),
+          }).isRequired,
+        }).isRequired
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default BlogPosts;

@@ -7,10 +7,29 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
-import Img from "gatsby-image";
+import Img, { FluidObject } from "gatsby-image";
+import PropTypes from "prop-types";
 import React from "react";
 
-const PortfolioItem = ({ portfolioItem }) => {
+export type PortfolioItemType = {
+  id?: string;
+  frontmatter: {
+    title: string;
+    description: string;
+    demo_link: string;
+    github_link: string;
+    screenshot: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+  };
+  html: string;
+};
+type PortfolioItemProps = {
+  portfolioItem: PortfolioItemType;
+};
+const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
@@ -69,6 +88,26 @@ const PortfolioItem = ({ portfolioItem }) => {
       </Grid>
     </Box>
   );
+};
+
+PortfolioItem.propTypes = {
+  portfolioItem: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      demo_link: PropTypes.string.isRequired,
+      github_link: PropTypes.string.isRequired,
+      screenshot: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+          fluid: PropTypes.shape({
+            src: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+    html: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default PortfolioItem;

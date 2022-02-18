@@ -12,9 +12,10 @@ import {
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Menu as MenuIcon } from "@material-ui/icons";
 import { Link } from "gatsby";
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles({
   navBar: {
     padding: "1rem",
     color: "white",
@@ -35,7 +36,7 @@ const useStyles = makeStyles(() => ({
   hideOnMobile: {
     display: "none",
   },
-}));
+});
 
 const menuLinks = [
   {
@@ -56,17 +57,18 @@ const menuLinks = [
   },
 ];
 
-const Header = ({ siteTitle, siteDescription }) => {
+type HeaderProps = {
+  siteTitle: string;
+  siteDescription: string;
+};
+const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
   const styles = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
   // Responsive menu
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement>(null);
   const isOpen = Boolean(anchorEl);
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -103,7 +105,9 @@ const Header = ({ siteTitle, siteDescription }) => {
               aria-label="menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleMenu}
+              onClick={(event) => {
+                setAnchorEl(event.currentTarget);
+              }}
               color="inherit"
             >
               <MenuIcon fontSize="large" />
@@ -151,6 +155,16 @@ const Header = ({ siteTitle, siteDescription }) => {
       </Toolbar>
     </AppBar>
   );
+};
+
+Header.propTypes = {
+  siteDescription: PropTypes.string,
+  siteTitle: PropTypes.string,
+};
+
+Header.defaultProps = {
+  siteDescription: "The official home of Claudio Rivera",
+  siteTitle: "Claudio Rivera",
 };
 
 export default Header;
