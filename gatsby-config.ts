@@ -1,4 +1,6 @@
-module.exports = {
+import type { GatsbyConfig } from "gatsby";
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: "Claudio Rivera",
     description: "Drummer | Developer | Drum Tech",
@@ -104,3 +106,5 @@ module.exports = {
     "gatsby-plugin-offline",
   ],
 };
+
+export default config;
