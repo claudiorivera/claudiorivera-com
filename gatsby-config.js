@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: "https://claudiorivera.com",
   },
   plugins: [
+    "gatsby-plugin-pnpm",
     "gatsby-plugin-material-ui",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
