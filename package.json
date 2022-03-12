@@ -3,6 +3,7 @@
   "private": true,
   "description": "My website. Made with Gatsby",
   "version": "2.0.0",
+  "packageManager": "pnpm@6.32.3",
   "dependencies": {
     "@material-ui/core": "4.12.3",
     "@material-ui/icons": "4.11.2",
@@ -14,6 +15,7 @@
     "gatsby-plugin-manifest": "4.7.0",
     "gatsby-plugin-material-ui": "3.0.1",
     "gatsby-plugin-offline": "5.7.0",
+    "gatsby-plugin-pnpm": "1.2.10",
     "gatsby-plugin-react-helmet": "5.7.0",
     "gatsby-plugin-sharp": "4.7.0",
     "gatsby-plugin-sitemap": "5.7.0",
