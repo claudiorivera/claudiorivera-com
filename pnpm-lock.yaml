@@ -21,7 +21,7 @@ specifiers:
   gatsby-source-filesystem: 4.9.1
   gatsby-transformer-remark: 5.9.1
   gatsby-transformer-sharp: 4.9.0
-  prettier: 2.5.1
+  prettier: 2.6.0
   prismjs: 1.27.0
   prop-types: 15.8.1
   react: 17.0.2
@@ -58,7 +58,7 @@ dependencies:
   react-obfuscate: 3.6.8_75cb922c19ee1b7939faae9b4d1f4cf7
 
 devDependencies:
-  prettier: 2.5.1
+  prettier: 2.6.0
 
 packages:
 
@@ -12099,8 +12099,8 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /prettier/2.5.1:
-    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+  /prettier/2.6.0:
+    resolution: {integrity: sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
