@@ -1,7 +1,21 @@
-const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
+import type { GatsbyNode } from "gatsby";
+import { createFilePath } from "gatsby-source-filesystem";
+import path from "path";
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+type QueryData = {
+  data?: {
+    allMarkdownRemark: {
+      totalCount: number;
+      edges: { node: { fields: { slug: string } } }[];
+    };
+  };
+};
+
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({
+  node,
+  getNode,
+  actions,
+}) => {
   const { createNodeField } = actions;
   if (node.internal.type === "MarkdownRemark") {
     const slug = createFilePath({ node, getNode, basePath: "content" });
@@ -18,10 +32,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+export const createPages: GatsbyNode["createPages"] = async ({
+  graphql,
+  actions,
+}) => {
   const { createPage } = actions;
 
-  const { data } = await graphql(`
+  const { data }: QueryData = await graphql(`
     {
       allMarkdownRemark(filter: { fields: { collection: { eq: "posts" } } }) {
         totalCount
