@@ -33,7 +33,7 @@
     "react-obfuscate": "3.6.8"
   },
   "devDependencies": {
-    "prettier": "2.6.0"
+    "prettier": "2.6.1"
   },
   "license": "MIT",
   "scripts": {
