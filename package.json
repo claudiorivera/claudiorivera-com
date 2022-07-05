@@ -19,7 +19,7 @@
     "gatsby-plugin-react-helmet": "5.17.0",
     "gatsby-plugin-sharp": "4.17.0",
     "gatsby-plugin-sitemap": "5.17.0",
-    "gatsby-remark-embed-video": "3.1.1",
+    "gatsby-remark-embed-video": "3.2.1",
     "gatsby-remark-images": "6.17.0",
     "gatsby-remark-prismjs": "6.17.0",
     "gatsby-source-filesystem": "4.17.0",
