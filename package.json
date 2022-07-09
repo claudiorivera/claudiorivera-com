@@ -13,7 +13,7 @@
     "gatsby-plugin-google-analytics": "4.18.0",
     "gatsby-plugin-google-fonts-v2": "1.0.0",
     "gatsby-plugin-manifest": "4.18.0",
-    "gatsby-plugin-material-ui": "3.0.1",
+    "gatsby-plugin-material-ui": "4.1.0",
     "gatsby-plugin-offline": "5.18.0",
     "gatsby-plugin-pnpm": "1.2.10",
     "gatsby-plugin-react-helmet": "5.18.0",
