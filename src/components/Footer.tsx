@@ -1,5 +1,4 @@
-import { Box, Typography } from "@material-ui/core";
-import React from "react";
+import { Box, Typography } from "@mui/material";
 import Obfuscate from "react-obfuscate";
 
 const Footer = () => (
@@ -18,7 +17,7 @@ const Footer = () => (
         href="https://github.com/claudiorivera/claudiorivera-com"
         style={{ color: "white" }}
       >
-        <span>Made by me with Gatsby</span>
+        <span>Made by me with Next.js and Material-UI</span>
       </a>
       {". "}
       <span>

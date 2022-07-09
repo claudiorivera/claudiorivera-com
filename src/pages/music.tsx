@@ -1,38 +1,25 @@
-import { Container, Link, Typography } from "@material-ui/core";
-import { graphql } from "gatsby";
-import { FluidObject } from "gatsby-image";
-import PropTypes from "prop-types";
-import React from "react";
+import { Container, Typography } from "@mui/material";
+import Link from "next/link";
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import YouTubeEmbed from "../components/YouTubeEmbed";
+import coverImage from "../images/joe-lemke-cr-behind-kit.jpg";
 
-type MusicPageProps = {
-  data: {
-    file: {
-      childImageSharp: {
-        fluid: FluidObject;
-      };
-    };
-    allMarkdownRemark: {
-      edges: {
-        node: {
-          id: string;
-          frontmatter: {
-            title: string;
-            label: string;
-            years: string;
-            link: string;
-          };
-          html: string;
-        };
-      }[];
-    };
-  };
-};
-const MusicPage = ({ data }: MusicPageProps) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Music">
+const musicExperiences = [
+  {
+    id: 1,
+    frontmatter: {
+      link: "https://google.com",
+      title: "Google",
+      label: "Records",
+      years: "2022",
+    },
+    html: `<div>hello</div>`,
+  },
+];
+const MusicPage = () => (
+  <Layout coverImage={coverImage} coverTitle="Music">
     <Seo title="Music" />
     <Container>
       <Typography variant="h1">See</Typography>
@@ -52,82 +39,28 @@ const MusicPage = ({ data }: MusicPageProps) => (
       <Typography variant="h1">
         Selected Discography &amp; Experience
       </Typography>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Container key={node.id}>
+      {musicExperiences.map((musicExperience) => (
+        <Container key={musicExperience.id}>
           <Typography variant="body1">
             <strong>
-              <Link href={node.frontmatter.link}>{node.frontmatter.title}</Link>
+              <Link href={musicExperience.frontmatter.link}>
+                {musicExperience.frontmatter.title}
+              </Link>
               &nbsp;
             </strong>
-            ({node.frontmatter.label}) - ({node.frontmatter.years})
+            ({musicExperience.frontmatter.label}) - (
+            {musicExperience.frontmatter.years})
           </Typography>
 
           <Typography
             variant="body1"
             component="div"
-            dangerouslySetInnerHTML={{ __html: node.html }}
+            dangerouslySetInnerHTML={{ __html: musicExperience.html }}
           />
         </Container>
       ))}
     </Container>
   </Layout>
 );
-
-export const query = graphql`
-  {
-    file(relativePath: { eq: "joe-lemke-cr-behind-kit.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    allMarkdownRemark(
-      filter: { fields: { collection: { eq: "music-experience" } } }
-      sort: { order: ASC, fields: fileAbsolutePath }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            label
-            years
-            link
-          }
-          html
-        }
-      }
-    }
-  }
-`;
-
-MusicPage.propTypes = {
-  data: PropTypes.shape({
-    file: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-              label: PropTypes.string.isRequired,
-              years: PropTypes.string.isRequired,
-              link: PropTypes.string.isRequired,
-            }).isRequired,
-            html: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired
-      ).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default MusicPage;

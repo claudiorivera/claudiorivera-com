@@ -1,3 +1,4 @@
+import { Menu as MenuIcon } from "@mui/icons-material";
 import {
   AppBar,
   Button,
@@ -8,35 +9,10 @@ import {
   Toolbar,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Menu as MenuIcon } from "@material-ui/icons";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-
-const useStyles = makeStyles({
-  navBar: {
-    padding: "1rem",
-    color: "white",
-    marginTop: "2vh",
-  },
-  title: {
-    fontSize: "2.4rem",
-    fontWeight: 700,
-    letterSpacing: "-0.04em",
-  },
-  description: {
-    letterSpacing: "-.04em",
-  },
-  link: {
-    textDecoration: "none",
-    color: "white",
-  },
-  hideOnMobile: {
-    display: "none",
-  },
-});
+} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { useState } from "react";
+import Link from "./Link";
 
 const menuLinks = [
   {
@@ -62,12 +38,11 @@ type HeaderProps = {
   siteDescription: string;
 };
 const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
-  const styles = useStyles();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   // Responsive menu
-  const [anchorEl, setAnchorEl] = useState<HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const isOpen = Boolean(anchorEl);
 
   const handleClose = () => {
@@ -78,14 +53,31 @@ const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
     <AppBar
       color="transparent"
       position="relative"
-      className={styles.navBar}
       elevation={0}
+      sx={{
+        padding: "1rem",
+        color: "white",
+        marginTop: "2vh",
+      }}
     >
       <Toolbar>
         <Grid container spacing={2} alignItems="baseline">
           <Grid item>
-            <Link to="/" className={styles.link}>
-              <Typography variant="h4" className={styles.title}>
+            <Link
+              href="/"
+              sx={{
+                textDecoration: "none",
+                color: "white",
+              }}
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  fontSize: "2.4rem",
+                  fontWeight: 700,
+                  letterSpacing: "-0.04em",
+                }}
+              >
                 {siteTitle}
               </Typography>
             </Link>
@@ -93,14 +85,16 @@ const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
           <Grid item>
             <Typography
               variant={isMobile ? "h5" : "h4"}
-              className={styles.description}
+              sx={{
+                letterSpacing: "-.04em",
+              }}
             >
               {siteDescription}
             </Typography>
           </Grid>
         </Grid>
         {isMobile && (
-          <div>
+          <>
             <IconButton
               aria-label="menu"
               aria-controls="menu-appbar"
@@ -132,13 +126,13 @@ const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
                   key={index}
                   onClick={handleClose}
                   component={Link}
-                  to={url}
+                  href={url}
                 >
                   {title}
                 </MenuItem>
               ))}
             </Menu>
-          </div>
+          </>
         )}
         {!isMobile &&
           menuLinks.map(({ title, url }, index) => (
@@ -146,7 +140,7 @@ const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
               key={index}
               color="inherit"
               component={Link}
-              to={url}
+              href={url}
               size="large"
             >
               {title}
@@ -155,16 +149,6 @@ const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
       </Toolbar>
     </AppBar>
   );
-};
-
-Header.propTypes = {
-  siteDescription: PropTypes.string,
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteDescription: "The official home of Claudio Rivera",
-  siteTitle: "Claudio Rivera",
 };
 
 export default Header;

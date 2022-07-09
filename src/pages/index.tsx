@@ -1,22 +1,11 @@
-import { Container, Typography } from "@material-ui/core";
-import { graphql, Link } from "gatsby";
-import { FluidObject } from "gatsby-image";
-import PropTypes from "prop-types";
-import React from "react";
+import { Container, Typography } from "@mui/material";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import coverImage from "../images/joe-lemke-cr-cover-photo.jpg";
 
-type IndexPageProps = {
-  data: {
-    file: {
-      childImageSharp: {
-        fluid: FluidObject;
-      };
-    };
-  };
-};
-const IndexPage = ({ data }: IndexPageProps) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Hello">
+const IndexPage = () => (
+  <Layout coverImage={coverImage} coverTitle="Hello">
     <Seo title="Home" />
     <Container>
       <Typography variant="body1" paragraph>
@@ -29,34 +18,10 @@ const IndexPage = ({ data }: IndexPageProps) => (
       </Typography>
       <Typography variant="body1" paragraph>
         I am also a software developer. Please visit my{" "}
-        <Link to="/dev">development</Link> page for more info.
+        <Link href="/dev">development</Link> page for more info.
       </Typography>
     </Container>
   </Layout>
 );
-
-export const query = graphql`
-  {
-    file(relativePath: { eq: "joe-lemke-cr-cover-photo.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    file: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default IndexPage;
