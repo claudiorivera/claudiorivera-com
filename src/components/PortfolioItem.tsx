@@ -2,27 +2,21 @@ import {
   Box,
   Button,
   Grid,
-  Link,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
-import Img, { FluidObject } from "gatsby-image";
-import PropTypes from "prop-types";
-import React from "react";
+  useTheme,
+} from "@mui/material";
+import Image, { StaticImageData } from "next/future/image";
+import Link from "./Link";
 
 export type PortfolioItemType = {
-  id?: string;
+  id?: number;
   frontmatter: {
     title: string;
     description: string;
     demo_link: string;
     github_link: string;
-    screenshot: {
-      childImageSharp: {
-        fluid: FluidObject;
-      };
-    };
+    screenshot: StaticImageData;
   };
   html: string;
 };
@@ -31,7 +25,8 @@ type PortfolioItemProps = {
 };
 const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box my={!isMobile ? "7rem" : ""}>
       <Grid container spacing={2} justifyContent="center">
@@ -42,9 +37,32 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
             </Typography>
           </Link>
           <Link href={portfolioItem.frontmatter.demo_link}>
-            <Img
-              fluid={portfolioItem.frontmatter.screenshot.childImageSharp.fluid}
-            />
+            <Box
+              sx={{
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <Box
+                aria-hidden="true"
+                sx={{
+                  width: "100%",
+                  paddingBottom: "60%",
+                }}
+              />
+              <Image
+                src={portfolioItem.frontmatter.screenshot}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </Box>
           </Link>
           <Typography align="center" variant="body2">
             {portfolioItem.frontmatter.description}
@@ -88,26 +106,6 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
       </Grid>
     </Box>
   );
-};
-
-PortfolioItem.propTypes = {
-  portfolioItem: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      demo_link: PropTypes.string.isRequired,
-      github_link: PropTypes.string.isRequired,
-      screenshot: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-          fluid: PropTypes.shape({
-            src: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    html: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default PortfolioItem;

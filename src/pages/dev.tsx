@@ -1,30 +1,29 @@
-import { Box, Container, Link, Typography } from "@material-ui/core";
-import { graphql } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
-import PortfolioItem, { PortfolioItemType } from "../components/PortfolioItem";
+import { Box, Container, Typography } from "@mui/material";
+import Link from "next/link";
 import Layout from "../components/Layout";
+import PortfolioItem from "../components/PortfolioItem";
 import Seo from "../components/Seo";
-import { FluidObject } from "gatsby-image";
+import coverImage from "../images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg";
+import portfolioScreenshot from "../content/dev-portfolio/game-night/images/game-night.png";
 
-type DevPageProps = {
-  data: {
-    file: {
-      childImageSharp: {
-        fluid: FluidObject;
-      };
-    };
-    allMarkdownRemark: {
-      edges: {
-        node: PortfolioItemType;
-      }[];
-    };
-  };
-};
-const DevPage = ({ data }: DevPageProps) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
+const portfolioItems = [
+  {
+    id: 1,
+    frontmatter: {
+      title: "Google",
+      description: "Portfolio item",
+      demo_link: "https://google.com",
+      github_link: "https://google.com",
+      screenshot: portfolioScreenshot,
+    },
+    html: `<div>hello</div>`,
+  },
+];
+
+const DevPage = () => (
+  <Layout coverImage={coverImage} coverTitle="Dev">
     <Seo title="Dev" />
-    {data.allMarkdownRemark.edges.map(({ node: portfolioItem }) => (
+    {portfolioItems.map((portfolioItem) => (
       <div key={portfolioItem.id}>
         <PortfolioItem portfolioItem={portfolioItem} />
         <hr />
@@ -41,76 +40,5 @@ const DevPage = ({ data }: DevPageProps) => (
     </Container>
   </Layout>
 );
-
-export const query = graphql`
-  {
-    file(relativePath: { eq: "ferenc-almasi-L8KQIPCODV8-unsplash.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    allMarkdownRemark(
-      filter: { fields: { collection: { eq: "dev-portfolio" } } }
-      sort: { order: ASC, fields: frontmatter___order }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            description
-            demo_link
-            github_link
-            screenshot {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          html
-        }
-      }
-    }
-  }
-`;
-
-DevPage.propTypes = {
-  data: PropTypes.shape({
-    file: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-              description: PropTypes.string.isRequired,
-              demo_link: PropTypes.string.isRequired,
-              github_link: PropTypes.string.isRequired,
-              screenshot: PropTypes.shape({
-                childImageSharp: PropTypes.shape({
-                  fluid: PropTypes.shape({
-                    src: PropTypes.string.isRequired,
-                  }).isRequired,
-                }).isRequired,
-              }).isRequired,
-            }).isRequired,
-            html: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired
-      ).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default DevPage;

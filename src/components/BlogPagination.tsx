@@ -1,9 +1,3 @@
-import { Container, Grid, styled, Typography } from "@material-ui/core";
-import { ArrowBack, ArrowForward } from "@material-ui/icons";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
-
 type StyledLinkProps = {
   disabled: boolean;
 };
@@ -43,15 +37,5 @@ const BlogPagination = ({ pageContext }) => {
     </Container>
   );
 };
-
-BlogPagination.propTypes = PropTypes.shape({
-  pageContext: PropTypes.shape({
-    limit: PropTypes.number.isRequired,
-    nextPage: PropTypes.number.isRequired,
-    numPages: PropTypes.number.isRequired,
-    prevPage: PropTypes.number.isRequired,
-    skip: PropTypes.number,
-  }).isRequired,
-}).isRequired;
 
 export default BlogPagination;
