@@ -2,20 +2,20 @@ import {
   Box,
   Button,
   Grid,
+  Link,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import Image, { StaticImageData } from "next/future/image";
-import Link from "./Link";
 
 export type PortfolioItemType = {
   id?: number;
   frontmatter: {
     title: string;
     description: string;
-    demo_link: string;
-    github_link: string;
+    demoLink: string;
+    githubLink: string;
     screenshot: StaticImageData;
   };
   html: string;
@@ -29,38 +29,21 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
 
   return (
     <Box my={!isMobile ? "7rem" : ""}>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} sx={{ justifyContent: "center" }}>
         <Grid item md={6} sm={12}>
-          <Link href={portfolioItem.frontmatter.demo_link}>
+          <Link href={portfolioItem.frontmatter.demoLink}>
             <Typography variant="h1" align="center" gutterBottom>
               {portfolioItem.frontmatter.title}
             </Typography>
           </Link>
-          <Link href={portfolioItem.frontmatter.demo_link}>
-            <Box
-              sx={{
-                position: "relative",
-                overflow: "hidden",
-              }}
-            >
-              <Box
-                aria-hidden="true"
-                sx={{
-                  width: "100%",
-                  paddingBottom: "60%",
-                }}
-              />
+          <Link href={portfolioItem.frontmatter.demoLink}>
+            <Box sx={{ width: "100%", height: "auto", position: "relative" }}>
               <Image
-                src={portfolioItem.frontmatter.screenshot}
                 style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
                   width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center",
+                  height: "auto",
                 }}
+                src={portfolioItem.frontmatter.screenshot}
               />
             </Box>
           </Link>
@@ -78,7 +61,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
           <Grid
             container
             direction="row"
-            justifyContent="space-evenly"
+            sx={{ justifyContent: "space-evenly" }}
             spacing={2}
           >
             <Grid item>
@@ -86,7 +69,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
                 size="large"
                 variant="outlined"
                 color="secondary"
-                href={portfolioItem.frontmatter.demo_link}
+                href={portfolioItem.frontmatter.demoLink}
               >
                 Live Demo
               </Button>
@@ -96,7 +79,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
                 size="large"
                 variant="outlined"
                 color="secondary"
-                href={portfolioItem.frontmatter.github_link}
+                href={portfolioItem.frontmatter.githubLink}
               >
                 View Source
               </Button>

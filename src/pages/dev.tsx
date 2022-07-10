@@ -10,13 +10,24 @@ const portfolioItems = [
   {
     id: 1,
     frontmatter: {
-      title: "Google",
-      description: "Portfolio item",
-      demo_link: "https://google.com",
-      github_link: "https://google.com",
+      title: "Scavenger Hunt",
+      description:
+        "A game that challenges you to find the most random items around your house. Great for virtual parties!",
+      demoLink: "https://google.com",
+      githubLink: "https://google.com",
       screenshot: portfolioScreenshot,
     },
-    html: `<div>hello</div>`,
+    html: `<ul>
+    <li><a href="https://reactjs.org">React</a></li>
+    <li><a href="https://www.typescriptlang.org">TypeScript</a></li>
+    <li><a href="https://nextjs.org">Next.js</a></li>
+    <li><a href="https://github.com/hoangvvo/next-connect">next-connect</a></li>
+    <li><a href="https://www.mongodb.com">MongoDB</a></li>
+    <li><a href="https://next-auth.js.org">NextAuth.js</a></li>
+    <li><a href="https://swr.vercel.app">SWR</a></li>
+    <li><a href="https://material-ui.com">Material-UI</a></li>
+    <li><a href="https://cloudinary.com/">Cloudinary</a></li>
+    </ul>`,
   },
 ];
 
