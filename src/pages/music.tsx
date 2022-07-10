@@ -11,11 +11,13 @@ const musicExperiences = [
     id: 1,
     frontmatter: {
       link: "https://google.com",
-      title: "Google",
-      label: "Records",
-      years: "2022",
+      title: "Saves The Day",
+      label: "Equal Vision",
+      years: "2020 - Present",
     },
-    html: `<div>hello</div>`,
+    html: `<ul>
+    <li>Touring drummer</li>
+    </ul>`,
   },
 ];
 const MusicPage = () => (
