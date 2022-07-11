@@ -2,13 +2,12 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
-const postsDirectory = join(process.cwd(), "src/content");
+const postsDirectory = join(process.cwd(), "src/content/posts");
 
 export const getPostSlugs = () => fs.readdirSync(postsDirectory);
 
 export const getPostBySlug = (slug: string, fields: string[] = []) => {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(postsDirectory, `${slug}/index.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -21,7 +20,7 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
-      items[field] = realSlug;
+      items[field] = slug;
     }
     if (field === "content") {
       items[field] = content;
@@ -35,7 +34,7 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
   return items;
 };
 
-export const getAllPosts = (fields: string[] = []) => {
+export const getAllPosts = async (fields: string[] = []) => {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
