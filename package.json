@@ -26,6 +26,7 @@
     "remark-html": "15.0.1"
   },
   "devDependencies": {
+    "@types/glob": "7.2.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
