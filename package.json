@@ -3,7 +3,7 @@
   "private": true,
   "description": "My website. Made with Gatsby",
   "version": "2.0.0",
-  "packageManager": "pnpm@7.5.0",
+  "packageManager": "pnpm@7.5.1",
   "dependencies": {
     "@material-ui/core": "4.12.4",
     "@material-ui/icons": "4.11.3",
