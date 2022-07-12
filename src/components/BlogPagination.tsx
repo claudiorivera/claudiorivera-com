@@ -1,8 +1,8 @@
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { Container, Grid, Typography } from "@mui/material";
-import Link from "./Link";
-
 import { styled } from "@mui/material/styles";
+
+import Link from "./Link";
 
 type LinkProps = {
   disabled?: boolean;

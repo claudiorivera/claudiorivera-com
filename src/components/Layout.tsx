@@ -1,11 +1,12 @@
 import { ArrowDownward } from "@mui/icons-material";
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider, useTheme } from "@mui/material/styles";
+import { StaticImageData } from "next/future/image";
 import { ReactNode } from "react";
+
 import BackgroundImg from "./BackgroundImg";
 import Footer from "./Footer";
 import Header from "./Header";
-import { StaticImageData } from "next/future/image";
 
 const colors = {
   blue: "#0169e9",

@@ -1,16 +1,16 @@
-import Link from "@/components/Link";
 import { Box, Container, Typography } from "@mui/material";
-import { Fragment } from "react";
-import BlogPagination from "../../components/BlogPagination";
+import { GetStaticProps } from "next";
 import Image from "next/future/image";
+import { Fragment } from "react";
+import { PostType } from "types/post";
+
+import Link from "@/components/Link";
+import { getAllPosts } from "@/lib/postsApi";
+
+import BlogPagination from "../../components/BlogPagination";
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
-import featuredImage from "../../content/posts/2021/04/06/pair-programming/images/amir-abbas-abdolali-_Tm4622z4Dg-unsplash.jpg";
 import coverImage from "../../images/patrick-fore-0gkw_9fy0eQ-unsplash.jpg";
-import { GetServerSideProps, GetStaticProps } from "next";
-import { getAllPosts } from "@/lib/postsApi";
-import { PostType } from "types/post";
-import dynamic from "next/dynamic";
 
 const pageContext = {
   prevPage: 0,
@@ -60,12 +60,13 @@ const BlogPosts = ({ posts }: Props) => {
                 <Box
                   sx={{ width: "100%", height: "auto", position: "relative" }}
                 >
-                  <img
+                  <Image
                     style={{
                       width: "100%",
                       height: "auto",
                     }}
                     src={`/assets/blog/${post.featuredImage}`}
+                    alt=""
                   />
                 </Box>
                 <Typography
