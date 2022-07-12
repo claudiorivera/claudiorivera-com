@@ -1,5 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import Link from "next/link";
+
 import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";

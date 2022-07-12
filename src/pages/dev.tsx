@@ -1,10 +1,11 @@
 import { Box, Container, Typography } from "@mui/material";
 import Link from "next/link";
+
 import Layout from "../components/Layout";
 import PortfolioItem from "../components/PortfolioItem";
 import Seo from "../components/Seo";
-import coverImage from "../images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg";
 import portfolioScreenshot from "../content/dev-portfolio/game-night/images/game-night.png";
+import coverImage from "../images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg";
 
 const portfolioItems = [
   {

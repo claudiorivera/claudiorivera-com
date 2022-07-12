@@ -44,6 +44,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
                   height: "auto",
                 }}
                 src={portfolioItem.frontmatter.screenshot}
+                alt={`screenshot of ${portfolioItem.frontmatter.title}`}
               />
             </Box>
           </Link>
