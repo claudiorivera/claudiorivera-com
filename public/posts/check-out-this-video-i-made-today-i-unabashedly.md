@@ -2,7 +2,7 @@
 title: '"Still Into You" - Drum Cover'
 date: "2018-09-04"
 category: "music"
-featuredImage: "/assets/blog/IMG_0011_wide-2048x825.jpg"
+featuredImage: "/images/IMG_0011_wide-2048x825.jpg"
 ---
 
 Check out this video I made today!

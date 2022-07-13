@@ -5,7 +5,6 @@ import AppleMusicEmbed from "../components/AppleMusicEmbed";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import YouTubeEmbed from "../components/YouTubeEmbed";
-import coverImage from "../images/joe-lemke-cr-behind-kit.jpg";
 
 const musicExperiences = [
   {
@@ -22,7 +21,7 @@ const musicExperiences = [
   },
 ];
 const MusicPage = () => (
-  <Layout coverImage={coverImage} coverTitle="Music">
+  <Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" coverTitle="Music">
     <Seo title="Music" />
     <Container>
       <Typography variant="h1">See</Typography>

@@ -2,7 +2,7 @@
 title: "RIP Warped Tour"
 date: "2018-07-10"
 category: "music"
-featuredImage: "/assets/blog/IMG_5560_FL.jpg"
+featuredImage: "/images/IMG_5560_FL.jpg"
 ---
 
 **tl;dr** Warped Tour was great, and holds a very special place in my heart.

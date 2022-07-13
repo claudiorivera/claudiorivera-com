@@ -7,10 +7,10 @@ type SeoProps = {
 };
 const Seo = ({ description, lang, title }: SeoProps) => {
   const site = {
-    // TODO: use real data
     siteMetadata: {
-      description: "",
-      title: "",
+      description:
+        "The official home of musician and developer, Claudio Rivera.",
+      title: "Claudio Rivera",
     },
   };
   const metaDescription = description || site.siteMetadata.description;

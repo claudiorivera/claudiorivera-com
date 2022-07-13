@@ -2,7 +2,7 @@
 title: "Pair Programming"
 date: "2021-04-06"
 category: "tech"
-featuredImage: "/assets/blog/amir-abbas-abdolali-_Tm4622z4Dg-unsplash.jpg"
+featuredImage: "/images/amir-abbas-abdolali-_Tm4622z4Dg-unsplash.jpg"
 ---
 
 The strangest thing happens when a colleague hops on a video call and I share my screen. Instead of feeling miserable and stupid, a flip switches in my head and I'm able to crank out more code in just a half hour than I have all day. Besides the obvious way that pair programming is able to get a developer unstuck--referred to as ["rubber ducking"](https://en.wikipedia.org/wiki/Rubber_duck_debugging)--I have found that there's even more at play for me.
