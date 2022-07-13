@@ -2,7 +2,7 @@
 title: "Hi, Gatsby"
 date: "2020-10-05"
 category: "tech"
-featuredImage: "cr-lighthouse-10-05-20.png"
+featuredImage: "/assets/blog/cr-lighthouse-10-05-20.png"
 ---
 
 If this is your first time visiting my site, welcome and I hope you like it! If you've been here before, welcome again and I hope you don't notice any changes--other than faster load times! 😉

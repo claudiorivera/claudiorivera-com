@@ -2,7 +2,7 @@
 title: '"One Of My Lies"'
 date: "2020-05-17"
 category: "music"
-featuredImage: "Kerplunk.jpg"
+featuredImage: "/assets/blog/Kerplunk.jpg"
 ---
 
 Inspired by all the fun videos that musicians are putting out (particularly [the Goldfinger ones](https://www.youtube.com/watch?v=h0rSYEoBMYM), since they're a band that's near and dear to me), I decided to challenge myself to do a similar quasi-live video. Here it is:
