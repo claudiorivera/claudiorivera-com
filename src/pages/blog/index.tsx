@@ -44,9 +44,6 @@ const BlogPosts = ({ posts }: Props) => {
       <Seo title="Blog" />
       {!!posts?.length &&
         posts.map((post) => {
-          // const image = dynamic(
-          //   () => import(`src/content/posts/${slug}/${post.featuredImage}`)
-          // );
           return (
             <Fragment key={post.slug}>
               <Container>
@@ -65,7 +62,9 @@ const BlogPosts = ({ posts }: Props) => {
                       width: "100%",
                       height: "auto",
                     }}
-                    src={`/assets/blog/${post.featuredImage}`}
+                    src={post.featuredImage}
+                    width={600}
+                    height={400}
                     alt=""
                   />
                 </Box>

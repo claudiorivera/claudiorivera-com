@@ -2,7 +2,7 @@
 title: "Habit & Routine, Vol. 2"
 date: "2020-01-24"
 category: "music"
-featuredImage: "Vol-2-Small.png"
+featuredImage: "/assets/blog/Vol-2-Small.png"
 ---
 
 Hi, friends! Please welcome “[Habit & Routine: Vol. 2](https://artist.landr.com/music/628810988617)” into the world!
