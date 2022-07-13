@@ -3,10 +3,9 @@ import Link from "next/link";
 
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-import coverImage from "../images/joe-lemke-cr-cover-photo.jpg";
 
 const IndexPage = () => (
-  <Layout coverImage={coverImage} coverTitle="Hello">
+  <Layout coverImage="/images/joe-lemke-cr-cover-photo.jpg" coverTitle="Hello">
     <Seo title="Home" />
     <Container>
       <Typography variant="body1" paragraph>

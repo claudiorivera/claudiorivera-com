@@ -10,7 +10,6 @@ import { getAllPosts } from "@/lib/postsApi";
 import BlogPagination from "../../components/BlogPagination";
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
-import coverImage from "../../images/patrick-fore-0gkw_9fy0eQ-unsplash.jpg";
 
 const pageContext = {
   prevPage: 0,
@@ -40,7 +39,10 @@ type Props = {
 };
 const BlogPosts = ({ posts }: Props) => {
   return (
-    <Layout coverImage={coverImage} coverTitle="Blog">
+    <Layout
+      coverImage="/images/patrick-fore-0gkw_9fy0eQ-unsplash.jpg"
+      coverTitle="Blog"
+    >
       <Seo title="Blog" />
       {!!posts?.length &&
         posts.map((post) => {
@@ -49,7 +51,7 @@ const BlogPosts = ({ posts }: Props) => {
               <Container>
                 <div style={{ textAlign: "center" }}>
                   <Typography variant="overline">{post.category}</Typography>
-                  <Link href={post.slug}>
+                  <Link href={`/blog/${post.slug}`}>
                     <h1>{post.title}</h1>
                   </Link>
                   <h2>{post.date}</h2>

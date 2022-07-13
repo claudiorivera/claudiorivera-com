@@ -1,7 +1,6 @@
 import { ArrowDownward } from "@mui/icons-material";
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider, useTheme } from "@mui/material/styles";
-import { StaticImageData } from "next/future/image";
 import { ReactNode } from "react";
 
 import BackgroundImg from "./BackgroundImg";
@@ -15,7 +14,7 @@ const colors = {
 
 type LayoutProps = {
   children: ReactNode;
-  coverImage: StaticImageData;
+  coverImage: string;
   coverTitle?: string;
 };
 const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {

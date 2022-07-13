@@ -5,7 +5,6 @@ import Layout from "../components/Layout";
 import PortfolioItem from "../components/PortfolioItem";
 import Seo from "../components/Seo";
 import portfolioScreenshot from "../content/dev-portfolio/game-night/images/game-night.png";
-import coverImage from "../images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg";
 
 const portfolioItems = [
   {
@@ -33,7 +32,10 @@ const portfolioItems = [
 ];
 
 const DevPage = () => (
-  <Layout coverImage={coverImage} coverTitle="Dev">
+  <Layout
+    coverImage="/images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg"
+    coverTitle="Dev"
+  >
     <Seo title="Dev" />
     {portfolioItems.map((portfolioItem) => (
       <div key={portfolioItem.id}>

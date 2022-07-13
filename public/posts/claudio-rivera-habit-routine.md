@@ -2,7 +2,7 @@
 title: "Habit & Routine"
 date: "2019-09-24"
 category: "music"
-featuredImage: "/assets/blog/Vol-1-Small.png"
+featuredImage: "/images/Vol-1-Small.png"
 ---
 
 Hey, I made a pop-punk EP!

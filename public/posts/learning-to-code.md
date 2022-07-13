@@ -2,7 +2,7 @@
 title: "Learning to Code"
 date: "2020-11-28"
 category: "tech"
-featuredImage: "/assets/blog/neonbrand-uEcSKKDB1pg-unsplash.jpg"
+featuredImage: "/images/neonbrand-uEcSKKDB1pg-unsplash.jpg"
 ---
 
 In a few days, I start my first job as a Software Developer. A few people asked me about how I taught myself, so I decided to put together some resources for anyone who was interested in doing what I did.

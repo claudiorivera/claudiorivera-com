@@ -4,7 +4,7 @@ import { join } from "path";
 
 import { markdownToHtml } from "./markdownToHtml";
 
-const postsDirectory = join(process.cwd(), "src/content/posts");
+const postsDirectory = join(process.cwd(), "public/posts");
 
 export const getPostSlugs = () => fs.readdirSync(postsDirectory);
 

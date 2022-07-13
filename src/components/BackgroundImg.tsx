@@ -1,11 +1,11 @@
 // https://markoskon.com/gatsby-background-image-example/#usage
 import { Box } from "@mui/material";
-import Image, { StaticImageData } from "next/future/image";
+import Image from "next/future/image";
 import { ReactNode } from "react";
 
 type BackgroundImgProps = {
   children: ReactNode;
-  image: StaticImageData;
+  image: string;
   height: string;
   overlayColor: string;
   title: string;
@@ -41,6 +41,8 @@ const BackgroundImg = ({
       src={image}
       title={title}
       alt=""
+      width={600}
+      height={400}
     />
     <Box
       sx={{
