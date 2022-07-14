@@ -1,10 +1,27 @@
 import { Typography } from "@mui/material";
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import { PostType } from "types/post";
 
 import Layout from "@/components/Layout";
 import { getAllPosts, getPostBySlug } from "@/lib/postsApi";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { posts } = await getAllPosts({
+    fields: ["slug", "date"],
+  });
+  return {
+    paths: posts.map((post) => ({
+      params: {
+        year: post.date.split("-")[0],
+        month: post.date.split("-")[1],
+        day: post.date.split("-")[2],
+        slug: post.slug,
+      },
+    })),
+    fallback: true, // false or 'blocking'
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getPostBySlug(params?.slug as string, [
@@ -41,18 +58,3 @@ const BlogPost = ({ post }: Props) => {
 };
 
 export default BlogPost;
-
-export async function getStaticPaths() {
-  const posts = await getAllPosts(["slug"]);
-
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
-}

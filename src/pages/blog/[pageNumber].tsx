@@ -11,7 +11,8 @@ import { getAllPosts } from "@/lib/postsApi";
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log({ params });
   const { posts, pageContext } = await getAllPosts({
     fields: ["slug", "title", "date", "featuredImage", "content"],
   });
