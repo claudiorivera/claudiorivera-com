@@ -21,17 +21,14 @@ type Props = {
   };
 };
 const BlogPagination = ({ pageContext }: Props) => {
-  const prevPage =
-    pageContext.prevPage === 1 ? "" : `page-${pageContext.prevPage}`;
-
   return (
     <Container maxWidth="sm">
       <Grid container sx={{ justifyContent: "space-between" }}>
         <Grid item>
           <Typography variant="h3">
             <StyledLink
-              disabled={pageContext.prevPage <= 1}
-              href={`/blog/${prevPage}`}
+              disabled={pageContext.prevPage === 0}
+              href={`/blog?page=${pageContext.prevPage}`}
             >
               <ArrowBack /> Previous {`${pageContext.limit}`} Posts
             </StyledLink>
@@ -41,7 +38,7 @@ const BlogPagination = ({ pageContext }: Props) => {
           <Typography variant="h3">
             <StyledLink
               disabled={pageContext.nextPage >= pageContext.numPages}
-              href={`/blog/page-${pageContext.nextPage}`}
+              href={`/blog?page=${pageContext.nextPage}`}
             >
               Next {`${pageContext.limit}`} Posts <ArrowForward />
             </StyledLink>
