@@ -8,8 +8,8 @@ import BlogPagination from "@/components/BlogPagination";
 import Link from "@/components/Link";
 import { getAllPosts } from "@/lib/postsApi";
 
-import Layout from "../../components/Layout";
-import Seo from "../../components/Seo";
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { page } = query;

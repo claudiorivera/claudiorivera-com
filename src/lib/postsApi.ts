@@ -62,7 +62,7 @@ export const getAllPosts = async ({
 
   const numPages = Math.ceil(sortedPosts.length / limit);
   const currentPage = skip;
-  const prevPage = currentPage <= 1 ? 0 : currentPage - 1;
+  const prevPage = currentPage <= 1 ? 1 : currentPage - 1;
   const nextPage = currentPage >= numPages ? numPages : currentPage + 1;
 
   const response = {
