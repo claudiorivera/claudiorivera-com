@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import { join } from "path";
 
 import { markdownToHtml } from "./markdownToHtml";
+import { paginate } from "./paginate";
 
 const postsDirectory = join(process.cwd(), "public/posts");
 
@@ -37,7 +38,16 @@ export const getPostBySlug = async (slug: string, fields: string[] = []) => {
   return items;
 };
 
-export const getAllPosts = async (fields: string[] = []) => {
+type GetAllPostsArgs = {
+  fields: string[];
+  limit?: number;
+  skip?: number;
+};
+export const getAllPosts = async ({
+  fields = [],
+  limit = 3,
+  skip = 1,
+}: GetAllPostsArgs) => {
   const slugs = getPostSlugs();
 
   let posts = [];
@@ -50,5 +60,25 @@ export const getAllPosts = async (fields: string[] = []) => {
     post1.date > post2.date ? -1 : 1
   );
 
-  return sortedPosts;
+  const numPages = Math.ceil(sortedPosts.length / limit);
+  const currentPage = skip;
+  const prevPage = currentPage <= 1 ? 1 : currentPage - 1;
+  const nextPage = currentPage >= numPages ? numPages : currentPage + 1;
+
+  const response = {
+    posts: paginate({
+      array: sortedPosts,
+      limit,
+      skip,
+    }),
+    pageContext: {
+      limit,
+      numPages,
+      currentPage,
+      prevPage,
+      nextPage,
+    },
+  };
+
+  return response;
 };

@@ -30,7 +30,7 @@ const BlogPagination = ({ pageContext }: Props) => {
         <Grid item>
           <Typography variant="h3">
             <StyledLink
-              disabled={pageContext.prevPage <= 0}
+              disabled={pageContext.prevPage <= 1}
               href={`/blog/${prevPage}`}
             >
               <ArrowBack /> Previous {`${pageContext.limit}`} Posts
@@ -40,7 +40,7 @@ const BlogPagination = ({ pageContext }: Props) => {
         <Grid item>
           <Typography variant="h3">
             <StyledLink
-              disabled={pageContext.nextPage > pageContext.numPages}
+              disabled={pageContext.nextPage >= pageContext.numPages}
               href={`/blog/page-${pageContext.nextPage}`}
             >
               Next {`${pageContext.limit}`} Posts <ArrowForward />

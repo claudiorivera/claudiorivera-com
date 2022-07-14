@@ -4,40 +4,37 @@ import Image from "next/future/image";
 import { Fragment } from "react";
 import { PostType } from "types/post";
 
+import BlogPagination from "@/components/BlogPagination";
 import Link from "@/components/Link";
 import { getAllPosts } from "@/lib/postsApi";
 
-import BlogPagination from "../../components/BlogPagination";
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
 
-const pageContext = {
-  prevPage: 0,
-  limit: 10,
-  nextPage: 2,
-  numPages: 2,
-};
-
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts([
-    "slug",
-    "title",
-    "date",
-    "featuredImage",
-    "content",
-  ]);
+  const { posts, pageContext } = await getAllPosts({
+    fields: ["slug", "title", "date", "featuredImage", "content"],
+  });
 
   return {
     props: {
       posts,
+      pageContext,
     },
   };
 };
 
 type Props = {
   posts: PostType[];
+  pageContext: {
+    currentPage: number;
+    limit: number;
+    nextPage: number;
+    numPages: number;
+    prevPage: number;
+  };
 };
-const BlogPosts = ({ posts }: Props) => {
+const BlogPosts = ({ posts, pageContext }: Props) => {
   return (
     <Layout
       coverImage="/images/patrick-fore-0gkw_9fy0eQ-unsplash.jpg"
