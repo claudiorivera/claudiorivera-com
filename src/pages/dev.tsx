@@ -1,10 +1,10 @@
 import { Box, Container, Typography } from "@mui/material";
+import portfolioScreenshot from "@public/dev-portfolio/game-night/images/game-night.png";
 import Link from "next/link";
 
-import Layout from "../components/Layout";
-import PortfolioItem from "../components/PortfolioItem";
-import Seo from "../components/Seo";
-import portfolioScreenshot from "../content/dev-portfolio/game-night/images/game-night.png";
+import Layout from "@/components/Layout";
+import PortfolioItem from "@/components/PortfolioItem";
+import Seo from "@/components/Seo";
 
 const portfolioItems = [
   {
