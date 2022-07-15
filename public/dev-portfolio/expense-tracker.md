@@ -3,7 +3,7 @@ title: "Expense Tracker"
 description: "A full-stack web app to track income and expenses."
 demoLink: "https://expense-tracker.claudiorivera.com/"
 githubLink: "https://github.com/claudiorivera/expense-tracker-svelte-kit"
-screenshot: "./images/expense-tracker.png"
+screenshot: "/images/expense-tracker.png"
 order: 3
 ---
 
