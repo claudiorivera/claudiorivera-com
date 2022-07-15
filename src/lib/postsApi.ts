@@ -10,7 +10,13 @@ const postsDirectory = join(process.cwd(), "public/posts");
 export const getPostSlugs = () => fs.readdirSync(postsDirectory);
 
 export const getPostBySlug = async (slug: string, fields: string[] = []) => {
-  const realSlug = slug.replace(/\.md$/, "");
+  let realSlug: string;
+  if (Array.isArray(slug)) {
+    realSlug = slug[3];
+  } else {
+    realSlug = slug.replace(/\.md$/, "");
+  }
+
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
