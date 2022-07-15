@@ -44,6 +44,8 @@ type Props = {
 };
 
 const BlogPost = ({ post }: Props) => {
+  if (!post) return null;
+
   return (
     <Layout coverImage={post.featuredImage} coverTitle={post.title}>
       <h2>{post.date}</h2>
