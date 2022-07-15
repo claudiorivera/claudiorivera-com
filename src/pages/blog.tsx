@@ -5,11 +5,10 @@ import { Fragment } from "react";
 import { PostType } from "types/post";
 
 import BlogPagination from "@/components/BlogPagination";
+import Layout from "@/components/Layout";
 import Link from "@/components/Link";
+import Seo from "@/components/Seo";
 import { getAllPosts } from "@/lib/postsApi";
-
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { page } = query;
