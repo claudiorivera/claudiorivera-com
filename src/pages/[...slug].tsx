@@ -13,10 +13,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: posts.map((post) => ({
       params: {
-        year: post.date.split("-")[0],
-        month: post.date.split("-")[1],
-        day: post.date.split("-")[2],
-        slug: post.slug,
+        slug: [
+          post.date.split("-")[0],
+          post.date.split("-")[1],
+          post.date.split("-")[2],
+          post.slug,
+        ],
       },
     })),
     fallback: true, // false or 'blocking'
