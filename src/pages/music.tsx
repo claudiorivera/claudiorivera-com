@@ -11,7 +11,7 @@ import { getAllMusicExperiences } from "@/lib/musicExperienceApi";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const musicExperiences = await getAllMusicExperiences({
-    fields: ["slug", "title", "label", "years", "link", "content"],
+    fields: ["slug", "title", "order", "label", "years", "link", "content"],
   });
 
   return {

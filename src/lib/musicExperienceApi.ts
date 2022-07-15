@@ -58,7 +58,9 @@ export const getAllMusicExperiences = async ({
     musicExperiences.push(musicExperience);
   }
 
-  const response = musicExperiences;
+  const response = musicExperiences.sort((m1, m2) =>
+    m1.order < m2.order ? -1 : 1
+  );
 
   return response;
 };
