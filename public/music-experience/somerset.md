@@ -3,6 +3,7 @@ title: "Somerset"
 label: "Punknews"
 years: "2002 - 2008"
 link: "https://itunes.apple.com/us/artist/somerset/id102288119"
+order: 7
 ---
 
 - Drummer
