@@ -3,7 +3,7 @@ title: "Game Night"
 description: "A full-stack web app to host or join board game nights."
 demoLink: "https://game-night.claudiorivera.com/"
 githubLink: "https://github.com/claudiorivera/game-night"
-screenshot: "./images/game-night.png"
+screenshot: "/images/game-night.png"
 order: 2
 ---
 

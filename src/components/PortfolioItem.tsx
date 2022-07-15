@@ -7,19 +7,9 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import Image, { StaticImageData } from "next/future/image";
+import Image from "next/future/image";
+import { PortfolioItemType } from "types/portfolioItem";
 
-export type PortfolioItemType = {
-  id?: number;
-  frontmatter: {
-    title: string;
-    description: string;
-    demoLink: string;
-    githubLink: string;
-    screenshot: StaticImageData;
-  };
-  html: string;
-};
 type PortfolioItemProps = {
   portfolioItem: PortfolioItemType;
 };
@@ -27,29 +17,33 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  if (!portfolioItem) return null;
+
   return (
     <Box my={!isMobile ? "7rem" : ""}>
       <Grid container spacing={2} sx={{ justifyContent: "center" }}>
         <Grid item md={6} sm={12}>
-          <Link href={portfolioItem.frontmatter.demoLink}>
+          <Link href={portfolioItem.demoLink}>
             <Typography variant="h1" align="center" gutterBottom>
-              {portfolioItem.frontmatter.title}
+              {portfolioItem.title}
             </Typography>
           </Link>
-          <Link href={portfolioItem.frontmatter.demoLink}>
+          <Link href={portfolioItem.demoLink}>
             <Box sx={{ width: "100%", height: "auto", position: "relative" }}>
               <Image
                 style={{
                   width: "100%",
                   height: "auto",
                 }}
-                src={portfolioItem.frontmatter.screenshot}
-                alt={`screenshot of ${portfolioItem.frontmatter.title}`}
+                width={600}
+                height={400}
+                src={portfolioItem.screenshot}
+                alt={`screenshot of ${portfolioItem.title}`}
               />
             </Box>
           </Link>
           <Typography align="center" variant="body2">
-            {portfolioItem.frontmatter.description}
+            {portfolioItem.description}
           </Typography>
         </Grid>
         <Grid item md={6} sm={12}>
@@ -57,7 +51,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
           <Typography
             variant="body1"
             component="div"
-            dangerouslySetInnerHTML={{ __html: portfolioItem.html }}
+            dangerouslySetInnerHTML={{ __html: portfolioItem.content }}
           />
           <Grid
             container
@@ -70,7 +64,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
                 size="large"
                 variant="outlined"
                 color="secondary"
-                href={portfolioItem.frontmatter.demoLink}
+                href={portfolioItem.demoLink}
               >
                 Live Demo
               </Button>
@@ -80,7 +74,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
                 size="large"
                 variant="outlined"
                 color="secondary"
-                href={portfolioItem.frontmatter.githubLink}
+                href={portfolioItem.githubLink}
               >
                 View Source
               </Button>

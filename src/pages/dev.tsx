@@ -1,44 +1,45 @@
 import { Box, Container, Typography } from "@mui/material";
-import portfolioScreenshot from "@public/dev-portfolio/game-night/images/game-night.png";
+import { GetServerSideProps } from "next";
 import Link from "next/link";
+import { PortfolioItemType } from "types/portfolioItem";
 
 import Layout from "@/components/Layout";
 import PortfolioItem from "@/components/PortfolioItem";
 import Seo from "@/components/Seo";
+import { getAllPortfolioItems } from "@/lib/devPortfolioApi";
 
-const portfolioItems = [
-  {
-    id: 1,
-    frontmatter: {
-      title: "Scavenger Hunt",
-      description:
-        "A game that challenges you to find the most random items around your house. Great for virtual parties!",
-      demoLink: "https://google.com",
-      githubLink: "https://google.com",
-      screenshot: portfolioScreenshot,
+export const getServerSideProps: GetServerSideProps = async () => {
+  const portfolioItems = await getAllPortfolioItems({
+    fields: [
+      "slug",
+      "title",
+      "description",
+      "demoLink",
+      "githubLink",
+      "screenshot",
+      "order",
+      "content",
+    ],
+  });
+
+  return {
+    props: {
+      portfolioItems,
     },
-    html: `<ul>
-    <li><a href="https://reactjs.org">React</a></li>
-    <li><a href="https://www.typescriptlang.org">TypeScript</a></li>
-    <li><a href="https://nextjs.org">Next.js</a></li>
-    <li><a href="https://github.com/hoangvvo/next-connect">next-connect</a></li>
-    <li><a href="https://www.mongodb.com">MongoDB</a></li>
-    <li><a href="https://next-auth.js.org">NextAuth.js</a></li>
-    <li><a href="https://swr.vercel.app">SWR</a></li>
-    <li><a href="https://material-ui.com">Material-UI</a></li>
-    <li><a href="https://cloudinary.com/">Cloudinary</a></li>
-    </ul>`,
-  },
-];
+  };
+};
 
-const DevPage = () => (
+type Props = {
+  portfolioItems: PortfolioItemType[];
+};
+const DevPage = ({ portfolioItems }: Props) => (
   <Layout
     coverImage="/images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg"
     coverTitle="Dev"
   >
     <Seo title="Dev" />
     {portfolioItems.map((portfolioItem) => (
-      <div key={portfolioItem.id}>
+      <div key={portfolioItem.slug}>
         <PortfolioItem portfolioItem={portfolioItem} />
         <hr />
       </div>
