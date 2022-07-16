@@ -56,12 +56,12 @@ const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
       position="relative"
       elevation={0}
       sx={{
-        padding: "1rem",
+        padding: 2,
         color: "white",
-        marginTop: "2vh",
+        justifyContent: isMobile ? "center" : "start",
       }}
     >
-      <Toolbar sx={{ pb: 2 }}>
+      <Toolbar>
         <Grid container spacing={2} alignItems="baseline">
           <Grid item>
             <Link
