@@ -1,7 +1,7 @@
 ---
 title: "Saves The Day"
 label: "Equal Vision"
-years: "2010 - 2013, 2020 - Present"
+years: "2010 - 2013 // 2020 - Present"
 link: "https://savestheday.com"
 order: 1
 ---

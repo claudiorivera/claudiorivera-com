@@ -15,6 +15,7 @@ specifiers:
   '@types/react-dom': latest
   '@types/react-helmet': latest
   clsx: 1.2.1
+  dayjs: 1.11.3
   eslint: 8.19.0
   eslint-config-next: 12.2.2
   eslint-config-prettier: 8.5.0
@@ -42,6 +43,7 @@ dependencies:
   '@mui/icons-material': 5.8.4_dcfjwnpd6qfmrhwwcdokxzivnu
   '@mui/material': 5.9.0_bl6qrq6463ovzmqn4cmwv7vydq
   clsx: 1.2.1
+  dayjs: 1.11.3
   gray-matter: 4.0.3
   next: 12.2.2_beenoklgwfttvph5dgxj7na7aq
   react: 18.2.0
@@ -1254,6 +1256,10 @@ packages:
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
+
+  /dayjs/1.11.3:
+    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

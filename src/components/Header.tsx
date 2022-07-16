@@ -61,7 +61,7 @@ const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
         marginTop: "2vh",
       }}
     >
-      <Toolbar>
+      <Toolbar sx={{ pb: 2 }}>
         <Grid container spacing={2} alignItems="baseline">
           <Grid item>
             <Link
