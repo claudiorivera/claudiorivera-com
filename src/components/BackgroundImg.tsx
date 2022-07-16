@@ -21,7 +21,7 @@ const BackgroundImg = ({
     sx={{
       backgroundColor: overlayColor,
       position: "relative",
-      marginBottom: "5rem",
+      marginBottom: "3.5rem",
       boxShadow: "0 5px 25px 5px #0000004d",
       height,
     }}

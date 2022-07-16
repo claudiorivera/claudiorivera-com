@@ -15,6 +15,7 @@ specifiers:
   '@types/react-dom': latest
   '@types/react-helmet': latest
   clsx: 1.2.1
+  dayjs: 1.11.3
   eslint: 8.19.0
   eslint-config-next: 12.2.2
   eslint-config-prettier: 8.5.0
@@ -42,6 +43,7 @@ dependencies:
   '@mui/icons-material': 5.8.4_dcfjwnpd6qfmrhwwcdokxzivnu
   '@mui/material': 5.9.0_bl6qrq6463ovzmqn4cmwv7vydq
   clsx: 1.2.1
+  dayjs: 1.11.3
   gray-matter: 4.0.3
   next: 12.2.2_beenoklgwfttvph5dgxj7na7aq
   react: 18.2.0
@@ -52,7 +54,7 @@ dependencies:
   remark-html: 15.0.1
 
 devDependencies:
-  '@types/node': 18.0.4
+  '@types/node': 18.0.5
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
   '@types/react-helmet': 6.1.5
@@ -866,8 +868,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node/18.0.4:
-    resolution: {integrity: sha512-M0+G6V0Y4YV8cqzHssZpaNCqvYwlCiulmm0PwpNLF55r/+cT8Ol42CHRU1SEaYFH2rTwiiE1aYg/2g2rrtGdPA==}
+  /@types/node/18.0.5:
+    resolution: {integrity: sha512-En7tneq+j0qAiVwysBD79y86MT3ModuoIJbe7JXp+sb5UAjInSShmK3nXXMioBzfF7rXC12hv12d4IyCVwN4dA==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -1254,6 +1256,10 @@ packages:
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
+
+  /dayjs/1.11.3:
+    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

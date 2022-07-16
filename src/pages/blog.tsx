@@ -1,4 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
+import dayjs from "dayjs";
 import { GetServerSideProps } from "next";
 import Image from "next/future/image";
 import { Fragment } from "react";
@@ -13,7 +14,7 @@ import { getAllPosts } from "@/lib/postsApi";
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { page } = query;
   const { posts, pageContext } = await getAllPosts({
-    fields: ["slug", "title", "date", "featuredImage", "content"],
+    fields: ["slug", "title", "date", "category", "featuredImage", "content"],
     ...(!!page && { skip: +page }),
   });
 
@@ -51,15 +52,17 @@ const BlogPosts = ({ posts, pageContext }: Props) => {
           return (
             <Fragment key={post.slug}>
               <Container>
-                <div style={{ textAlign: "center" }}>
+                <Box style={{ textAlign: "center" }}>
                   <Typography variant="overline">{post.category}</Typography>
                   <Link
                     href={`/${postYear}/${postMonth}/${postDay}/${post.slug}`}
                   >
-                    <h1>{post.title}</h1>
+                    <Typography variant="h2">{post.title}</Typography>
                   </Link>
-                  <h2>{post.date}</h2>
-                </div>
+                  <Typography variant="subtitle2" my={1.5}>
+                    {dayjs(post.date).format("MMMM D, YYYY")}
+                  </Typography>
+                </Box>
                 <Box
                   sx={{ width: "100%", height: "auto", position: "relative" }}
                 >
@@ -80,7 +83,7 @@ const BlogPosts = ({ posts, pageContext }: Props) => {
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
               </Container>
-              <hr />
+              <hr style={{ marginBlock: "4rem" }} />
             </Fragment>
           );
         })}

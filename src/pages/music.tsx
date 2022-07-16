@@ -1,12 +1,17 @@
-import { Container, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  Typography,
+} from "@mui/material";
 import { GetServerSideProps } from "next";
-import Link from "next/link";
 import { MusicExperienceType } from "types/musicExperience";
 
-import AppleMusicEmbed from "@/components/AppleMusicEmbed";
+import Embed from "@/components/Embed";
 import Layout from "@/components/Layout";
+import Link from "@/components/Link";
 import Seo from "@/components/Seo";
-import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { getAllMusicExperiences } from "@/lib/musicExperienceApi";
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -28,39 +33,65 @@ const MusicPage = ({ musicExperiences }: Props) => (
   <Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" coverTitle="Music">
     <Seo title="Music" />
     <Container>
-      <Typography variant="h1">See</Typography>
-      <YouTubeEmbed
+      <Typography variant="h3" gutterBottom>
+        See
+      </Typography>
+      <Embed
         url="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
         title="YouTube playlist of random drum and music-related videos of mine."
+        iframeProps={{
+          allow:
+            "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+          frameBorder: "0",
+          allowFullScreen: true,
+        }}
       />
     </Container>
     <Container>
-      <Typography variant="h1">Hear</Typography>
-      <AppleMusicEmbed
+      <Typography variant="h3" gutterBottom>
+        Hear
+      </Typography>
+      <Embed
         url="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
         title="Songs I've Played On"
+        iframeProps={{
+          allow: "encrypted-media",
+        }}
       />
     </Container>
     <Container>
-      <Typography variant="h1">
+      <Typography variant="h3" gutterBottom>
         Selected Discography &amp; Experience
       </Typography>
       {musicExperiences.map((musicExperience) => (
-        <Container key={musicExperience.slug}>
-          <Typography variant="body1">
-            <strong>
-              <Link href={musicExperience.link}>{musicExperience.title}</Link>
-              &nbsp;
-            </strong>
-            ({musicExperience.label}) - ({musicExperience.years})
-          </Typography>
-
-          <Typography
-            variant="body1"
-            component="div"
-            dangerouslySetInnerHTML={{ __html: musicExperience.content }}
+        <Card key={musicExperience.slug} sx={{ mb: 2 }}>
+          <CardHeader
+            sx={{ px: 4, pt: 4, pb: 0 }}
+            title={
+              <>
+                <Link href={musicExperience.link}>
+                  <Typography variant="h3">{musicExperience.title}</Typography>
+                </Link>
+                <Typography variant="overline">
+                  {musicExperience.label}
+                </Typography>
+              </>
+            }
+            subheader={
+              <Typography variant="subtitle1">
+                {musicExperience.years}
+              </Typography>
+            }
           />
-        </Container>
+          <CardContent sx={{ pt: 0 }}>
+            <Typography
+              sx={{ py: 0, my: 0 }}
+              variant="body2"
+              component="div"
+              dangerouslySetInnerHTML={{ __html: musicExperience.content }}
+            />
+          </CardContent>
+        </Card>
       ))}
     </Container>
   </Layout>

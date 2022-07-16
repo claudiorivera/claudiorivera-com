@@ -50,10 +50,14 @@ export const theme = createTheme({
         },
         h3: {
           fontWeight: 700,
-          fontSize: "1.5rem",
+          fontSize: "2rem",
+        },
+        subtitle1: {
+          fontWeight: 700,
+          fontSize: "1.25rem",
         },
         overline: {
-          fontSize: "1.5rem",
+          fontSize: "1rem",
         },
       },
     },
