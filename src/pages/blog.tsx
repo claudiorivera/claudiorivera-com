@@ -16,6 +16,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { posts, pageContext } = await getAllPosts({
     fields: ["slug", "title", "date", "category", "featuredImage", "content"],
     page: !!page ? parseInt(page as string) : 1,
+    postsPerPage: 3,
   });
 
   return {

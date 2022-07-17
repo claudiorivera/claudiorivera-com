@@ -74,11 +74,11 @@ export const getAllPosts = async ({
   const response = {
     posts: paginate({
       array: sortedPosts,
-      postsPerPage: numPages,
+      postsPerPage,
       page,
     }),
     pageContext: {
-      postsPerPage,
+      postsPerPage: postsPerPage ?? sortedPosts.length,
       numPages,
       currentPage: page,
       prevPage,
