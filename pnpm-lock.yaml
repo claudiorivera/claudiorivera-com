@@ -28,7 +28,6 @@ specifiers:
   react: latest
   react-dom: latest
   react-helmet: latest
-  react-obfuscate: latest
   remark: 14.0.2
   remark-html: 15.0.1
   remark-prism: 1.3.6
@@ -51,7 +50,6 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-helmet: 6.1.0_react@18.2.0
-  react-obfuscate: 3.6.8_v2m5e27vhdewzwhryxwfaorcca
   remark: 14.0.2
   remark-html: 15.0.1
   remark-prism: 1.3.6
@@ -3233,19 +3231,6 @@ packages:
 
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
-    dev: false
-
-  /react-obfuscate/3.6.8_v2m5e27vhdewzwhryxwfaorcca:
-    resolution: {integrity: sha512-Pc47sbOJEGqOQ65y22ZFwCGHlSwGn0tykl+sQ64wHy/ALcyZxK6zsNYD8Fp3YBcU2EhmJPSKR7BypBYtnAqqyA==}
-    engines: {node: '>= 0.10.0'}
-    peerDependencies:
-      prop-types: '>= 15'
-      react: '>= 16.8'
-      react-dom: '>= 16.8'
-    dependencies:
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-side-effect/2.1.2_react@18.2.0:
