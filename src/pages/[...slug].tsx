@@ -2,7 +2,7 @@ import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import dayjs from "dayjs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-import { PostType } from "types/post";
+import { PostType } from "types";
 
 import Layout from "@/components/Layout";
 import { getAllPosts, getPostBySlug } from "@/lib/postsApi";
@@ -11,6 +11,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { posts } = await getAllPosts({
     fields: ["slug", "date"],
   });
+
   return {
     paths: posts.map((post) => ({
       params: {
@@ -46,10 +47,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 type Props = {
   post: PostType;
 };
-
 const BlogPost = ({ post }: Props) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   if (!post) return null;
 
   return (

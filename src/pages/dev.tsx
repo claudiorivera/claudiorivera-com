@@ -1,7 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
-import { PortfolioItemType } from "types/portfolioItem";
+import { Fragment } from "react";
+import { PortfolioItemType } from "types";
 
 import Layout from "@/components/Layout";
 import PortfolioItem from "@/components/PortfolioItem";
@@ -39,10 +40,10 @@ const DevPage = ({ portfolioItems }: Props) => (
   >
     <Seo title="Dev" />
     {portfolioItems.map((portfolioItem) => (
-      <div key={portfolioItem.slug}>
+      <Fragment key={portfolioItem.slug}>
         <PortfolioItem portfolioItem={portfolioItem} />
         <hr />
-      </div>
+      </Fragment>
     ))}
     <Container maxWidth="sm">
       <Box m={2}>

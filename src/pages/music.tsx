@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { GetServerSideProps } from "next";
-import { MusicExperienceType } from "types/musicExperience";
+import { MusicExperienceType } from "types";
 
 import Embed from "@/components/Embed";
 import Layout from "@/components/Layout";
