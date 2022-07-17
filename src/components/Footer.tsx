@@ -17,7 +17,7 @@ const Footer = () => (
         href="https://github.com/claudiorivera/claudiorivera-com"
         style={{ color: "white" }}
       >
-        <span>Made by me with Next.js and Material-UI</span>
+        <span>Made by me. Here&apos;s the source</span>
       </a>
       {". "}
       <span>

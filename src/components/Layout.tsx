@@ -21,13 +21,9 @@ const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const data = {
-    site: {
-      siteMetadata: {
-        title: "Claudio Rivera",
-        description: "Drummer | Developer | Drum Tech",
-      },
-    },
+  const meta = {
+    title: "Claudio Rivera",
+    description: "Drummer | Developer | Drum Tech",
   };
 
   return (
@@ -38,10 +34,7 @@ const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
         overlayColor={`${colors.blue}bf`}
         title="background"
       >
-        <Header
-          siteDescription={data.site.siteMetadata.description}
-          siteTitle={data.site.siteMetadata.title}
-        />
+        <Header siteDescription={meta.description} siteTitle={meta.title} />
         {!isMobile && coverImage && (
           <Typography
             variant="h1"

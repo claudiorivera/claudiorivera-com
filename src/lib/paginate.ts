@@ -1,7 +1,9 @@
 type PaginateArgs = {
   array: any[];
-  limit: number;
-  skip: number;
+  postsPerPage?: number;
+  page?: number;
 };
-export const paginate = ({ array, limit, skip }: PaginateArgs) =>
-  array.slice((skip - 1) * limit, skip * limit);
+export const paginate = ({ array, postsPerPage, page = 1 }: PaginateArgs) =>
+  postsPerPage
+    ? array.slice((page - 1) * postsPerPage, page * postsPerPage)
+    : array;

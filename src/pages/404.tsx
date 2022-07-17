@@ -1,3 +1,5 @@
+import { Typography } from "@mui/material";
+
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 
@@ -7,7 +9,9 @@ const NotFoundPage = () => (
     coverTitle="Uh Oh!"
   >
     <Seo title="404: Not found" />
-    <h1>There&apos;s nothing here. Sorry about that.</h1>
+    <Typography variant="h2">
+      There&apos;s nothing here. Sorry about that.
+    </Typography>
   </Layout>
 );
 

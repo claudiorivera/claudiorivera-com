@@ -9,10 +9,12 @@ type Props = {
     prevPage: number;
     nextPage: number;
     numPages: number;
-    limit: number;
+    postsPerPage: number;
   };
 };
 const BlogPagination = ({ pageContext }: Props) => {
+  const { currentPage, prevPage, nextPage, postsPerPage } = pageContext;
+
   return (
     <Container maxWidth="sm">
       <Grid container sx={{ justifyContent: "space-between" }}>
@@ -20,16 +22,12 @@ const BlogPagination = ({ pageContext }: Props) => {
           <Typography variant="h3">
             <Link
               sx={{
-                pointerEvents:
-                  pageContext.currentPage === pageContext.prevPage
-                    ? "none"
-                    : "auto",
-                opacity:
-                  pageContext.currentPage === pageContext.prevPage ? ".5" : "1",
+                pointerEvents: currentPage === prevPage ? "none" : "auto",
+                opacity: currentPage === prevPage ? ".5" : "1",
               }}
-              href={`/blog?page=${pageContext.prevPage}`}
+              href={`/blog?page=${prevPage}`}
             >
-              <ArrowBack /> Previous {`${pageContext.limit}`} Posts
+              <ArrowBack /> Previous {`${postsPerPage}`} Posts
             </Link>
           </Typography>
         </Grid>
@@ -37,16 +35,12 @@ const BlogPagination = ({ pageContext }: Props) => {
           <Typography variant="h3">
             <Link
               sx={{
-                pointerEvents:
-                  pageContext.currentPage === pageContext.nextPage
-                    ? "none"
-                    : "auto",
-                opacity:
-                  pageContext.currentPage === pageContext.nextPage ? ".5" : "1",
+                pointerEvents: currentPage === nextPage ? "none" : "auto",
+                opacity: currentPage === nextPage ? ".5" : "1",
               }}
-              href={`/blog?page=${pageContext.nextPage}`}
+              href={`/blog?page=${nextPage}`}
             >
-              Next {`${pageContext.limit}`} Posts <ArrowForward />
+              Next {`${postsPerPage}`} Posts <ArrowForward />
             </Link>
           </Typography>
         </Grid>

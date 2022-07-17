@@ -35,7 +35,6 @@ export const getPostBySlug = async (slug: string, fields: string[] = []) => {
     if (field === "content") {
       items[field] = await markdownToHtml(content || "");
     }
-
     if (typeof data[field] !== "undefined") {
       items[field] = data[field];
     }
@@ -46,13 +45,13 @@ export const getPostBySlug = async (slug: string, fields: string[] = []) => {
 
 type GetAllPostsArgs = {
   fields: string[];
-  limit?: number;
-  skip?: number;
+  postsPerPage?: number;
+  page?: number;
 };
 export const getAllPosts = async ({
   fields = [],
-  limit = 3,
-  skip = 1,
+  postsPerPage,
+  page = 1,
 }: GetAllPostsArgs) => {
   const slugs = getPostSlugs();
 
@@ -66,21 +65,22 @@ export const getAllPosts = async ({
     post1.date > post2.date ? -1 : 1
   );
 
-  const numPages = Math.ceil(sortedPosts.length / limit);
-  const currentPage = skip;
-  const prevPage = currentPage <= 1 ? 1 : currentPage - 1;
-  const nextPage = currentPage >= numPages ? numPages : currentPage + 1;
+  const numPages = postsPerPage
+    ? Math.ceil(sortedPosts.length / postsPerPage)
+    : 1;
+  const prevPage = page <= 1 ? 1 : page - 1;
+  const nextPage = page >= numPages ? numPages : page + 1;
 
   const response = {
     posts: paginate({
       array: sortedPosts,
-      limit,
-      skip,
+      postsPerPage: numPages,
+      page,
     }),
     pageContext: {
-      limit,
+      postsPerPage,
       numPages,
-      currentPage,
+      currentPage: page,
       prevPage,
       nextPage,
     },
