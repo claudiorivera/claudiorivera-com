@@ -2,7 +2,7 @@
 title: "Saves The Day"
 label: "Equal Vision"
 years: "2010 - 2013 // 2020 - Present"
-link: "https://savestheday.com"
+link: "https://savestheday.merchdirect.com"
 order: 1
 ---
 - Drummer

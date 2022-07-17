@@ -2,7 +2,7 @@
 title: '"Habit & Routine"'
 label: "Self-released"
 years: "2019"
-link: "https://artist.landr.com/music/628810708741"
+link: "https://distrokid.com/hyperfollow/claudiorivera/habit--routine"
 order: 3
 ---
 

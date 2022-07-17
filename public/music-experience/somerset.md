@@ -2,7 +2,7 @@
 title: "Somerset"
 label: "Punknews"
 years: "2002 - 2008"
-link: "https://itunes.apple.com/us/artist/somerset/id102288119"
+link: "https://music.apple.com/us/artist/somerset/1485052251"
 order: 7
 ---
 
