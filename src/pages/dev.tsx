@@ -1,34 +1,49 @@
-import { Box, Container, Link, Typography } from "@material-ui/core";
-import { graphql } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
-import PortfolioItem, { PortfolioItemType } from "../components/PortfolioItem";
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
-import { FluidObject } from "gatsby-image";
+import { Box, Container, Typography } from "@mui/material";
+import { GetStaticProps } from "next";
+import Link from "next/link";
+import { Fragment } from "react";
+import { PortfolioItemType } from "types";
 
-type DevPageProps = {
-  data: {
-    file: {
-      childImageSharp: {
-        fluid: FluidObject;
-      };
-    };
-    allMarkdownRemark: {
-      edges: {
-        node: PortfolioItemType;
-      }[];
-    };
+import Layout from "@/components/Layout";
+import PortfolioItem from "@/components/PortfolioItem";
+import Seo from "@/components/Seo";
+import { getAllPortfolioItems } from "@/lib/devPortfolioApi";
+
+export const getStaticProps: GetStaticProps = async () => {
+  const portfolioItems = await getAllPortfolioItems({
+    fields: [
+      "slug",
+      "title",
+      "description",
+      "demoLink",
+      "githubLink",
+      "screenshot",
+      "order",
+      "content",
+    ],
+  });
+
+  return {
+    props: {
+      portfolioItems,
+    },
   };
 };
-const DevPage = ({ data }: DevPageProps) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Dev">
+
+type Props = {
+  portfolioItems: PortfolioItemType[];
+};
+const DevPage = ({ portfolioItems }: Props) => (
+  <Layout
+    coverImage="/images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg"
+    coverTitle="Dev"
+  >
     <Seo title="Dev" />
-    {data.allMarkdownRemark.edges.map(({ node: portfolioItem }) => (
-      <div key={portfolioItem.id}>
+    {portfolioItems.map((portfolioItem) => (
+      <Fragment key={portfolioItem.slug}>
         <PortfolioItem portfolioItem={portfolioItem} />
         <hr />
-      </div>
+      </Fragment>
     ))}
     <Container maxWidth="sm">
       <Box m={2}>
@@ -41,76 +56,5 @@ const DevPage = ({ data }: DevPageProps) => (
     </Container>
   </Layout>
 );
-
-export const query = graphql`
-  {
-    file(relativePath: { eq: "ferenc-almasi-L8KQIPCODV8-unsplash.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    allMarkdownRemark(
-      filter: { fields: { collection: { eq: "dev-portfolio" } } }
-      sort: { order: ASC, fields: frontmatter___order }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            description
-            demo_link
-            github_link
-            screenshot {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          html
-        }
-      }
-    }
-  }
-`;
-
-DevPage.propTypes = {
-  data: PropTypes.shape({
-    file: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-              description: PropTypes.string.isRequired,
-              demo_link: PropTypes.string.isRequired,
-              github_link: PropTypes.string.isRequired,
-              screenshot: PropTypes.shape({
-                childImageSharp: PropTypes.shape({
-                  fluid: PropTypes.shape({
-                    src: PropTypes.string.isRequired,
-                  }).isRequired,
-                }).isRequired,
-              }).isRequired,
-            }).isRequired,
-            html: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired
-      ).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default DevPage;

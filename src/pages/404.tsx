@@ -1,48 +1,18 @@
-import { graphql } from "gatsby";
-import { FluidObject } from "gatsby-image";
-import PropTypes from "prop-types";
-import React from "react";
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
+import { Typography } from "@mui/material";
 
-type NotFoundPageProps = {
-  data: {
-    file: {
-      childImageSharp: {
-        fluid: FluidObject;
-      };
-    };
-  };
-};
-const NotFoundPage = ({ data }: NotFoundPageProps) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Uh Oh!">
+import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
+
+const NotFoundPage = () => (
+  <Layout
+    coverImage="/images/billow926-rTufXtvIFXc-unsplash.jpg"
+    coverTitle="Uh Oh!"
+  >
     <Seo title="404: Not found" />
-    <h1>There's nothing here. Sorry about that.</h1>
+    <Typography variant="h2">
+      There&apos;s nothing here. Sorry about that.
+    </Typography>
   </Layout>
 );
-
-export const query = graphql`
-  {
-    file(relativePath: { eq: "billow926-rTufXtvIFXc-unsplash.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
-
-NotFoundPage.propTypes = {
-  data: PropTypes.shape({
-    file: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default NotFoundPage;

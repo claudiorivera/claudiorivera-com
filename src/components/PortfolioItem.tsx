@@ -5,49 +5,45 @@ import {
   Link,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
-import Img, { FluidObject } from "gatsby-image";
-import PropTypes from "prop-types";
-import React from "react";
+  useTheme,
+} from "@mui/material";
+import Image from "next/future/image";
+import { PortfolioItemType } from "types";
 
-export type PortfolioItemType = {
-  id?: string;
-  frontmatter: {
-    title: string;
-    description: string;
-    demo_link: string;
-    github_link: string;
-    screenshot: {
-      childImageSharp: {
-        fluid: FluidObject;
-      };
-    };
-  };
-  html: string;
-};
 type PortfolioItemProps = {
   portfolioItem: PortfolioItemType;
 };
 const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  if (!portfolioItem) return null;
+
   return (
     <Box my={!isMobile ? "7rem" : ""}>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} sx={{ justifyContent: "center" }}>
         <Grid item md={6} sm={12}>
-          <Link href={portfolioItem.frontmatter.demo_link}>
+          <Link href={portfolioItem.demoLink}>
             <Typography variant="h1" align="center" gutterBottom>
-              {portfolioItem.frontmatter.title}
+              {portfolioItem.title}
             </Typography>
           </Link>
-          <Link href={portfolioItem.frontmatter.demo_link}>
-            <Img
-              fluid={portfolioItem.frontmatter.screenshot.childImageSharp.fluid}
-            />
+          <Link href={portfolioItem.demoLink}>
+            <Box sx={{ width: "100%", height: "auto", position: "relative" }}>
+              <Image
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+                width={600}
+                height={400}
+                src={portfolioItem.screenshot}
+                alt={`screenshot of ${portfolioItem.title}`}
+              />
+            </Box>
           </Link>
           <Typography align="center" variant="body2">
-            {portfolioItem.frontmatter.description}
+            {portfolioItem.description}
           </Typography>
         </Grid>
         <Grid item md={6} sm={12}>
@@ -55,12 +51,12 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
           <Typography
             variant="body1"
             component="div"
-            dangerouslySetInnerHTML={{ __html: portfolioItem.html }}
+            dangerouslySetInnerHTML={{ __html: portfolioItem.content }}
           />
           <Grid
             container
             direction="row"
-            justifyContent="space-evenly"
+            sx={{ justifyContent: "space-evenly" }}
             spacing={2}
           >
             <Grid item>
@@ -68,7 +64,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
                 size="large"
                 variant="outlined"
                 color="secondary"
-                href={portfolioItem.frontmatter.demo_link}
+                href={portfolioItem.demoLink}
               >
                 Live Demo
               </Button>
@@ -78,7 +74,7 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
                 size="large"
                 variant="outlined"
                 color="secondary"
-                href={portfolioItem.frontmatter.github_link}
+                href={portfolioItem.githubLink}
               >
                 View Source
               </Button>
@@ -88,26 +84,6 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
       </Grid>
     </Box>
   );
-};
-
-PortfolioItem.propTypes = {
-  portfolioItem: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      demo_link: PropTypes.string.isRequired,
-      github_link: PropTypes.string.isRequired,
-      screenshot: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-          fluid: PropTypes.shape({
-            src: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    html: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default PortfolioItem;

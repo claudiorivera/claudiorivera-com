@@ -1,133 +1,100 @@
-import { Container, Link, Typography } from "@material-ui/core";
-import { graphql } from "gatsby";
-import { FluidObject } from "gatsby-image";
-import PropTypes from "prop-types";
-import React from "react";
-import AppleMusicEmbed from "../components/AppleMusicEmbed";
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
-import YouTubeEmbed from "../components/YouTubeEmbed";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  Typography,
+} from "@mui/material";
+import { GetStaticProps } from "next";
+import { MusicExperienceType } from "types";
 
-type MusicPageProps = {
-  data: {
-    file: {
-      childImageSharp: {
-        fluid: FluidObject;
-      };
-    };
-    allMarkdownRemark: {
-      edges: {
-        node: {
-          id: string;
-          frontmatter: {
-            title: string;
-            label: string;
-            years: string;
-            link: string;
-          };
-          html: string;
-        };
-      }[];
-    };
+import Embed from "@/components/Embed";
+import Layout from "@/components/Layout";
+import Link from "@/components/Link";
+import Seo from "@/components/Seo";
+import { getAllMusicExperiences } from "@/lib/musicExperienceApi";
+
+export const getStaticProps: GetStaticProps = async () => {
+  const musicExperiences = await getAllMusicExperiences({
+    fields: ["slug", "title", "order", "label", "years", "link", "content"],
+  });
+
+  return {
+    props: {
+      musicExperiences,
+    },
   };
 };
-const MusicPage = ({ data }: MusicPageProps) => (
-  <Layout coverImage={data.file.childImageSharp.fluid} coverTitle="Music">
+
+type Props = {
+  musicExperiences: MusicExperienceType[];
+};
+const MusicPage = ({ musicExperiences }: Props) => (
+  <Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" coverTitle="Music">
     <Seo title="Music" />
     <Container>
-      <Typography variant="h1">See</Typography>
-      <YouTubeEmbed
+      <Typography variant="h3" gutterBottom>
+        See
+      </Typography>
+      <Embed
         url="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
         title="YouTube playlist of random drum and music-related videos of mine."
+        iframeProps={{
+          allow:
+            "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+          frameBorder: "0",
+          allowFullScreen: true,
+        }}
       />
     </Container>
     <Container>
-      <Typography variant="h1">Hear</Typography>
-      <AppleMusicEmbed
+      <Typography variant="h3" gutterBottom>
+        Hear
+      </Typography>
+      <Embed
         url="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
         title="Songs I've Played On"
+        iframeProps={{
+          allow: "encrypted-media",
+        }}
       />
     </Container>
     <Container>
-      <Typography variant="h1">
+      <Typography variant="h3" gutterBottom>
         Selected Discography &amp; Experience
       </Typography>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Container key={node.id}>
-          <Typography variant="body1">
-            <strong>
-              <Link href={node.frontmatter.link}>{node.frontmatter.title}</Link>
-              &nbsp;
-            </strong>
-            ({node.frontmatter.label}) - ({node.frontmatter.years})
-          </Typography>
-
-          <Typography
-            variant="body1"
-            component="div"
-            dangerouslySetInnerHTML={{ __html: node.html }}
+      {musicExperiences.map((musicExperience) => (
+        <Card key={musicExperience.slug} sx={{ mb: 2 }}>
+          <CardHeader
+            sx={{ px: 4, pt: 4, pb: 0 }}
+            title={
+              <>
+                <Link href={musicExperience.link}>
+                  <Typography variant="h3">{musicExperience.title}</Typography>
+                </Link>
+                <Typography variant="overline">
+                  {musicExperience.label}
+                </Typography>
+              </>
+            }
+            subheader={
+              <Typography variant="subtitle1">
+                {musicExperience.years}
+              </Typography>
+            }
           />
-        </Container>
+          <CardContent sx={{ pt: 0 }}>
+            <Typography
+              sx={{ py: 0, my: 0 }}
+              variant="body2"
+              component="div"
+              dangerouslySetInnerHTML={{ __html: musicExperience.content }}
+            />
+          </CardContent>
+        </Card>
       ))}
     </Container>
   </Layout>
 );
-
-export const query = graphql`
-  {
-    file(relativePath: { eq: "joe-lemke-cr-behind-kit.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    allMarkdownRemark(
-      filter: { fields: { collection: { eq: "music-experience" } } }
-      sort: { order: ASC, fields: fileAbsolutePath }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            label
-            years
-            link
-          }
-          html
-        }
-      }
-    }
-  }
-`;
-
-MusicPage.propTypes = {
-  data: PropTypes.shape({
-    file: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.shape({
-          src: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-              label: PropTypes.string.isRequired,
-              years: PropTypes.string.isRequired,
-              link: PropTypes.string.isRequired,
-            }).isRequired,
-            html: PropTypes.string.isRequired,
-          }).isRequired,
-        }).isRequired
-      ).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default MusicPage;

@@ -1,6 +1,6 @@
-import { Box, Typography } from "@material-ui/core";
-import React from "react";
-import Obfuscate from "react-obfuscate";
+import { Box, Typography } from "@mui/material";
+
+import Link from "./Link";
 
 const Footer = () => (
   <Box
@@ -11,34 +11,25 @@ const Footer = () => (
     mt={7}
     textAlign="center"
     bgcolor="primary.main"
-    color="white"
   >
-    <Typography variant="h5">
-      <a
+    <Typography sx={{ color: "white" }} variant="h5">
+      <Link
+        sx={{ color: "white" }}
         href="https://github.com/claudiorivera/claudiorivera-com"
-        style={{ color: "white" }}
       >
-        <span>Made by me with Gatsby</span>
-      </a>
+        Site made by me
+      </Link>
       {". "}
-      <span>
-        Email&nbsp;
-        <Obfuscate
-          style={{ color: "white" }}
-          email="me@claudiorivera.com"
-          headers={{
-            subject: "Hi Claudio",
-          }}
-        />
-        .
-      </span>{" "}
-      Connect with me on{" "}
-      <a
+      <Link sx={{ color: "white" }} href="mailto:me@claudiorivera.com">
+        Email me
+      </Link>{" "}
+      or connect on{" "}
+      <Link
+        sx={{ color: "white" }}
         href="https://www.linkedin.com/in/atclaudiorivera/"
-        style={{ color: "white" }}
       >
         LinkedIn
-      </a>
+      </Link>
       .
     </Typography>
   </Box>
