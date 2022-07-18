@@ -5,7 +5,7 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { MusicExperienceType } from "types";
 
 import Embed from "@/components/Embed";
@@ -14,7 +14,7 @@ import Link from "@/components/Link";
 import Seo from "@/components/Seo";
 import { getAllMusicExperiences } from "@/lib/musicExperienceApi";
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const musicExperiences = await getAllMusicExperiences({
     fields: ["slug", "title", "order", "label", "years", "link", "content"],
   });
