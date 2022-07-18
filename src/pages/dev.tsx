@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import { Fragment } from "react";
 import { PortfolioItemType } from "types";
@@ -9,7 +9,7 @@ import PortfolioItem from "@/components/PortfolioItem";
 import Seo from "@/components/Seo";
 import { getAllPortfolioItems } from "@/lib/devPortfolioApi";
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const portfolioItems = await getAllPortfolioItems({
     fields: [
       "slug",
