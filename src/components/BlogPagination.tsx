@@ -25,7 +25,7 @@ const BlogPagination = ({ pageContext }: Props) => {
                 pointerEvents: currentPage === prevPage ? "none" : "auto",
                 opacity: currentPage === prevPage ? ".5" : "1",
               }}
-              href={`/blog/page-${prevPage}`}
+              href={prevPage === 1 ? "/blog" : `/blog/page-${prevPage}`}
             >
               <ArrowBack /> Previous {`${postsPerPage}`} Posts
             </Link>
