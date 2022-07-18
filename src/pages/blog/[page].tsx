@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import dayjs from "dayjs";
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/future/image";
 import { Fragment } from "react";
 import { PageContext, PostType } from "types";
@@ -11,10 +11,28 @@ import Link from "@/components/Link";
 import Seo from "@/components/Seo";
 import { getAllPosts } from "@/lib/postsApi";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { pageContext } = await getAllPosts({
+    fields: ["slug"],
+  });
+
+  const { numPages } = pageContext;
+
+  return {
+    paths: Array.from({ length: numPages }, (_, i) => ({
+      params: {
+        page: `page-${i + 1}`,
+      },
+    })),
+    fallback: true, // false or 'blocking'
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const page = (params?.page as string).split("-")[1] || "1";
   const { posts, pageContext } = await getAllPosts({
     fields: ["slug", "title", "date", "category", "featuredImage", "content"],
-    page: 1,
+    page: parseInt(page),
     postsPerPage: 3,
   });
 
