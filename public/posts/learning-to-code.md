@@ -15,7 +15,7 @@ So, this is definitely not an "I went from zero coding experience to developer i
 
 Have a look at this video by [Brad Traversy](https://www.traversymedia.com) that talks a little bit about this:
 
-`youtube: [Who Can or Can't Be a Programmer?](https://www.youtube.com/watch?v=Ght0sqn52JY)`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ght0sqn52JY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 If you're still excited about learning, let's dig in!
 
