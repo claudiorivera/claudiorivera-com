@@ -27,9 +27,7 @@ export const getItemBySlug = async ({
   slug,
   fields = [],
 }: GetItemBySlugArgs) => {
-  const realSlug = Array.isArray(slug)
-    ? slug[3].replace(/\.md$/, "")
-    : slug.replace(/\.md$/, "");
+  const realSlug = Array.isArray(slug) ? slug[3] : slug.replace(/\.md$/, "");
   const fullPath = join(
     getDirectoryForContentType(contentType),
     `${realSlug}.md`
