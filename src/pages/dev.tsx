@@ -4,10 +4,8 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { PortfolioItemType } from "types";
 
-import Layout from "@/components/Layout";
-import PortfolioItem from "@/components/PortfolioItem";
-import Seo from "@/components/Seo";
-import { getAllPortfolioItems } from "@/lib/devPortfolioApi";
+import { Layout, PortfolioItem, Seo } from "@/components";
+import { getAllPortfolioItems } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
   const portfolioItems = await getAllPortfolioItems({

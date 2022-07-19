@@ -13,7 +13,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
 
-import Link from "./Link";
+import { Link } from "./Link";
 
 const menuLinks = [
   {
@@ -38,7 +38,7 @@ type HeaderProps = {
   siteTitle: string;
   siteDescription: string;
 };
-const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
+export const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -151,5 +151,3 @@ const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
     </AppBar>
   );
 };
-
-export default Header;

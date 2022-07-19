@@ -8,11 +8,8 @@ import {
 import { GetStaticProps } from "next";
 import { MusicExperienceType } from "types";
 
-import Embed from "@/components/Embed";
-import Layout from "@/components/Layout";
-import Link from "@/components/Link";
-import Seo from "@/components/Seo";
-import { getAllMusicExperiences } from "@/lib/musicExperienceApi";
+import { Embed, Layout, Link, Seo } from "@/components";
+import { getAllMusicExperiences } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
   const musicExperiences = await getAllMusicExperiences({

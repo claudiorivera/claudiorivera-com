@@ -5,11 +5,8 @@ import Image from "next/future/image";
 import { Fragment } from "react";
 import { PageContext, PostType } from "types";
 
-import BlogPagination from "@/components/BlogPagination";
-import Layout from "@/components/Layout";
-import Link from "@/components/Link";
-import Seo from "@/components/Seo";
-import { getAllPosts } from "@/lib/postsApi";
+import { BlogPagination, Layout, Link, Seo } from "@/components";
+import { getAllPosts } from "@/lib";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { pageContext } = await getAllPosts({

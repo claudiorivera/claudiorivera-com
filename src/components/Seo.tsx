@@ -5,7 +5,7 @@ type SeoProps = {
   description?: string;
   lang?: string;
 };
-const Seo = ({ description, lang, title }: SeoProps) => {
+export const Seo = ({ description, lang, title }: SeoProps) => {
   const site = {
     siteMetadata: {
       description:
@@ -43,5 +43,3 @@ const Seo = ({ description, lang, title }: SeoProps) => {
     />
   );
 };
-
-export default Seo;

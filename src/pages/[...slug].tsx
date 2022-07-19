@@ -4,8 +4,8 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import { PostType } from "types";
 
-import Layout from "@/components/Layout";
-import { getAllPosts, getPostBySlug } from "@/lib/postsApi";
+import { Layout } from "@/components";
+import { getAllPosts, getPostBySlug } from "@/lib";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { posts } = await getAllPosts({

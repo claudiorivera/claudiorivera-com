@@ -10,7 +10,7 @@ type BackgroundImgProps = {
   overlayColor: string;
   title: string;
 };
-const BackgroundImg = ({
+export const BackgroundImg = ({
   children,
   image,
   height,
@@ -58,5 +58,3 @@ const BackgroundImg = ({
     </Box>
   </Box>
 );
-
-export default BackgroundImg;
