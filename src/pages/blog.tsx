@@ -6,13 +6,16 @@ import { Fragment } from "react";
 import { PageContext, PostType } from "types";
 
 import { BlogPagination, Layout, Link } from "@/components";
-import { getAllPosts } from "@/lib";
+import { ContentType, getAllItems } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { posts, pageContext } = await getAllPosts({
+  const { data: posts, pageContext } = await getAllItems({
+    contentType: ContentType.Blog,
     fields: ["slug", "title", "date", "category", "featuredImage", "content"],
     page: 1,
-    postsPerPage: 3,
+    itemsPerPage: 3,
+    orderByField: "date",
+    orderByDirection: "desc",
   });
 
   return {

@@ -4,10 +4,11 @@ import { MusicExperienceType } from "types";
 
 import { Embed, Layout } from "@/components";
 import { MusicExperienceItem } from "@/components/MusicExperienceItem";
-import { getAllMusicExperiences } from "@/lib";
+import { ContentType, getAllItems } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const musicExperiences = await getAllMusicExperiences({
+  const { data: musicExperiences } = await getAllItems({
+    contentType: ContentType.Music,
     fields: ["slug", "title", "order", "label", "years", "link", "content"],
   });
 

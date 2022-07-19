@@ -19,7 +19,7 @@ export type MusicExperienceType = {
 
 export type PageContext = {
   currentPage: number;
-  postsPerPage: number;
+  itemsPerPage: number;
   nextPage: number;
   numPages: number;
   prevPage: number;

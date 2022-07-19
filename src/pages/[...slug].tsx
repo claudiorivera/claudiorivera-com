@@ -5,10 +5,11 @@ import React from "react";
 import { PostType } from "types";
 
 import { Layout } from "@/components";
-import { getAllPosts, getPostBySlug } from "@/lib";
+import { ContentType, getAllItems, getItemBySlug } from "@/lib";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { posts } = await getAllPosts({
+  const { data: posts } = await getAllItems({
+    contentType: ContentType.Blog,
     fields: ["slug", "date"],
   });
 
@@ -28,14 +29,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = await getPostBySlug(params?.slug as string, [
-    "slug",
-    "title",
-    "category",
-    "date",
-    "featuredImage",
-    "content",
-  ]);
+  const post = await getItemBySlug({
+    contentType: ContentType.Blog,
+    slug: params?.slug as string,
+    fields: ["slug", "title", "category", "date", "featuredImage", "content"],
+  });
 
   return {
     props: {
