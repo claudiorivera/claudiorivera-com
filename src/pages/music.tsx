@@ -1,14 +1,9 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  Container,
-  Typography,
-} from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { GetStaticProps } from "next";
 import { MusicExperienceType } from "types";
 
-import { Embed, Layout, Link, Seo } from "@/components";
+import { Embed, Layout } from "@/components";
+import { MusicExperienceItem } from "@/components/MusicExperienceItem";
 import { getAllMusicExperiences } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -27,8 +22,7 @@ type Props = {
   musicExperiences: MusicExperienceType[];
 };
 const MusicPage = ({ musicExperiences }: Props) => (
-  <Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" coverTitle="Music">
-    <Seo title="Music" />
+  <Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" title="Music">
     <Container>
       <Typography variant="h3" gutterBottom>
         See
@@ -61,34 +55,10 @@ const MusicPage = ({ musicExperiences }: Props) => (
         Selected Discography &amp; Experience
       </Typography>
       {musicExperiences.map((musicExperience) => (
-        <Card key={musicExperience.slug} sx={{ mb: 2 }}>
-          <CardHeader
-            sx={{ px: 4, pt: 4, pb: 0 }}
-            title={
-              <>
-                <Link href={musicExperience.link}>
-                  <Typography variant="h3">{musicExperience.title}</Typography>
-                </Link>
-                <Typography variant="overline">
-                  {musicExperience.label}
-                </Typography>
-              </>
-            }
-            subheader={
-              <Typography variant="subtitle1">
-                {musicExperience.years}
-              </Typography>
-            }
-          />
-          <CardContent sx={{ pt: 0 }}>
-            <Typography
-              sx={{ py: 0, my: 0 }}
-              variant="body2"
-              component="div"
-              dangerouslySetInnerHTML={{ __html: musicExperience.content }}
-            />
-          </CardContent>
-        </Card>
+        <MusicExperienceItem
+          key={musicExperience.slug}
+          musicExperience={musicExperience}
+        />
       ))}
     </Container>
   </Layout>

@@ -5,7 +5,7 @@ import Image from "next/future/image";
 import { Fragment } from "react";
 import { PageContext, PostType } from "types";
 
-import { BlogPagination, Layout, Link, Seo } from "@/components";
+import { BlogPagination, Layout, Link } from "@/components";
 import { getAllPosts } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -30,9 +30,8 @@ type Props = {
 const BlogPosts = ({ posts, pageContext }: Props) => (
   <Layout
     coverImage="/images/patrick-fore-0gkw_9fy0eQ-unsplash.jpg"
-    coverTitle="Blog"
+    title="Blog"
   >
-    <Seo title="Blog" />
     {posts.map((post) => {
       const { slug, title, date, category, featuredImage, content } = post;
       const postYear = date.split("-")[0];

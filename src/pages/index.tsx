@@ -1,11 +1,10 @@
 import { Container, Typography } from "@mui/material";
 import Link from "next/link";
 
-import { Layout, Seo } from "@/components";
+import { Layout } from "@/components";
 
 const IndexPage = () => (
-  <Layout coverImage="/images/joe-lemke-cr-cover-photo.jpg" coverTitle="Hello">
-    <Seo title="Home" />
+  <Layout coverImage="/images/joe-lemke-cr-cover-photo.jpg" title="Hello">
     <Container>
       <Typography variant="body1" paragraph>
         My name is Claudio. I&apos;ve been all over this beautiful Earth,

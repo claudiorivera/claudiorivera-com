@@ -1,6 +1,7 @@
 import { ArrowDownward } from "@mui/icons-material";
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider, useTheme } from "@mui/material/styles";
+import Head from "next/head";
 import { ReactNode } from "react";
 
 import { BackgroundImg } from "./BackgroundImg";
@@ -15,9 +16,13 @@ const colors = {
 type LayoutProps = {
   children: ReactNode;
   coverImage: string;
-  coverTitle?: string;
+  title?: string;
 };
-export const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
+export const Layout = ({
+  children,
+  coverImage,
+  title = "Home",
+}: LayoutProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -28,6 +33,17 @@ export const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Head>
+        <title>{`${title} | "Claudio Rivera"`}</title>
+        <meta name="description" content={meta.description} />
+        <meta
+          property="og:title"
+          content={`${title} | "Claudio Rivera"`}
+          key="title"
+        />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:type" content="website" />
+      </Head>
       <BackgroundImg
         image={coverImage}
         height={isMobile ? "15vh" : "100vh"}
@@ -53,7 +69,7 @@ export const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
                 padding: "1rem",
               }}
             >
-              {coverTitle || ""}
+              {title || ""}
               <ArrowDownward fontSize="large" />
             </Box>
           </Typography>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { PortfolioItemType } from "types";
 
-import { Layout, PortfolioItem, Seo } from "@/components";
+import { Layout, PortfolioItem } from "@/components";
 import { getAllPortfolioItems } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -34,9 +34,8 @@ type Props = {
 const DevPage = ({ portfolioItems }: Props) => (
   <Layout
     coverImage="/images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg"
-    coverTitle="Dev"
+    title="Dev"
   >
-    <Seo title="Dev" />
     {portfolioItems.map((portfolioItem) => (
       <Fragment key={portfolioItem.slug}>
         <PortfolioItem portfolioItem={portfolioItem} />
