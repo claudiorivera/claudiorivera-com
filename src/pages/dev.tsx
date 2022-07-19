@@ -5,10 +5,11 @@ import { Fragment } from "react";
 import { PortfolioItemType } from "types";
 
 import { Layout, PortfolioItem } from "@/components";
-import { getAllPortfolioItems } from "@/lib";
+import { ContentType, getAllItems } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const portfolioItems = await getAllPortfolioItems({
+  const { data: portfolioItems } = await getAllItems({
+    contentType: ContentType.Dev,
     fields: [
       "slug",
       "title",

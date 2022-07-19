@@ -9,11 +9,11 @@ type Props = {
     prevPage: number;
     nextPage: number;
     numPages: number;
-    postsPerPage: number;
+    itemsPerPage: number;
   };
 };
 export const BlogPagination = ({ pageContext }: Props) => {
-  const { currentPage, prevPage, nextPage, postsPerPage } = pageContext;
+  const { currentPage, prevPage, nextPage, itemsPerPage } = pageContext;
 
   return (
     <Container maxWidth="sm">
@@ -27,7 +27,7 @@ export const BlogPagination = ({ pageContext }: Props) => {
               }}
               href={prevPage === 1 ? "/blog" : `/blog/page-${prevPage}`}
             >
-              <ArrowBack /> Previous {`${postsPerPage}`} Posts
+              <ArrowBack /> Previous {`${itemsPerPage}`} Posts
             </Link>
           </Typography>
         </Grid>
@@ -40,7 +40,7 @@ export const BlogPagination = ({ pageContext }: Props) => {
               }}
               href={`/blog/page-${nextPage}`}
             >
-              Next {`${postsPerPage}`} Posts <ArrowForward />
+              Next {`${itemsPerPage}`} Posts <ArrowForward />
             </Link>
           </Typography>
         </Grid>

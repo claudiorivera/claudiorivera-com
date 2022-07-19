@@ -6,12 +6,15 @@ import { Fragment } from "react";
 import { PageContext, PostType } from "types";
 
 import { BlogPagination, Layout, Link } from "@/components";
-import { getAllPosts } from "@/lib";
+import { ContentType, getAllItems } from "@/lib";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { pageContext } = await getAllPosts({
+  const { pageContext } = await getAllItems({
+    contentType: ContentType.Blog,
     fields: ["slug"],
-    postsPerPage: 3,
+    itemsPerPage: 3,
+    orderByField: "date",
+    orderByDirection: "desc",
   });
 
   const { numPages } = pageContext;
@@ -30,10 +33,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const page = (params?.page as string).split("-")[1];
-  const { posts, pageContext } = await getAllPosts({
+  const { data: posts, pageContext } = await getAllItems({
+    contentType: ContentType.Blog,
     fields: ["slug", "title", "date", "category", "featuredImage", "content"],
     page: parseInt(page),
-    postsPerPage: 3,
+    itemsPerPage: 3,
+    orderByField: "date",
+    orderByDirection: "desc",
   });
 
   if (!posts) {

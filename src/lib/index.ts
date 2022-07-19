@@ -1,5 +1,3 @@
-export * from "./devPortfolioApi";
+export * from "./markdownApi";
 export * from "./markdownToHtml";
-export * from "./musicExperienceApi";
 export * from "./paginate";
-export * from "./postsApi";
