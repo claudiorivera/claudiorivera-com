@@ -15,7 +15,7 @@ specifiers:
   '@types/react-dom': latest
   '@types/remark-prism': 1.3.3
   clsx: 1.2.1
-  dayjs: 1.11.3
+  dayjs: 1.11.4
   eslint: 8.20.0
   eslint-config-next: 12.2.2
   eslint-config-prettier: 8.5.0
@@ -42,7 +42,7 @@ dependencies:
   '@mui/icons-material': 5.8.4_67klntijwxqlm2hij5x527mwqy
   '@mui/material': 5.9.1_bl6qrq6463ovzmqn4cmwv7vydq
   clsx: 1.2.1
-  dayjs: 1.11.3
+  dayjs: 1.11.4
   gray-matter: 4.0.3
   next: 12.2.2_beenoklgwfttvph5dgxj7na7aq
   react: 18.2.0
@@ -1365,8 +1365,8 @@ packages:
       whatwg-url: 8.7.0
     dev: false
 
-  /dayjs/1.11.3:
-    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
+  /dayjs/1.11.4:
+    resolution: {integrity: sha512-Zj/lPM5hOvQ1Bf7uAvewDaUcsJoI6JmNqmHhHl3nyumwe0XHwt8sWdOVAPACJzCebL8gQCi+K49w7iKWnGwX9g==}
     dev: false
 
   /debug/2.6.9:
