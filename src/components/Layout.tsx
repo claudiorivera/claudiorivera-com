@@ -34,11 +34,11 @@ export const Layout = ({
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>{`${title} | "Claudio Rivera"`}</title>
+        <title>{`${title} | Claudio Rivera`}</title>
         <meta name="description" content={meta.description} />
         <meta
           property="og:title"
-          content={`${title} | "Claudio Rivera"`}
+          content={`${title} | Claudio Rivera`}
           key="title"
         />
         <meta property="og:description" content={meta.description} />
