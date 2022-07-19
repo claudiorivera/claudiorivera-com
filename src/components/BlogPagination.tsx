@@ -1,7 +1,7 @@
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { Container, Grid, Typography } from "@mui/material";
 
-import Link from "./Link";
+import { Link } from "./Link";
 
 type Props = {
   pageContext: {
@@ -12,7 +12,7 @@ type Props = {
     postsPerPage: number;
   };
 };
-const BlogPagination = ({ pageContext }: Props) => {
+export const BlogPagination = ({ pageContext }: Props) => {
   const { currentPage, prevPage, nextPage, postsPerPage } = pageContext;
 
   return (
@@ -48,5 +48,3 @@ const BlogPagination = ({ pageContext }: Props) => {
     </Container>
   );
 };
-
-export default BlogPagination;

@@ -13,7 +13,7 @@ import { PortfolioItemType } from "types";
 type PortfolioItemProps = {
   portfolioItem: PortfolioItemType;
 };
-const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
+export const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -85,5 +85,3 @@ const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
     </Box>
   );
 };
-
-export default PortfolioItem;

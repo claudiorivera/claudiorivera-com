@@ -7,7 +7,7 @@ type EmbedProps = {
     [key: string]: string | boolean;
   };
 };
-const Embed = ({ url, title, iframeProps }: EmbedProps) => (
+export const Embed = ({ url, title, iframeProps }: EmbedProps) => (
   <Box
     sx={{
       position: "relative",
@@ -30,5 +30,3 @@ const Embed = ({ url, title, iframeProps }: EmbedProps) => (
     />
   </Box>
 );
-
-export default Embed;

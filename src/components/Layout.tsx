@@ -3,9 +3,9 @@ import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider, useTheme } from "@mui/material/styles";
 import { ReactNode } from "react";
 
-import BackgroundImg from "./BackgroundImg";
-import Footer from "./Footer";
-import Header from "./Header";
+import { BackgroundImg } from "./BackgroundImg";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
 
 const colors = {
   blue: "#0169e9",
@@ -17,7 +17,7 @@ type LayoutProps = {
   coverImage: string;
   coverTitle?: string;
 };
-const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
+export const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -66,5 +66,3 @@ const Layout = ({ children, coverImage, coverTitle }: LayoutProps) => {
     </ThemeProvider>
   );
 };
-
-export default Layout;

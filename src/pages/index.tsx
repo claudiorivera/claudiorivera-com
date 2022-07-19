@@ -1,8 +1,7 @@
 import { Container, Typography } from "@mui/material";
 import Link from "next/link";
 
-import Layout from "@/components/Layout";
-import Seo from "@/components/Seo";
+import { Layout, Seo } from "@/components";
 
 const IndexPage = () => (
   <Layout coverImage="/images/joe-lemke-cr-cover-photo.jpg" coverTitle="Hello">

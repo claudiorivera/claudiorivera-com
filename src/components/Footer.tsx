@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 
-import Link from "./Link";
+import { Link } from "./Link";
 
-const Footer = () => (
+export const Footer = () => (
   <Box
     display="flex"
     flexDirection="column"
@@ -34,5 +34,3 @@ const Footer = () => (
     </Typography>
   </Box>
 );
-
-export default Footer;
