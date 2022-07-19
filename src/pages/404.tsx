@@ -1,13 +1,12 @@
 import { Typography } from "@mui/material";
 
-import { Layout, Seo } from "@/components";
+import { Layout } from "@/components";
 
 const NotFoundPage = () => (
   <Layout
     coverImage="/images/billow926-rTufXtvIFXc-unsplash.jpg"
-    coverTitle="Uh Oh!"
+    title="Uh Oh! Page Not Found"
   >
-    <Seo title="404: Not found" />
     <Typography variant="h2">
       There&apos;s nothing here. Sorry about that.
     </Typography>
