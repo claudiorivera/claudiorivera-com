@@ -1,4 +1,4 @@
-import "../styles/global.css";
+import "@/styles/global.css";
 
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { CssBaseline, GlobalStyles } from "@mui/material";
