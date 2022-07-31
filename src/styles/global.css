@@ -1,0 +1,18 @@
+.iframe-wrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  margin-bottom: 2rem;
+}
+
+.iframe-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* markdown images are wrapped in p tags */
+p > img {
+  max-width: 100%;
+}
