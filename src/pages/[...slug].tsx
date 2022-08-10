@@ -52,7 +52,7 @@ const BlogPost = ({ post }: Props) => {
   if (!post) return null;
 
   return (
-    <Layout coverImage={post.featuredImage} title={`${post.title} | Blog`}>
+    <Layout coverImage={post.featuredImage} title={`${post.title}`}>
       {isMobile && <Typography variant="h2">{post.title}</Typography>}
       <Typography variant="overline">{post.category}</Typography>
       <Typography variant="h3">
