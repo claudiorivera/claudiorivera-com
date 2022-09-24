@@ -1,10 +1,10 @@
-.iframe-wrapper {
+.videoWrapper {
   position: relative;
   aspect-ratio: 16/9;
   margin-bottom: 2rem;
 }
 
-.iframe-content {
+.video {
   position: absolute;
   top: 0;
   left: 0;
