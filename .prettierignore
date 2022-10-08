@@ -1,6 +1,6 @@
+.next
+node_modules
 .cache
 package.json
 package-lock.json
-public
-.next
-node_modules
+pnpm-lock.yaml

@@ -17,7 +17,7 @@ Fortunately, it didn't take much time to search online for a hint, and my pal "G
 
 ```javascript
 const isPangram = (string) =>
-  [...new Set(string.replace(/\s/g, "").toLowerCase().split(""))].length >= 26;
+	[...new Set(string.replace(/\s/g, "").toLowerCase().split(""))].length >= 26;
 ```
 
 I know every experienced coder will tell you that the best skill one can have is Googling the solution, and I strongly agree with that, but it also feels nice to be able to think up an algorithm all by myself. However, I won't beat myself up too much, because the next time I need to find unique values in a set, I'll know exactly where to look!
