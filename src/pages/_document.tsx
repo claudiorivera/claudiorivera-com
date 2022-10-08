@@ -1,5 +1,6 @@
 import createEmotionServer from "@emotion/server/create-instance";
 import Document, { Head, Html, Main, NextScript } from "next/document";
+import Script from "next/script";
 import * as React from "react";
 
 import { createEmotionCache, theme } from "@/styles";
@@ -9,6 +10,19 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
+					<Script
+						async
+						src="https://www.googletagmanager.com/gtag/js?id=UA-164475801-1"
+					/>
+					<Script id="ga">
+						{`
+							window.dataLayer = window.dataLayer || [];
+							function gtag(){dataLayer.push(arguments);}
+							gtag('js', new Date());
+
+							gtag('config', 'UA-164475801-1');
+						`}
+					</Script>
 					{/* PWA primary color */}
 					<meta name="theme-color" content={theme.palette.primary.main} />
 					<link rel="shortcut icon" href="/static/favicon.ico" />
