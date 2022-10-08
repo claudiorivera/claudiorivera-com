@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
 				</Head>
 				<Script
 					async
-					src="https://www.googletagmanager.com/gtag/js?id=UA-164475801-1"
+					src="https://www.googletagmanager.com/gtag/js?id=G-48FTKRH0J5"
 				/>
 				<Script id="google-analytics">
 					{`
@@ -30,7 +30,7 @@ export default class MyDocument extends Document {
 						function gtag(){dataLayer.push(arguments);}
 						gtag('js', new Date());
 
-						gtag('config', 'UA-164475801-1');
+						gtag('config', 'G-48FTKRH0J5');
 					`}
 				</Script>
 				<body>
