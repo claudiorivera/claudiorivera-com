@@ -5,6 +5,7 @@ import { CssBaseline, GlobalStyles } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import * as React from "react";
 
 import { createEmotionCache, theme } from "@/styles";
@@ -28,6 +29,19 @@ export default function MyApp(props: MyAppProps) {
 			<Head>
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
 			</Head>
+			<Script
+				async
+				src="https://www.googletagmanager.com/gtag/js?id=G-48FTKRH0J5"
+			/>
+			<Script id="google-analytics">
+				{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+
+					gtag('config', 'G-48FTKRH0J5');
+				`}
+			</Script>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<GlobalStyles
