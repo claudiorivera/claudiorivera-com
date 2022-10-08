@@ -10,19 +10,6 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<Script
-						async
-						src="https://www.googletagmanager.com/gtag/js?id=UA-164475801-1"
-					/>
-					<Script id="ga">
-						{`
-							window.dataLayer = window.dataLayer || [];
-							function gtag(){dataLayer.push(arguments);}
-							gtag('js', new Date());
-
-							gtag('config', 'UA-164475801-1');
-						`}
-					</Script>
 					{/* PWA primary color */}
 					<meta name="theme-color" content={theme.palette.primary.main} />
 					<link rel="shortcut icon" href="/static/favicon.ico" />
@@ -33,6 +20,19 @@ export default class MyDocument extends Document {
 					<meta name="emotion-insertion-point" content="" />
 					{(this.props as any).emotionStyleTags}
 				</Head>
+				<Script
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=UA-164475801-1"
+				/>
+				<Script id="google-analytics">
+					{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+
+						gtag('config', 'UA-164475801-1');
+					`}
+				</Script>
 				<body>
 					<Main />
 					<NextScript />
