@@ -27,7 +27,7 @@ export const BlogPagination = ({ pageContext }: Props) => {
 							}}
 							href={prevPage === 1 ? "/blog" : `/blog/page-${prevPage}`}
 						>
-							<ArrowBack /> Previous {`${itemsPerPage}`} Posts
+							<ArrowBack /> Previous {`${itemsPerPage}`}
 						</Link>
 					</Typography>
 				</Grid>
@@ -40,7 +40,7 @@ export const BlogPagination = ({ pageContext }: Props) => {
 							}}
 							href={`/blog/page-${nextPage}`}
 						>
-							Next {`${itemsPerPage}`} Posts <ArrowForward />
+							Next {`${itemsPerPage}`} <ArrowForward />
 						</Link>
 					</Typography>
 				</Grid>
