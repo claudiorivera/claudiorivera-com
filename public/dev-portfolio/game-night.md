@@ -8,6 +8,7 @@ order: 2
 ---
 
 - [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
 - [Next.js](https://nextjs.org)
 - [Material-UI](https://material-ui.com)
 - [Postgres](https://www.postgresql.org)
