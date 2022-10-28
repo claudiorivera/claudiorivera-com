@@ -14,7 +14,7 @@ specifiers:
   '@types/react': latest
   '@types/react-dom': latest
   '@types/remark-prism': 1.3.3
-  '@vercel/analytics': 0.1.2
+  '@vercel/analytics': 0.1.3
   clsx: 1.2.1
   dayjs: 1.11.6
   eslint: 8.26.0
@@ -43,7 +43,7 @@ dependencies:
   '@fontsource/roboto': 4.5.8
   '@mui/icons-material': 5.10.9_4ucrevsrp5tdlzg44kesjenzrm
   '@mui/material': 5.10.11_gs4twfomdgooimayvnfrqgiwam
-  '@vercel/analytics': 0.1.2_react@18.2.0
+  '@vercel/analytics': 0.1.3_react@18.2.0
   clsx: 1.2.1
   dayjs: 1.11.6
   gray-matter: 4.0.3
@@ -1006,8 +1006,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vercel/analytics/0.1.2_react@18.2.0:
-    resolution: {integrity: sha512-eV2XRMRQJzPcwAskfNicAwFr5+e/u76JcS2fJooWvaT9xAg/sX0RzkgRxDZXPjnRts2ErvjhoETmbnquAMBY9A==}
+  /@vercel/analytics/0.1.3_react@18.2.0:
+    resolution: {integrity: sha512-zJuEwzvi0bBmWrMrj9jvyMS+X6iUdW3m/y5P7aOLwJQKHsJyfpdINo/4Rv+wxubz3gl4nRqIQdtOFCe1P1ErXQ==}
     peerDependencies:
       react: ^16.8||^17||^18
     dependencies:
