@@ -1,6 +1,6 @@
 // https://markoskon.com/gatsby-background-image-example/#usage
 import { Box } from "@mui/material";
-import Image from "next/future/image";
+import Image from "next/image";
 import { ReactNode } from "react";
 
 type BackgroundImgProps = {

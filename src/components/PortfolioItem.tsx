@@ -7,7 +7,7 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
-import Image from "next/future/image";
+import Image from "next/image";
 import { PortfolioItemType } from "types";
 
 type PortfolioItemProps = {

@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import dayjs from "dayjs";
 import { GetStaticProps } from "next";
-import Image from "next/future/image";
+import Image from "next/image";
 import { Fragment } from "react";
 import { PageContext, PostType } from "types";
 
