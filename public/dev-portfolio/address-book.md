@@ -8,11 +8,12 @@ order: 4
 ---
 
 - [Create T3 App](https://create.t3.gg)
-  - [TypeScript](https://www.typescriptlang.org)
-  - [Next.js](https://nextjs.org)
-  - [tRPC](https://trpc.io)
-  - [Tailwind CSS](https://tailwindcss.com)
-  - [Prisma](https://www.prisma.io)
+- [TypeScript](https://www.typescriptlang.org)
+- [Next.js](https://nextjs.org)
+- [tRPC](https://trpc.io)
+- [Tailwind CSS](https://tailwindcss.com)
+- [daisyUI](https://daisyui.com)
+- [Prisma](https://www.prisma.io)
 - [Postgres](https://www.postgresql.org)
 - [React Hook Form](https://react-hook-form.com)
 - [Zod](https://zod.dev)
