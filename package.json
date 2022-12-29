@@ -3,7 +3,7 @@
   "private": true,
   "description": "My website",
   "version": "2.1.0",
-  "packageManager": "pnpm@7.20.0",
+  "packageManager": "pnpm@7.21.0",
   "dependencies": {
     "@emotion/cache": "11.10.5",
     "@emotion/react": "11.10.5",
