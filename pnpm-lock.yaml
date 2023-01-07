@@ -24,7 +24,7 @@ specifiers:
   eslint-plugin-unused-imports: 2.0.0
   gray-matter: 4.0.3
   next: 13.1.1
-  prettier: 2.8.1
+  prettier: 2.8.2
   react: 18.2.0
   react-dom: 18.2.0
   remark: 14.0.2
@@ -65,7 +65,7 @@ devDependencies:
   eslint-config-prettier: 8.6.0_eslint@8.31.0
   eslint-plugin-simple-import-sort: 8.0.0_eslint@8.31.0
   eslint-plugin-unused-imports: 2.0.0_eslint@8.31.0
-  prettier: 2.8.1
+  prettier: 2.8.2
   typescript: 4.9.4
 
 packages:
@@ -3317,8 +3317,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.8.1:
-    resolution: {integrity: sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==}
+  /prettier/2.8.2:
+    resolution: {integrity: sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
