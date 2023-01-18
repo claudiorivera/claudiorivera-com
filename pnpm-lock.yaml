@@ -5,8 +5,8 @@ specifiers:
   '@emotion/react': 11.10.5
   '@emotion/server': 11.10.0
   '@emotion/styled': 11.10.5
-  '@fontsource/eb-garamond': 4.5.10
-  '@fontsource/inter': 4.5.14
+  '@fontsource/eb-garamond': 4.5.11
+  '@fontsource/inter': 4.5.15
   '@fontsource/roboto': 4.5.8
   '@mui/icons-material': 5.11.0
   '@mui/material': 5.11.5
@@ -38,8 +38,8 @@ dependencies:
   '@emotion/react': 11.10.5_6d5eu3nhwowb2fuh2wwiir3uae
   '@emotion/server': 11.10.0
   '@emotion/styled': 11.10.5_vbwg7cjixi2qntm4zmjad7sjzi
-  '@fontsource/eb-garamond': 4.5.10
-  '@fontsource/inter': 4.5.14
+  '@fontsource/eb-garamond': 4.5.11
+  '@fontsource/inter': 4.5.15
   '@fontsource/roboto': 4.5.8
   '@mui/icons-material': 5.11.0_qf6ggnnrpsyhzwt6sk54rmqqzq
   '@mui/material': 5.11.5_lskpmcsdi7ipu6qpuapyu56ihm
@@ -467,12 +467,12 @@ packages:
       - supports-color
     dev: true
 
-  /@fontsource/eb-garamond/4.5.10:
-    resolution: {integrity: sha512-smk/GMWjIN6+v/d1o+2GAtUh2OceHe4R7xrPX7UD8EZ36ndOaJWJlh48mwh+Yh6MN6Mr3QIu/LYOspVcUw2Zsg==}
+  /@fontsource/eb-garamond/4.5.11:
+    resolution: {integrity: sha512-LwhKdD20iu3/Bzf7BCUg6YXwSFS0ouaCQJj0d+pZStKQlGiH/J5BGB8bhEqVeRdsoNRYyCs9IX9lIXpjvPOnRQ==}
     dev: false
 
-  /@fontsource/inter/4.5.14:
-    resolution: {integrity: sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==}
+  /@fontsource/inter/4.5.15:
+    resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
     dev: false
 
   /@fontsource/roboto/4.5.8:
