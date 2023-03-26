@@ -13,6 +13,7 @@ order: 2
 - [Headless UI](https://headlessui.dev)
 - [daisyUI](https://daisyui.com)
 - [Postgres](https://www.postgresql.org)
+- [tRPC](https://trpc.io)
 - [Prisma](https://www.prisma.io/)
 - [NextAuth.js](https://next-auth.js.org)
 - [dayjs](https://day.js.org)
