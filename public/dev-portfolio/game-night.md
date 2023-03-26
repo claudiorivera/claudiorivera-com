@@ -8,13 +8,13 @@ order: 2
 ---
 
 - [React](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
 - [Next.js](https://nextjs.org)
-- [Material-UI](https://material-ui.com)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Headless UI](https://headlessui.dev)
+- [daisyUI](https://daisyui.com)
 - [Postgres](https://www.postgresql.org)
-- [Prisma](https://www.prisma.io)
-- [SWR](https://swr.vercel.app)
+- [Prisma](https://www.prisma.io/)
 - [NextAuth.js](https://next-auth.js.org)
-- [Moment](https://momentjs.com)
+- [dayjs](https://day.js.org)
 - [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser)
 - [BoardGameGeek API2](https://boardgamegeek.com/wiki/page/BGG_XML_API2)
