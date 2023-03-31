@@ -15,7 +15,7 @@ order: 2
 - [Postgres](https://www.postgresql.org)
 - [tRPC](https://trpc.io)
 - [Prisma](https://www.prisma.io/)
-- [NextAuth.js](https://next-auth.js.org)
+- [Clerk](https://clerk.com)
 - [dayjs](https://day.js.org)
 - [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser)
 - [BoardGameGeek API2](https://boardgamegeek.com/wiki/page/BGG_XML_API2)
