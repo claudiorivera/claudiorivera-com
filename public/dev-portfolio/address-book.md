@@ -9,7 +9,7 @@ order: 4
 
 - [Create T3 App](https://create.t3.gg)
 - [TypeScript](https://www.typescriptlang.org)
-- [Next.js](https://nextjs.org)
+- [Next.js](https://nextjs.org) (Edge Runtime)
 - [tRPC](https://trpc.io)
 - [Tailwind CSS](https://tailwindcss.com)
 - [daisyUI](https://daisyui.com)
