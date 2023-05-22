@@ -20,8 +20,8 @@ dependencies:
     specifier: 4.5.15
     version: 4.5.15
   '@fontsource/roboto':
-    specifier: 4.5.8
-    version: 4.5.8
+    specifier: 5.0.1
+    version: 5.0.1
   '@mui/icons-material':
     specifier: 5.11.16
     version: 5.11.16(@mui/material@5.13.2)(@types/react@18.2.6)(react@18.2.0)
@@ -324,8 +324,8 @@ packages:
     resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
     dev: false
 
-  /@fontsource/roboto@4.5.8:
-    resolution: {integrity: sha512-CnD7zLItIzt86q4Sj3kZUiLcBk1dSk81qcqgMGaZe7SQ1P8hFNxhMl5AZthK1zrDM5m74VVhaOpuMGIL4gagaA==}
+  /@fontsource/roboto@5.0.1:
+    resolution: {integrity: sha512-pWF64nF35Tfoh2kWgOuJYEFTLkpn+O3/GIR//u1MGD9b1yR+UBwYKXmcNx9CRyNPjMdWjkdN9GKDHhaWZRYbnw==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:
