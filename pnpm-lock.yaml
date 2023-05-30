@@ -14,8 +14,8 @@ dependencies:
     specifier: 11.11.0
     version: 11.11.0(@emotion/react@11.11.0)(@types/react@18.2.7)(react@18.2.0)
   '@fontsource/eb-garamond':
-    specifier: 5.0.1
-    version: 5.0.1
+    specifier: 5.0.2
+    version: 5.0.2
   '@fontsource/inter':
     specifier: 4.5.15
     version: 4.5.15
@@ -316,8 +316,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/eb-garamond@5.0.1:
-    resolution: {integrity: sha512-GE+H+YmsOz1w8aLZTxQd68mceJA+9g++IMcFDRwXigXWpMZmCeZRKbebEocDaBk/508/qjw2wzEGkhpVEjDsWA==}
+  /@fontsource/eb-garamond@5.0.2:
+    resolution: {integrity: sha512-cHf0dKNMdfNhVc1p3/rsyMFBpBNOMyuHEUNMspvICYOyd7M25PPleHvO1/TDA8fC2XsimYFND/YoXoyq6DPBOQ==}
     dev: false
 
   /@fontsource/inter@4.5.15:
