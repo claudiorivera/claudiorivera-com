@@ -6,7 +6,7 @@
   "packageManager": "pnpm@8.5.1",
   "dependencies": {
     "@emotion/cache": "11.11.0",
-    "@emotion/react": "11.11.0",
+    "@emotion/react": "11.11.1",
     "@emotion/server": "11.11.0",
     "@emotion/styled": "11.11.0",
     "@fontsource/eb-garamond": "5.0.2",
