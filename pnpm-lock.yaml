@@ -39,8 +39,8 @@ dependencies:
     specifier: 1.2.1
     version: 1.2.1
   dayjs:
-    specifier: 1.11.8
-    version: 1.11.8
+    specifier: 1.11.9
+    version: 1.11.9
   gray-matter:
     specifier: 4.0.3
     version: 4.0.3
@@ -1212,8 +1212,8 @@ packages:
       whatwg-url: 8.7.0
     dev: false
 
-  /dayjs@1.11.8:
-    resolution: {integrity: sha512-LcgxzFoWMEPO7ggRv1Y2N31hUf2R0Vj7fuy/m+Bg1K8rr+KAs1AEy4y9jd5DXe8pbHgX+srkHNS7TH6Q6ZhYeQ==}
+  /dayjs@1.11.9:
+    resolution: {integrity: sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==}
     dev: false
 
   /debug@2.6.9:
