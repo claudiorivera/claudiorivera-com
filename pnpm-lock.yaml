@@ -18,14 +18,14 @@ dependencies:
     specifier: 11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.18)(react@18.2.0)
   '@fontsource/eb-garamond':
-    specifier: 5.0.5
-    version: 5.0.5
+    specifier: 5.0.6
+    version: 5.0.6
   '@fontsource/inter':
-    specifier: 5.0.5
-    version: 5.0.5
+    specifier: 5.0.6
+    version: 5.0.6
   '@fontsource/roboto':
-    specifier: 5.0.5
-    version: 5.0.5
+    specifier: 5.0.6
+    version: 5.0.6
   '@mui/icons-material':
     specifier: 5.14.3
     version: 5.14.3(@mui/material@5.14.3)(@types/react@18.2.18)(react@18.2.0)
@@ -332,16 +332,16 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/eb-garamond@5.0.5:
-    resolution: {integrity: sha512-a6td0ESxRXyrZ4i+yQcEazfQWaXONluUgi29rz8pnoIljkdgGw6JVWPNBV8jAM1oykaZy1ikxkZKVYCnnAa5Ug==}
+  /@fontsource/eb-garamond@5.0.6:
+    resolution: {integrity: sha512-iV4Ur5+TLL8daspED/HAeidk0kzwAc4rNCuJDPBAtUBvHfabk0XenKZ4hyQ45sUcPMiLKmxrkBjtWjXyqaHxlg==}
     dev: false
 
-  /@fontsource/inter@5.0.5:
-    resolution: {integrity: sha512-RE1JmWRB6Kxo+1nXUnORSSH5uKgUZ2QEQE+h/nsNt758C+17G9y26E9QiAsIqsG13NpKhwn22EeECfyC+da5ew==}
+  /@fontsource/inter@5.0.6:
+    resolution: {integrity: sha512-wRue4DHx8szIvPwx6zlSBd/2XxvZ9p48SEmaHX3g4WVRdRBSP2TNdGofZ8x9spgc96fU4LIuEu5w/8mWFM/cxQ==}
     dev: false
 
-  /@fontsource/roboto@5.0.5:
-    resolution: {integrity: sha512-IMXFq5AMgGx0sgNLfwWsmPuy3qa7lmDmQcXXihqwF4mT2UpD725cbxZj93ERY793OWon+6V1ANax02I3nt9+4w==}
+  /@fontsource/roboto@5.0.6:
+    resolution: {integrity: sha512-SksyUGbdqY7a71l/ywdX5fm37fepCakgHZEZ3H4uP5A9wDJewrcSACtIzw6yi9QjJIYoj1xArhDSOz4XJxyWow==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
