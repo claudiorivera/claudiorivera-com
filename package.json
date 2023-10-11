@@ -14,7 +14,7 @@
     "@fontsource/roboto": "5.0.8",
     "@mui/icons-material": "5.14.13",
     "@mui/material": "5.14.13",
-    "@vercel/analytics": "1.0.2",
+    "@vercel/analytics": "1.1.0",
     "clsx": "2.0.0",
     "dayjs": "1.11.10",
     "gray-matter": "4.0.3",
