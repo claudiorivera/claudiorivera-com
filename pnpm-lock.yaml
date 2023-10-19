@@ -18,11 +18,11 @@ dependencies:
     specifier: 11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.30)(react@18.2.0)
   '@fontsource/eb-garamond':
-    specifier: 5.0.13
-    version: 5.0.13
+    specifier: 5.0.14
+    version: 5.0.14
   '@fontsource/inter':
-    specifier: 5.0.13
-    version: 5.0.13
+    specifier: 5.0.14
+    version: 5.0.14
   '@fontsource/roboto':
     specifier: 5.0.8
     version: 5.0.8
@@ -352,12 +352,12 @@ packages:
     resolution: {integrity: sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==}
     dev: false
 
-  /@fontsource/eb-garamond@5.0.13:
-    resolution: {integrity: sha512-RPsqszhKsW86pPlFZLLuIg4mXbOJohEP69tSC08Y953RzxGVMra4tHT8LudxTDo/ZOd4PKb1r44O35mt7Q7sBA==}
+  /@fontsource/eb-garamond@5.0.14:
+    resolution: {integrity: sha512-PK/XBauhGx7cFEj7+zITSv0rovG/A0iZYa/Zptr9/RY15yke9XZ6kcRYwNAzFVF655HGKDguA0eaUNMvPy0WNA==}
     dev: false
 
-  /@fontsource/inter@5.0.13:
-    resolution: {integrity: sha512-FVIBhP9X/x02blF2VQl2Pji/c3jUjkWEQ9bom4vIrGwO1MlHRDXhXx9iA1hhjpcCIfH3oX68ihIBdYcFnOXhsg==}
+  /@fontsource/inter@5.0.14:
+    resolution: {integrity: sha512-5H+rWUemTnUrtF5Dov2zDq+RWDIoXCmSrupNIfI5x7udZnoUTNhr+k9sYxtNS22mIngUQHZUPexTMj0/7P0Ucg==}
     dev: false
 
   /@fontsource/roboto@5.0.8:
