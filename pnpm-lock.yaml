@@ -77,8 +77,8 @@ devDependencies:
     specifier: 18.2.14
     version: 18.2.14
   '@types/remark-prism':
-    specifier: 1.3.6
-    version: 1.3.6
+    specifier: 1.3.7
+    version: 1.3.7
   eslint:
     specifier: 8.53.0
     version: 8.53.0
@@ -764,8 +764,8 @@ packages:
       '@types/scheduler': 0.16.2
       csstype: 3.1.2
 
-  /@types/remark-prism@1.3.6:
-    resolution: {integrity: sha512-JJzoVLE0pPHX2fJRGSrSpYM0mLwZ0betuSazfsYxa84P8pU1XRFGP+TMs0ggpz87a6ce80+XFCDjV6fheZSBTA==}
+  /@types/remark-prism@1.3.7:
+    resolution: {integrity: sha512-cPdp6UXuMi8ikq6RtMuVoZIYn7Kxi6+ToiJ4YuT0f8Ha6DP/cxne+MS3W2ddlQrBb7GZDIu4YGD2geeTIU9Jmg==}
     dependencies:
       '@types/mdast': 3.0.10
       remark: 14.0.3
