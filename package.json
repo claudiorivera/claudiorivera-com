@@ -15,7 +15,7 @@
     "@mui/icons-material": "5.15.3",
     "@mui/material": "5.15.3",
     "@vercel/analytics": "1.1.1",
-    "clsx": "2.0.0",
+    "clsx": "2.1.0",
     "dayjs": "1.11.10",
     "gray-matter": "4.0.3",
     "next": "14.0.4",
