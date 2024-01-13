@@ -9,4 +9,5 @@ order: 3
 
 - [SvelteKit](https://kit.svelte.dev)
 - [Tailwind CSS](https://tailwindcss.com)
+- [shadcn-svelte](https://www.shadcn-svelte.com)
 - [MongoDB](https://www.mongodb.com)
