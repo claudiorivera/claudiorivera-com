@@ -99,6 +99,7 @@ const BlogPosts = ({ posts, pageContext }: Props) => {
 							<Typography
 								variant="body1"
 								component="div"
+								// biome-ignore lint/security/noDangerouslySetInnerHtml: until astro migration
 								dangerouslySetInnerHTML={{ __html: content }}
 							/>
 						</Container>

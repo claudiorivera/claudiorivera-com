@@ -51,6 +51,7 @@ export const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
 					<Typography
 						variant="body1"
 						component="div"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: until the astro migration
 						dangerouslySetInnerHTML={{ __html: portfolioItem.content }}
 					/>
 					<Grid
