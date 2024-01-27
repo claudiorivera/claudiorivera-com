@@ -1,6 +1,6 @@
 import fs from "fs";
-import matter from "gray-matter";
 import { join } from "path";
+import matter from "gray-matter";
 
 import { markdownToHtml } from "./markdownToHtml";
 import { paginate } from "./paginate";
@@ -74,7 +74,7 @@ export const getAllItems = async ({
 		contentType,
 	});
 
-	let items = [];
+	const items = [];
 	for (const slug of slugs) {
 		const item = await getItemBySlug({
 			contentType,

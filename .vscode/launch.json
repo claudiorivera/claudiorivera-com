@@ -5,7 +5,7 @@
 			"name": "Next.js Server",
 			"type": "node-terminal",
 			"request": "launch",
-			"command": "pnpm dev"
+			"command": "bun dev"
 		}
 	]
 }

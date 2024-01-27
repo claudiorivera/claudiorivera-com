@@ -4,7 +4,9 @@ import * as React from "react";
 
 import { createEmotionCache, theme } from "@/styles";
 
-export default class MyDocument extends Document {
+export default class MyDocument extends Document<{
+	emotionStyleTags: React.ReactElement;
+}> {
 	render() {
 		return (
 			<Html lang="en">
@@ -17,7 +19,7 @@ export default class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 					/>
 					<meta name="emotion-insertion-point" content="" />
-					{(this.props as any).emotionStyleTags}
+					{this.props.emotionStyleTags}
 				</Head>
 				<body>
 					<Main />
@@ -62,6 +64,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
 	ctx.renderPage = () =>
 		originalRenderPage({
+			// biome-ignore lint/suspicious/noExplicitAny: until astro migration
 			enhanceApp: (App: any) =>
 				function EnhanceApp(props) {
 					return <App emotionCache={cache} {...props} />;
@@ -76,7 +79,7 @@ MyDocument.getInitialProps = async (ctx) => {
 		<style
 			data-emotion={`${style.key} ${style.ids.join(" ")}`}
 			key={style.key}
-			// eslint-disable-next-line react/no-danger
+			// biome-ignore lint/security/noDangerouslySetInnerHtml: until astro migration
 			dangerouslySetInnerHTML={{ __html: style.css }}
 		/>
 	));

@@ -122,9 +122,9 @@ export const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
 							open={isOpen}
 							onClose={handleClose}
 						>
-							{menuLinks.map(({ title, url }, index) => (
+							{menuLinks.map(({ title, url }) => (
 								<MenuItem
-									key={index}
+									key={url}
 									onClick={handleClose}
 									component={Link}
 									href={url}
@@ -136,9 +136,9 @@ export const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
 					</>
 				)}
 				{!isMobile &&
-					menuLinks.map(({ title, url }, index) => (
+					menuLinks.map(({ title, url }) => (
 						<Button
-							key={index}
+							key={url}
 							color="inherit"
 							component={Link}
 							href={url}

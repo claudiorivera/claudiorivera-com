@@ -27,6 +27,7 @@ export const MusicExperienceItem = ({ musicExperience }: Props) => (
 				sx={{ py: 0, my: 0 }}
 				variant="body2"
 				component="div"
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: until astro migration
 				dangerouslySetInnerHTML={{ __html: musicExperience.content }}
 			/>
 		</CardContent>
