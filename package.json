@@ -28,7 +28,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3",
 		"@types/node": "20.11.21",
-		"@types/react": "18.2.59",
+		"@types/react": "18.2.60",
 		"@types/react-dom": "18.2.19",
 		"@types/remark-prism": "1.3.7",
 		"typescript": "5.1.6"
