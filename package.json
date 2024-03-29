@@ -7,7 +7,7 @@
 		"@emotion/cache": "11.11.0",
 		"@emotion/react": "11.11.4",
 		"@emotion/server": "11.11.0",
-		"@emotion/styled": "11.11.0",
+		"@emotion/styled": "11.11.5",
 		"@fontsource/eb-garamond": "5.0.17",
 		"@fontsource/inter": "5.0.17",
 		"@fontsource/roboto": "5.0.12",
