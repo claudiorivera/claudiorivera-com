@@ -38,7 +38,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"check:fix": "bunx @biomejs/biome check --apply src",
+		"check:fix": "pnpm biome check --apply src",
 		"typecheck": "tsc --noEmit"
 	}
 }
