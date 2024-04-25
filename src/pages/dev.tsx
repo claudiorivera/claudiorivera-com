@@ -1,8 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import Link from "next/link";
 import { Fragment } from "react";
-import { PortfolioItemType } from "types";
+import type { PortfolioItemType } from "types";
 
 import { Layout, PortfolioItem } from "@/components";
 import { ContentType, getAllItems } from "@/lib";

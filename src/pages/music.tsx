@@ -1,6 +1,6 @@
 import { Container, Typography } from "@mui/material";
-import { GetStaticProps } from "next";
-import { MusicExperienceType } from "types";
+import type { GetStaticProps } from "next";
+import type { MusicExperienceType } from "types";
 
 import { Embed, Layout } from "@/components";
 import { MusicExperienceItem } from "@/components/MusicExperienceItem";

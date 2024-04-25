@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, Typography } from "@mui/material";
-import { MusicExperienceType } from "types";
+import type { MusicExperienceType } from "types";
 
 import { Link } from "./Link";
 

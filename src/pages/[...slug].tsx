@@ -1,8 +1,8 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import dayjs from "dayjs";
-import { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-import { PostType } from "types";
+import type { PostType } from "types";
 
 import { Layout } from "@/components";
 import { ContentType, getAllItems, getItemBySlug } from "@/lib";

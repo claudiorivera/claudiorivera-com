@@ -8,7 +8,7 @@ import {
 	useTheme,
 } from "@mui/material";
 import Image from "next/image";
-import { PortfolioItemType } from "types";
+import type { PortfolioItemType } from "types";
 
 type PortfolioItemProps = {
 	portfolioItem: PortfolioItemType;

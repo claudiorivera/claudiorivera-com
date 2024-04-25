@@ -2,7 +2,7 @@ import { ArrowDownward } from "@mui/icons-material";
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider, useTheme } from "@mui/material/styles";
 import Head from "next/head";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import { BackgroundImg } from "./BackgroundImg";
 import { Footer } from "./Footer";
