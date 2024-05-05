@@ -1,38 +1,26 @@
-import { ArrowDownward } from "@mui/icons-material";
-import { Box, Container, Typography, useMediaQuery } from "@mui/material";
-import { ThemeProvider, useTheme } from "@mui/material/styles";
+import { ArrowDown } from "lucide-react";
 import Head from "next/head";
 import type { ReactNode } from "react";
-
 import { BackgroundImg } from "./BackgroundImg";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-const colors = {
-	blue: "#0169e9",
-	indigo: "#4770df",
+const meta = {
+	title: "Claudio Rivera",
+	description: "Drummer | Developer | Drum Tech",
 };
 
-type LayoutProps = {
-	children: ReactNode;
-	coverImage: string;
-	title?: string;
-};
-export const Layout = ({
+export function Layout({
 	children,
 	coverImage,
 	title = "Home",
-}: LayoutProps) => {
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-	const meta = {
-		title: "Claudio Rivera",
-		description: "Drummer | Developer | Drum Tech",
-	};
-
+}: {
+	children: ReactNode;
+	coverImage: string;
+	title?: string;
+}) {
 	return (
-		<ThemeProvider theme={theme}>
+		<>
 			<Head>
 				<title>{`${title} | Claudio Rivera`}</title>
 				<meta name="description" content={meta.description} />
@@ -44,41 +32,24 @@ export const Layout = ({
 				<meta property="og:description" content={meta.description} />
 				<meta property="og:type" content="website" />
 			</Head>
-			<BackgroundImg
-				image={coverImage}
-				height={isMobile ? "15vh" : "100vh"}
-				overlayColor={`${colors.blue}bf`}
-				title="background"
-			>
-				<Header siteDescription={meta.description} siteTitle={meta.title} />
-				{!isMobile && coverImage && (
-					<Typography
-						variant="h1"
-						sx={{
-							bottom: 0,
-							color: "white",
-							position: "absolute",
-							textAlign: "center",
-						}}
-					>
-						<Box
-							sx={{
-								display: "flex",
-								flexDirection: "column",
-								alignItems: "center",
-								padding: "1rem",
-							}}
-						>
-							{title || ""}
-							<ArrowDownward fontSize="large" />
-						</Box>
-					</Typography>
-				)}
-			</BackgroundImg>
-			<Container maxWidth="md">
-				<main id="main">{children}</main>
-			</Container>
-			<Footer />
-		</ThemeProvider>
+
+			<div className="flex flex-col gap-8 sm:gap-16">
+				<BackgroundImg image={coverImage} title="background">
+					<Header siteDescription={meta.description} siteTitle={meta.title} />
+					<div className="hidden sm:block bottom-0 text-primary-foreground absolute text-center">
+						<div className="flex flex-col items-center gap-1 p-4">
+							<h1 className="text-5xl font-bold">{title}</h1>
+							<ArrowDown className="w-10 h-10" />
+						</div>
+					</div>
+				</BackgroundImg>
+
+				<div className="container mx-auto max-w-7xl">
+					<main id="main">{children}</main>
+				</div>
+
+				<Footer />
+			</div>
+		</>
 	);
-};
+}

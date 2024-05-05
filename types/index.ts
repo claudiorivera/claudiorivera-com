@@ -25,7 +25,7 @@ export type PageContext = {
 	prevPage: number;
 };
 
-export type PortfolioItemType = {
+export type PortfolioItem = {
 	slug: string;
 	title: string;
 	description: string;

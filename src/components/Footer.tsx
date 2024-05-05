@@ -1,36 +1,15 @@
-import { Box, Typography } from "@mui/material";
+import Link from "next/link";
 
-import { Link } from "./Link";
-
-export const Footer = () => (
-	<Box
-		display="flex"
-		flexDirection="column"
-		justifyContent="center"
-		p={7}
-		mt={7}
-		textAlign="center"
-		bgcolor="primary.main"
-	>
-		<Typography sx={{ color: "white" }} variant="h5">
-			<Link
-				sx={{ color: "white" }}
-				href="https://github.com/claudiorivera/claudiorivera-com"
-			>
+export function Footer() {
+	return (
+		<div className="flex justify-center items-center p-14 bg-primary text-primary-foreground">
+			<Link href="https://github.com/claudiorivera/claudiorivera-com">
 				Site made by me
 			</Link>
-			{". "}
-			<Link sx={{ color: "white" }} href="mailto:me@claudiorivera.com">
-				Email me
-			</Link>{" "}
-			or connect on{" "}
-			<Link
-				sx={{ color: "white" }}
-				href="https://www.linkedin.com/in/atclaudiorivera/"
-			>
-				LinkedIn
-			</Link>
-			.
-		</Typography>
-	</Box>
-);
+			.&nbsp;
+			<Link href="mailto:me@claudiorivera.com">Email me&nbsp;</Link>or connect
+			on&nbsp;
+			<Link href="https://www.linkedin.com/in/atclaudiorivera/">LinkedIn</Link>.
+		</div>
+	);
+}

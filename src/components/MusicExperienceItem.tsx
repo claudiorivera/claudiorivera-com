@@ -1,35 +1,42 @@
-import { Card, CardContent, CardHeader, Typography } from "@mui/material";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+import Link from "next/link";
 import type { MusicExperienceType } from "types";
 
-import { Link } from "./Link";
-
-type Props = {
+export function MusicExperienceItem({
+	musicExperience,
+}: {
 	musicExperience: MusicExperienceType;
-};
-export const MusicExperienceItem = ({ musicExperience }: Props) => (
-	<Card key={musicExperience.slug} sx={{ mb: 2 }}>
-		<CardHeader
-			sx={{ px: 4, pt: 4, pb: 0 }}
-			title={
-				<>
-					<Link href={musicExperience.link}>
-						<Typography variant="h3">{musicExperience.title}</Typography>
+}) {
+	return (
+		<Card className="shadow">
+			<CardHeader>
+				<CardTitle>
+					<Link className="text-primary text-xl" href={musicExperience.link}>
+						{musicExperience.title}
 					</Link>
-					<Typography variant="overline">{musicExperience.label}</Typography>
-				</>
-			}
-			subheader={
-				<Typography variant="subtitle1">{musicExperience.years}</Typography>
-			}
-		/>
-		<CardContent sx={{ pt: 0 }}>
-			<Typography
-				sx={{ py: 0, my: 0 }}
-				variant="body2"
-				component="div"
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: until astro migration
-				dangerouslySetInnerHTML={{ __html: musicExperience.content }}
-			/>
-		</CardContent>
-	</Card>
-);
+				</CardTitle>
+				<CardDescription>
+					<div className="flex flex-col gap-2">
+						<div className="uppercase text-xs">{musicExperience.label}</div>
+						<div className="font-semibold text-secondary-foreground">
+							{musicExperience.years}
+						</div>
+					</div>
+				</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<div
+					className="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc prose-li:my-0"
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+					dangerouslySetInnerHTML={{ __html: musicExperience.content }}
+				/>
+			</CardContent>
+		</Card>
+	);
+}

@@ -1,16 +1,14 @@
-import { Typography } from "@mui/material";
-
 import { Layout } from "@/components";
 
-const NotFoundPage = () => (
-	<Layout
-		coverImage="/images/billow926-rTufXtvIFXc-unsplash.jpg"
-		title="Uh Oh! Page Not Found"
-	>
-		<Typography variant="h2">
-			There&apos;s nothing here. Sorry about that.
-		</Typography>
-	</Layout>
-);
-
-export default NotFoundPage;
+export default function NotFoundPage() {
+	return (
+		<Layout
+			coverImage="/images/billow926-rTufXtvIFXc-unsplash.jpg"
+			title="Uh Oh! Page Not Found"
+		>
+			<h2 className="text-3xl font-bold pb-16">
+				There&apos;s nothing here. Sorry about that.
+			</h2>
+		</Layout>
+	);
+}

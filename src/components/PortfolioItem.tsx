@@ -1,88 +1,55 @@
-import {
-	Box,
-	Button,
-	Grid,
-	Link,
-	Typography,
-	useMediaQuery,
-	useTheme,
-} from "@mui/material";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import type { PortfolioItemType } from "types";
+import Link from "next/link";
+import type { PortfolioItem as PortfolioItemType } from "types";
 
-type PortfolioItemProps = {
+export function PortfolioItem({
+	portfolioItem,
+}: {
 	portfolioItem: PortfolioItemType;
-};
-export const PortfolioItem = ({ portfolioItem }: PortfolioItemProps) => {
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
+}) {
 	if (!portfolioItem) return null;
 
 	return (
-		<Box my={!isMobile ? "7rem" : ""}>
-			<Grid container spacing={2} sx={{ justifyContent: "center" }}>
-				<Grid item md={6} sm={12}>
-					<Link href={portfolioItem.demoLink}>
-						<Typography variant="h1" align="center" gutterBottom>
-							{portfolioItem.title}
-						</Typography>
-					</Link>
-					<Link href={portfolioItem.demoLink}>
-						<Box sx={{ width: "100%", height: "auto", position: "relative" }}>
-							<Image
-								style={{
-									width: "100%",
-									height: "auto",
-								}}
-								width={600}
-								height={400}
-								src={portfolioItem.screenshot}
-								alt={`screenshot of ${portfolioItem.title}`}
-							/>
-						</Box>
-					</Link>
-					<Typography align="center" variant="body2">
-						{portfolioItem.description}
-					</Typography>
-				</Grid>
-				<Grid item md={6} sm={12}>
-					<Typography variant="h2">Technologies Used:</Typography>
-					<Typography
-						variant="body1"
-						component="div"
-						// biome-ignore lint/security/noDangerouslySetInnerHtml: until the astro migration
-						dangerouslySetInnerHTML={{ __html: portfolioItem.content }}
+		<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0">
+			<div className="flex flex-col items-center gap-4">
+				<Link
+					className="text-5xl font-bold text-primary text-center"
+					href={portfolioItem.demoLink}
+				>
+					<h2>{portfolioItem.title}</h2>
+				</Link>
+				<Link className="w-full h-auto relative" href={portfolioItem.demoLink}>
+					<Image
+						className="w-full h-auto"
+						width={600}
+						height={400}
+						src={portfolioItem.screenshot}
+						alt={`screenshot of ${portfolioItem.title}`}
 					/>
-					<Grid
-						container
-						direction="row"
-						sx={{ justifyContent: "space-evenly" }}
-						spacing={2}
-					>
-						<Grid item>
-							<Button
-								size="large"
-								variant="outlined"
-								color="secondary"
-								href={portfolioItem.demoLink}
-							>
-								Live Demo
-							</Button>
-						</Grid>
-						<Grid item>
-							<Button
-								size="large"
-								variant="outlined"
-								color="secondary"
-								href={portfolioItem.githubLink}
-							>
-								View Source
-							</Button>
-						</Grid>
-					</Grid>
-				</Grid>
-			</Grid>
-		</Box>
+				</Link>
+				<p className="font-serif text-lg text-center">
+					{portfolioItem.description}
+				</p>
+			</div>
+			<div className="text-primary flex flex-col gap-4 px-16">
+				<h2 className="text-2xl font-semibold text-black">
+					Technologies Used:
+				</h2>
+				<div
+					className="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc prose-li:my-0"
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: until the astro migration
+					dangerouslySetInnerHTML={{ __html: portfolioItem.content }}
+				/>
+				<div className="flex gap-4 justify-center">
+					<Button variant="outline" color="secondary" asChild>
+						<Link href={portfolioItem.demoLink}>Live Demo</Link>
+					</Button>
+					<Button variant="outline" color="secondary" asChild>
+						<Link href={portfolioItem.githubLink}>View Source</Link>
+					</Button>
+				</div>
+			</div>
+		</div>
 	);
-};
+}

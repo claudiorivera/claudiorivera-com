@@ -1,153 +1,69 @@
-import { Menu as MenuIcon } from "@mui/icons-material";
+import { Button } from "@/components/ui/button";
 import {
-	AppBar,
-	Button,
-	Grid,
-	IconButton,
-	Menu,
-	MenuItem,
-	Toolbar,
-	Typography,
-	useMediaQuery,
-} from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import { useState } from "react";
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { MENU_LINKS } from "@/lib/constants";
+import { AlignJustify } from "lucide-react";
+import Link from "next/link";
 
-import { Link } from "./Link";
-
-const menuLinks = [
-	{
-		title: "Home",
-		url: "/",
-	},
-	{
-		title: "Music",
-		url: "/music",
-	},
-	{
-		title: "Dev",
-		url: "/dev",
-	},
-	{
-		title: "Blog",
-		url: "/blog",
-	},
-];
-
-type HeaderProps = {
+export function Header({
+	siteTitle,
+	siteDescription,
+}: {
 	siteTitle: string;
 	siteDescription: string;
-};
-export const Header = ({ siteTitle, siteDescription }: HeaderProps) => {
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-	// Responsive menu
-	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-	const isOpen = Boolean(anchorEl);
-
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
-
+}) {
 	return (
-		<AppBar
+		<header
 			color="transparent"
-			position="relative"
-			elevation={0}
-			sx={{
-				padding: 2,
-				color: "white",
-				justifyContent: isMobile ? "center" : "start",
-			}}
+			className="relative sm:p-4 text-primary-foreground w-full flex flex-col justify-center sm:justify-start"
 		>
-			<Toolbar>
-				<Grid container spacing={2} alignItems="baseline">
-					<Grid item>
-						<Link
-							href="/"
-							sx={{
-								textDecoration: "none",
-								color: "white",
-							}}
-						>
-							<Typography
-								variant="h4"
-								sx={{
-									fontSize: "2.4rem",
-									fontWeight: 700,
-									letterSpacing: "-0.04em",
-								}}
+			<div className="flex justify-between items-center">
+				<div className="flex items-baseline gap-4 flex-wrap">
+					<Link href="/">
+						<h1 className="font-bold tracking-tighter text-xl sm:text-2xl">
+							{siteTitle}
+						</h1>
+					</Link>
+					<h2 className="tracking-tighter text-lg sm:text-xl font-medium">
+						{siteDescription}
+					</h2>
+				</div>
+				<div className="flex">
+					<div className="sm:hidden">
+						<DropdownMenu>
+							<DropdownMenuTrigger>
+								<AlignJustify />
+							</DropdownMenuTrigger>
+							<DropdownMenuContent>
+								{MENU_LINKS.map(({ url, title }) => (
+									<DropdownMenuItem key={url}>
+										<Link className="font-sans" href={url}>
+											{title}
+										</Link>
+									</DropdownMenuItem>
+								))}
+							</DropdownMenuContent>
+						</DropdownMenu>
+					</div>
+					<div className="hidden sm:flex">
+						{MENU_LINKS.map(({ title, url }) => (
+							<Button
+								key={url}
+								asChild
+								variant="ghost"
+								size="sm"
+								className="uppercase"
 							>
-								{siteTitle}
-							</Typography>
-						</Link>
-					</Grid>
-					<Grid item>
-						<Typography
-							variant={isMobile ? "h5" : "h4"}
-							sx={{
-								letterSpacing: "-.04em",
-							}}
-						>
-							{siteDescription}
-						</Typography>
-					</Grid>
-				</Grid>
-				{isMobile && (
-					<>
-						<IconButton
-							aria-label="menu"
-							aria-controls="menu-appbar"
-							aria-haspopup="true"
-							onClick={(event) => {
-								setAnchorEl(event.currentTarget);
-							}}
-							color="inherit"
-						>
-							<MenuIcon fontSize="large" />
-						</IconButton>
-						<Menu
-							id="menu-appbar"
-							anchorEl={anchorEl}
-							anchorOrigin={{
-								vertical: "top",
-								horizontal: "right",
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: "top",
-								horizontal: "right",
-							}}
-							open={isOpen}
-							onClose={handleClose}
-						>
-							{menuLinks.map(({ title, url }) => (
-								<MenuItem
-									key={url}
-									onClick={handleClose}
-									component={Link}
-									href={url}
-								>
-									{title}
-								</MenuItem>
-							))}
-						</Menu>
-					</>
-				)}
-				{!isMobile &&
-					menuLinks.map(({ title, url }) => (
-						<Button
-							key={url}
-							color="inherit"
-							component={Link}
-							href={url}
-							size="large"
-						>
-							{title}
-						</Button>
-					))}
-			</Toolbar>
-		</AppBar>
+								<Link href={url}>{title}</Link>
+							</Button>
+						))}
+					</div>
+				</div>
+			</div>
+		</header>
 	);
-};
+}

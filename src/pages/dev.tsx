@@ -1,8 +1,6 @@
-import { Box, Container, Typography } from "@mui/material";
 import type { GetStaticProps } from "next";
 import Link from "next/link";
-import { Fragment } from "react";
-import type { PortfolioItemType } from "types";
+import type { PortfolioItem as PortfolioItemType } from "types";
 
 import { Layout, PortfolioItem } from "@/components";
 import { ContentType, getAllItems } from "@/lib";
@@ -37,21 +35,23 @@ const DevPage = ({ portfolioItems }: Props) => (
 		coverImage="/images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg"
 		title="Dev"
 	>
-		{portfolioItems.map((portfolioItem) => (
-			<Fragment key={portfolioItem.slug}>
-				<PortfolioItem portfolioItem={portfolioItem} />
-				<hr />
-			</Fragment>
-		))}
-		<Container maxWidth="sm">
-			<Box m={2}>
-				<Typography variant="h1">
-					For more, please visit{" "}
-					<Link href="https://github.com/claudiorivera">my GitHub profile</Link>
-					.
-				</Typography>
-			</Box>
-		</Container>
+		<div className="flex flex-col gap-8 sm:gap-16">
+			<div className="flex flex-col gap-8 sm:gap-16">
+				{portfolioItems.map((portfolioItem) => (
+					<div className="border-b pb-8 sm:pb-16" key={portfolioItem.slug}>
+						<PortfolioItem portfolioItem={portfolioItem} />
+					</div>
+				))}
+			</div>
+
+			<h1 className="font-semibold text-5xl">
+				For more, please visit{" "}
+				<Link className="text-primary" href="https://github.com/claudiorivera">
+					my GitHub profile
+				</Link>
+				.
+			</h1>
+		</div>
 	</Layout>
 );
 
