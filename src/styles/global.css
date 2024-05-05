@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "prismjs/themes/prism-tomorrow.css";
 
 .videoWrapper {
