@@ -1,4 +1,4 @@
-import "@/styles/global.css";
+import "~/styles/global.css";
 import { Analytics } from "@vercel/analytics/react";
 import type { AppProps } from "next/app";
 import { EB_Garamond, Inter } from "next/font/google";

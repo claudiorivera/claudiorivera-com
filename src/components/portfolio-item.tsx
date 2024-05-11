@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import type { PortfolioItem as PortfolioItemType } from "types";
+import { Button } from "~/components/ui/button";
 
 export function PortfolioItem({
 	portfolioItem,

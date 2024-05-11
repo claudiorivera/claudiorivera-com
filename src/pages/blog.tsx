@@ -1,5 +1,5 @@
-import { ContentType, getAllItems } from "@/lib/api";
 import type { GetStaticProps } from "next";
+import { ContentType, getAllItems } from "~/lib/api";
 
 export const getStaticProps: GetStaticProps = async () => {
 	const { data: posts, pageContext } = await getAllItems({
@@ -19,4 +19,4 @@ export const getStaticProps: GetStaticProps = async () => {
 	};
 };
 
-export { BlogPosts as default } from "@/components/blog-posts";
+export { BlogPosts as default } from "~/components/blog-posts";

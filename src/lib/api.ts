@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
-import { markdownToHtml } from "./markdown-to-html";
-import { paginate } from "./paginate";
+import { markdownToHtml } from "~/lib/markdown-to-html";
+import { paginate } from "~/lib/paginate";
 
 export enum ContentType {
 	Music = "music-experience",

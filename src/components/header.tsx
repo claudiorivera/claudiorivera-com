@@ -1,13 +1,13 @@
-import { Button } from "@/components/ui/button";
+import { AlignJustify } from "lucide-react";
+import Link from "next/link";
+import { Button } from "~/components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { MENU_LINKS } from "@/lib/constants";
-import { AlignJustify } from "lucide-react";
-import Link from "next/link";
+} from "~/components/ui/dropdown-menu";
+import { MENU_LINKS } from "~/lib/constants";
 
 export function Header({
 	siteTitle,

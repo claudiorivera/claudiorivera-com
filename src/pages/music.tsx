@@ -1,9 +1,9 @@
-import { IframeWrapper } from "@/components/iframe-wrapper";
-import { Layout } from "@/components/layout";
-import { MusicExperienceCard } from "@/components/music-experience-card";
-import { ContentType, getAllItems } from "@/lib/api";
 import type { GetStaticProps } from "next";
 import type { MusicExperienceItem } from "types";
+import { IframeWrapper } from "~/components/iframe-wrapper";
+import { Layout } from "~/components/layout";
+import { MusicExperienceCard } from "~/components/music-experience-card";
+import { ContentType, getAllItems } from "~/lib/api";
 
 export const getStaticProps: GetStaticProps = async () => {
 	const { data: musicExperiences } = await getAllItems({

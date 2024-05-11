@@ -1,8 +1,8 @@
-import { Layout } from "@/components/layout";
-import { ContentType, getAllItems, getItemBySlug } from "@/lib/api";
 import dayjs from "dayjs";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { Post } from "types";
+import { Layout } from "~/components/layout";
+import { ContentType, getAllItems, getItemBySlug } from "~/lib/api";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const { data: posts } = await getAllItems({

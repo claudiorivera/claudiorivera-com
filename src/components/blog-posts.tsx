@@ -1,10 +1,10 @@
-import { BlogPagination } from "@/components/blog-pagination";
-import { Layout } from "@/components/layout";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import type { PageContext, Post } from "types";
+import { BlogPagination } from "~/components/blog-pagination";
+import { Layout } from "~/components/layout";
 
 export function BlogPosts({
 	posts,

@@ -1,9 +1,9 @@
 import { ArrowDown } from "lucide-react";
 import Head from "next/head";
 import type { ReactNode } from "react";
-import { Footer } from "./footer";
-import { Header } from "./header";
-import { HeroImageContainer } from "./hero-image-container";
+import { Footer } from "~/components/footer";
+import { Header } from "~/components/header";
+import { HeroImageContainer } from "~/components/hero-image-container";
 
 const meta = {
 	title: "Claudio Rivera",
