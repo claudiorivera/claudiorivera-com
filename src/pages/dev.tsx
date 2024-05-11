@@ -1,9 +1,9 @@
+import { Layout } from "@/components/layout";
+import { PortfolioItem } from "@/components/portfolio-item";
+import { ContentType, getAllItems } from "@/lib/api";
 import type { GetStaticProps } from "next";
 import Link from "next/link";
 import type { PortfolioItem as PortfolioItemType } from "types";
-
-import { Layout, PortfolioItem } from "@/components";
-import { ContentType, getAllItems } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
 	const { data: portfolioItems } = await getAllItems({

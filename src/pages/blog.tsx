@@ -1,6 +1,5 @@
+import { ContentType, getAllItems } from "@/lib/api";
 import type { GetStaticProps } from "next";
-
-import { ContentType, getAllItems } from "@/lib";
 
 export const getStaticProps: GetStaticProps = async () => {
 	const { data: posts, pageContext } = await getAllItems({

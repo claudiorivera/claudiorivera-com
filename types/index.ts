@@ -1,4 +1,4 @@
-export type PostType = {
+export type Post = {
 	slug: string;
 	title: string;
 	date: string;
@@ -7,7 +7,7 @@ export type PostType = {
 	content: string;
 };
 
-export type MusicExperienceType = {
+export type MusicExperienceItem = {
 	slug: string;
 	title: string;
 	order: number;

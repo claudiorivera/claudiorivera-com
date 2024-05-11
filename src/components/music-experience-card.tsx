@@ -6,12 +6,12 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import type { MusicExperienceType } from "types";
+import type { MusicExperienceItem } from "types";
 
 export function MusicExperienceCard({
 	musicExperience,
 }: {
-	musicExperience: MusicExperienceType;
+	musicExperience: MusicExperienceItem;
 }) {
 	return (
 		<Card className="shadow">

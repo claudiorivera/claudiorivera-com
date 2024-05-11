@@ -1,6 +1,5 @@
+import { ContentType, getAllItems } from "@/lib/api";
 import type { GetStaticPaths, GetStaticProps } from "next";
-
-import { ContentType, getAllItems } from "@/lib";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const { pageContext } = await getAllItems({

@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
-
 import { markdownToHtml } from "./markdown-to-html";
 import { paginate } from "./paginate";
 

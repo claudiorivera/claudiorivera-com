@@ -1,8 +1,9 @@
-import { IframeWrapper, Layout } from "@/components";
+import { IframeWrapper } from "@/components/iframe-wrapper";
+import { Layout } from "@/components/layout";
 import { MusicExperienceCard } from "@/components/music-experience-card";
-import { ContentType, getAllItems } from "@/lib";
+import { ContentType, getAllItems } from "@/lib/api";
 import type { GetStaticProps } from "next";
-import type { MusicExperienceType } from "types";
+import type { MusicExperienceItem } from "types";
 
 export const getStaticProps: GetStaticProps = async () => {
 	const { data: musicExperiences } = await getAllItems({
@@ -18,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 type Props = {
-	musicExperiences: MusicExperienceType[];
+	musicExperiences: MusicExperienceItem[];
 };
 const MusicPage = ({ musicExperiences }: Props) => (
 	<Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" title="Music">
