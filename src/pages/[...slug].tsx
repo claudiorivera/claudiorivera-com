@@ -1,31 +1,30 @@
 import dayjs from "dayjs";
-import type { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPropsContext } from "next";
 import type { Post } from "types";
 import { Layout } from "~/components/layout";
 import { ContentType, getAllItems, getItemBySlug } from "~/lib/api";
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export async function getStaticPaths() {
 	const { data: posts } = await getAllItems({
 		contentType: ContentType.Blog,
 		fields: ["slug", "date"],
 	});
 
 	return {
-		paths: posts.map((post) => ({
-			params: {
-				slug: [
-					post.date.split("-")[0],
-					post.date.split("-")[1],
-					post.date.split("-")[2],
-					post.slug,
-				],
-			},
-		})),
+		paths: posts.map(({ date, slug }) => {
+			const [year, month, day] = date.split("-");
+
+			return {
+				params: {
+					slug: [year, month, day, slug],
+				},
+			};
+		}),
 		fallback: false,
 	};
-};
+}
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }: GetStaticPropsContext) {
 	const post = await getItemBySlug({
 		contentType: ContentType.Blog,
 		slug: params?.slug as string,
@@ -37,12 +36,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			post,
 		},
 	};
-};
+}
 
-type Props = {
+export default function BlogPostPage({
+	post,
+}: {
 	post: Post;
-};
-const BlogPost = ({ post }: Props) => {
+}) {
 	return (
 		<Layout coverImage={post.featuredImage} title={`${post.title}`}>
 			<div className="flex flex-col gap-4">
@@ -61,6 +61,4 @@ const BlogPost = ({ post }: Props) => {
 			</div>
 		</Layout>
 	);
-};
-
-export default BlogPost;
+}

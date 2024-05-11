@@ -1,7 +1,6 @@
-import type { GetStaticProps } from "next";
 import { ContentType, getAllItems } from "~/lib/api";
 
-export const getStaticProps: GetStaticProps = async () => {
+export async function getStaticProps() {
 	const { data: posts, pageContext } = await getAllItems({
 		contentType: ContentType.Blog,
 		fields: ["slug", "title", "date", "category", "featuredImage", "content"],
@@ -17,6 +16,6 @@ export const getStaticProps: GetStaticProps = async () => {
 			pageContext,
 		},
 	};
-};
+}
 
 export { BlogPosts as default } from "~/components/blog-posts";

@@ -14,9 +14,7 @@ const ebGaramond = EB_Garamond({
 	variable: "--font-eb-garamond",
 });
 
-interface MyAppProps extends AppProps {}
-
-export default function MyApp(props: MyAppProps) {
+export default function MyApp(props: AppProps) {
 	const { Component, pageProps } = props;
 	return (
 		<>

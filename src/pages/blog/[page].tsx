@@ -1,7 +1,7 @@
-import type { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPropsContext } from "next";
 import { ContentType, getAllItems } from "~/lib/api";
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export async function getStaticPaths() {
 	const { pageContext } = await getAllItems({
 		contentType: ContentType.Blog,
 		fields: ["slug"],
@@ -22,9 +22,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		})),
 		fallback: true,
 	};
-};
+}
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }: GetStaticPropsContext) {
 	const page = (params?.page as string).split("-")[1];
 	const { data: posts, pageContext } = await getAllItems({
 		contentType: ContentType.Blog,
@@ -41,6 +41,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			pageContext,
 		},
 	};
-};
+}
 
 export { BlogPosts as default } from "~/components/blog-posts";
