@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 				page: `page-${pageNumber}`,
 			},
 		})),
-		fallback: true,
+		fallback: false,
 	};
 }
 
