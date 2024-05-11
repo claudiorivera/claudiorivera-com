@@ -20,4 +20,4 @@ export const getStaticProps: GetStaticProps = async () => {
 	};
 };
 
-export { BlogPosts as default } from "@/components/BlogPosts";
+export { BlogPosts as default } from "@/components/blog-posts";

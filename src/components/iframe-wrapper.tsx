@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-export function Embed({
+export function IframeWrapper({
 	url,
 	title,
 	iframeProps,

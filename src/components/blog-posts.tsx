@@ -46,7 +46,7 @@ export function BlogPosts({
 								/>
 							</div>
 							<div
-								className="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc"
+								className="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc prose-li:my-0"
 								// biome-ignore lint/security/noDangerouslySetInnerHtml: until astro migration
 								dangerouslySetInnerHTML={{ __html: content }}
 							/>

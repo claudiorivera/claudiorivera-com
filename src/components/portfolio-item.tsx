@@ -8,8 +8,6 @@ export function PortfolioItem({
 }: {
 	portfolioItem: PortfolioItemType;
 }) {
-	if (!portfolioItem) return null;
-
 	return (
 		<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0">
 			<div className="flex flex-col items-center gap-4">

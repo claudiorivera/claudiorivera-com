@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-export function BackgroundImg({
+export function HeroImageContainer({
 	children,
 	image,
 	title,

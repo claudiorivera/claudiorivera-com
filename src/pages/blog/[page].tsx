@@ -44,4 +44,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	};
 };
 
-export { BlogPosts as default } from "@/components/BlogPosts";
+export { BlogPosts as default } from "@/components/blog-posts";

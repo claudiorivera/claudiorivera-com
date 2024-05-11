@@ -1,9 +1,9 @@
 import { ArrowDown } from "lucide-react";
 import Head from "next/head";
 import type { ReactNode } from "react";
-import { BackgroundImg } from "./BackgroundImg";
-import { Footer } from "./Footer";
-import { Header } from "./Header";
+import { Footer } from "./footer";
+import { Header } from "./header";
+import { HeroImageContainer } from "./hero-image-container";
 
 const meta = {
 	title: "Claudio Rivera",
@@ -34,7 +34,7 @@ export function Layout({
 			</Head>
 
 			<div className="flex flex-col gap-8 sm:gap-16">
-				<BackgroundImg image={coverImage} title="background">
+				<HeroImageContainer image={coverImage} title="background">
 					<Header siteDescription={meta.description} siteTitle={meta.title} />
 					<div className="hidden sm:block bottom-0 text-primary-foreground absolute text-center">
 						<div className="flex flex-col items-center gap-1 p-4">
@@ -42,7 +42,7 @@ export function Layout({
 							<ArrowDown className="w-10 h-10" />
 						</div>
 					</div>
-				</BackgroundImg>
+				</HeroImageContainer>
 
 				<div className="container mx-auto max-w-7xl">
 					<main id="main">{children}</main>

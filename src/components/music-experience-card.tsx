@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 import type { MusicExperienceType } from "types";
 
-export function MusicExperienceItem({
+export function MusicExperienceCard({
 	musicExperience,
 }: {
 	musicExperience: MusicExperienceType;
