@@ -15,7 +15,7 @@ So, this is definitely not an "I went from zero coding experience to developer i
 
 Have a look at this video by [Brad Traversy](https://www.traversymedia.com) that talks a little bit about this:
 
-<div class="videoWrapper"><iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/Ght0sqn52JY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ght0sqn52JY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 If you're still excited about learning, let's dig in!
 

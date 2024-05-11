@@ -1,12 +1,10 @@
-import { Container, Typography } from "@mui/material";
-import type { GetStaticProps } from "next";
-import type { MusicExperienceType } from "types";
+import type { MusicExperienceItem } from "types";
+import { IframeWrapper } from "~/components/iframe-wrapper";
+import { Layout } from "~/components/layout";
+import { MusicExperienceCard } from "~/components/music-experience-card";
+import { ContentType, getAllItems } from "~/lib/api";
 
-import { Embed, Layout } from "@/components";
-import { MusicExperienceItem } from "@/components/MusicExperienceItem";
-import { ContentType, getAllItems } from "@/lib";
-
-export const getStaticProps: GetStaticProps = async () => {
+export async function getStaticProps() {
 	const { data: musicExperiences } = await getAllItems({
 		contentType: ContentType.Music,
 		fields: ["slug", "title", "order", "label", "years", "link", "content"],
@@ -17,52 +15,53 @@ export const getStaticProps: GetStaticProps = async () => {
 			musicExperiences,
 		},
 	};
-};
+}
 
-type Props = {
-	musicExperiences: MusicExperienceType[];
-};
-const MusicPage = ({ musicExperiences }: Props) => (
-	<Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" title="Music">
-		<Container>
-			<Typography variant="h3" gutterBottom>
-				See
-			</Typography>
-			<Embed
-				url="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
-				title="YouTube playlist of random drum and music-related videos of mine."
-				iframeProps={{
-					allow:
-						"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-					frameBorder: "0",
-					allowFullScreen: true,
-				}}
-			/>
-		</Container>
-		<Container>
-			<Typography variant="h3" gutterBottom>
-				Hear
-			</Typography>
-			<Embed
-				url="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
-				title="Songs I've Played On"
-				iframeProps={{
-					allow: "encrypted-media",
-				}}
-			/>
-		</Container>
-		<Container>
-			<Typography variant="h3" gutterBottom>
-				Selected Discography &amp; Experience
-			</Typography>
-			{musicExperiences.map((musicExperience) => (
-				<MusicExperienceItem
-					key={musicExperience.slug}
-					musicExperience={musicExperience}
-				/>
-			))}
-		</Container>
-	</Layout>
-);
-
-export default MusicPage;
+export default function MusicPage({
+	musicExperiences,
+}: {
+	musicExperiences: MusicExperienceItem[];
+}) {
+	return (
+		<Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" title="Music">
+			<div className="flex flex-col gap-4 pb-16">
+				<div className="flex flex-col gap-2">
+					<h3 className="font-semibold text-xl">See</h3>
+					<IframeWrapper
+						url="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
+						title="YouTube playlist of random drum and music-related videos of mine."
+						iframeProps={{
+							allow:
+								"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+							frameBorder: "0",
+							allowFullScreen: true,
+						}}
+					/>
+				</div>
+				<div className="flex flex-col gap-2">
+					<h3 className="font-semibold text-xl">Hear</h3>
+					<IframeWrapper
+						url="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
+						title="Songs I've Played On"
+						iframeProps={{
+							allow: "encrypted-media",
+						}}
+					/>
+				</div>
+				<div className="flex flex-col gap-2">
+					<h3 className="font-semibold text-xl">
+						Selected Discography &amp; Experience
+					</h3>
+					<div className="flex flex-col gap-4">
+						{musicExperiences.map((musicExperience) => (
+							<MusicExperienceCard
+								key={musicExperience.slug}
+								musicExperience={musicExperience}
+							/>
+						))}
+					</div>
+				</div>
+			</div>
+		</Layout>
+	);
+}

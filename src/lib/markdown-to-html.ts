@@ -2,7 +2,7 @@ import { remark } from "remark";
 import html from "remark-html";
 import prism from "remark-prism";
 
-export const markdownToHtml = async (markdown: string) => {
+export async function markdownToHtml(markdown: string) {
 	const result = await remark()
 		.use(html, {
 			sanitize: false,
@@ -11,4 +11,4 @@ export const markdownToHtml = async (markdown: string) => {
 		.process(markdown);
 
 	return result.toString();
-};
+}

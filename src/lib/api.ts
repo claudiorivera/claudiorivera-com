@@ -1,9 +1,10 @@
 import fs from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
+import { markdownToHtml } from "~/lib/markdown-to-html";
+import { paginate } from "~/lib/paginate";
 
-import { markdownToHtml } from "./markdownToHtml";
-import { paginate } from "./paginate";
+type Items = Record<string, string>;
 
 export enum ContentType {
 	Music = "music-experience",
@@ -11,22 +12,23 @@ export enum ContentType {
 	Dev = "dev-portfolio",
 }
 
-type GetSlugsArgs = {
+export function getSlugs({
+	contentType,
+}: {
 	contentType: ContentType;
-};
-export const getSlugs = ({ contentType }: GetSlugsArgs) =>
-	fs.readdirSync(getDirectoryForContentType(contentType));
+}) {
+	return fs.readdirSync(getDirectoryForContentType(contentType));
+}
 
-type GetItemBySlugArgs = {
-	contentType: ContentType;
-	slug: string;
-	fields: string[];
-};
-export const getItemBySlug = async ({
+export async function getItemBySlug({
 	contentType,
 	slug,
 	fields = [],
-}: GetItemBySlugArgs) => {
+}: {
+	contentType: ContentType;
+	slug: string;
+	fields: string[];
+}) {
 	const realSlug = Array.isArray(slug) ? slug[3] : slug.replace(/\.md$/, "");
 	const fullPath = join(
 		getDirectoryForContentType(contentType),
@@ -52,37 +54,36 @@ export const getItemBySlug = async ({
 	}
 
 	return items;
-};
+}
 
-type GetAllItemsArgs = {
-	contentType: ContentType;
-	fields: string[];
-	orderByField?: string;
-	orderByDirection?: "asc" | "desc";
-	itemsPerPage?: number;
-	page?: number;
-};
-export const getAllItems = async ({
+export async function getAllItems({
 	contentType,
 	fields = [],
 	orderByField = "order",
 	orderByDirection = "asc",
 	itemsPerPage,
 	page = 1,
-}: GetAllItemsArgs) => {
+}: {
+	contentType: ContentType;
+	fields: string[];
+	orderByField?: string;
+	orderByDirection?: "asc" | "desc";
+	itemsPerPage?: number;
+	page?: number;
+}) {
 	const slugs = getSlugs({
 		contentType,
 	});
 
-	const items = [];
-	for (const slug of slugs) {
-		const item = await getItemBySlug({
-			contentType,
-			slug,
-			fields,
-		});
-		items.push(item);
-	}
+	const items = await Promise.all(
+		slugs.map((slug) =>
+			getItemBySlug({
+				contentType,
+				slug,
+				fields,
+			}),
+		),
+	);
 
 	const sortAscending = (a: Items, b: Items) =>
 		a[orderByField] < b[orderByField] ? -1 : 1;
@@ -113,11 +114,8 @@ export const getAllItems = async ({
 			nextPage,
 		},
 	};
-};
+}
 
-type Items = {
-	[key: string]: string;
-};
-
-const getDirectoryForContentType = (contentType: ContentType) =>
-	join(process.cwd(), "public", contentType);
+function getDirectoryForContentType(contentType: ContentType) {
+	return join(process.cwd(), "public", contentType);
+}
