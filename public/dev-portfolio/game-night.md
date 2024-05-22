@@ -7,15 +7,13 @@ screenshot: "/images/game-night.png"
 order: 2
 ---
 
-- [React](https://reactjs.org)
+- [React](https://react.dev)
 - [Next.js](https://nextjs.org)
+- [SQLite](https://www.sqlite.org)
+- [Drizzle](https://orm.drizzle.team)
 - [Tailwind CSS](https://tailwindcss.com)
-- [Headless UI](https://headlessui.dev)
-- [daisyUI](https://daisyui.com)
-- [Postgres](https://www.postgresql.org)
-- [tRPC](https://trpc.io)
-- [Prisma](https://www.prisma.io/)
-- [Clerk](https://clerk.com)
-- [dayjs](https://day.js.org)
+- [Zod](https://zod.dev)
+- [NextAuth.js](https://next-auth.js.org)
+- [date-fns](https://date-fns.org)
 - [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser)
 - [BoardGameGeek API2](https://boardgamegeek.com/wiki/page/BGG_XML_API2)
