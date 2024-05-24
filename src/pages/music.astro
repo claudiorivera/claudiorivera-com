@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import IframeWrapper from "~/components/iframe-wrapper.astro";
+import Layout from "~/components/layout.astro";
+import MusicExperienceCard from "~/components/music-experience-card.astro";
+
+const musicCollection = await getCollection("music");
+const musicExperiences = musicCollection.sort(
+	(a, b) => a.data.order - b.data.order,
+);
+---
+<Layout coverImage="/images/joe-lemke-cr-behind-kit.jpg" title="Music">
+	<div class="flex flex-col gap-4 pb-16">
+		<div class="flex flex-col gap-2">
+			<h3 class="font-semibold text-xl">See</h3>
+			<IframeWrapper
+				url="https://www.youtube.com/embed/videoseries?list=PLB953FCBE7D8E1AC1"
+				title="YouTube playlist of random drum and music-related videos of mine."
+				iframeProps={{
+					allow:
+						"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+					frameborder: "0",
+					allowfullscreen: true,
+				}}
+			/>
+		</div>
+		<div class="flex flex-col gap-2">
+			<h3 class="font-semibold text-xl">Hear</h3>
+			<IframeWrapper
+				url="https://embed.music.apple.com/us/playlist/songs-ive-played-on/pl.u-MZrqIo3RAW?app=music"
+				title="Songs I've Played On"
+				iframeProps={{
+					allow: "encrypted-media",
+				}}
+			/>
+		</div>
+		<div class="flex flex-col gap-2">
+			<h3 class="font-semibold text-xl">
+				Selected Discography &amp; Experience
+			</h3>
+			<div class="flex flex-col gap-4">
+				{musicExperiences.map((musicExperience) => (
+					<MusicExperienceCard
+						musicExperience={musicExperience}
+					/>
+				))}
+			</div>
+		</div>
+	</div>
+</Layout>

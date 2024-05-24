@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Fragment } from "react";
+import BlogPost from "~/components/blog-post.astro";
+import Layout from "~/components/layout.astro";
+import { cn } from "~/lib/utils";
+
+const blogCollection = await getCollection("blog");
+const posts = blogCollection
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+	.slice(0, 3);
+---
+<Layout
+	coverImage="/images/patrick-fore-0gkw_9fy0eQ-unsplash.jpg"
+	title="Blog"
+>
+	{posts.map((post) => {
+		return (
+			<BlogPost post={post} />
+			<hr class="my-8 sm:my-16" />
+		);
+	})}
+	<div class="container mx-auto px-4">
+		<div class="flex justify-between items-center">
+			<a
+				class={cn("pointer-events-none text-slate-400 no-underline opacity-50", {
+				})}
+				href="/blog"
+			>
+				<div class="flex items-center">
+					<ArrowLeft /> Prev 3
+				</div>
+			</a>
+			<a
+				class={cn("text-primary")}
+				href="/blog/page-2"
+			>
+				<div class="flex items-center">
+					Next 3 <ArrowRight />
+				</div>
+			</a>
+		</div>
+	</div>
+</Layout>

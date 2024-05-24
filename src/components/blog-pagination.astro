@@ -1,0 +1,39 @@
+---
+import type { Page } from "astro";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { cn } from "~/lib/utils";
+
+type Props = {
+	page: Page;
+};
+
+const { page } = Astro.props;
+---
+<div class="container mx-auto px-4">
+	<div class="flex justify-between items-center">
+		<a
+			class={cn("text-primary", {
+				"pointer-events-none text-slate-400 no-underline":
+					!page.url.prev,
+				"opacity-50": !page.url.prev,
+			})}
+			href={page.url.prev === "/blog/page-1" ? "/blog" : page.url.prev}
+		>
+			<div class="flex items-center">
+				<ArrowLeft /> Prev {page.size}
+			</div>
+		</a>
+		<a
+			class={cn("text-primary", {
+				"pointer-events-none text-slate-400 no-underline":
+					!page.url.next,
+				"opacity-50": !page.url.next,
+			})}
+			href={page.url.next}
+		>
+			<div class="flex items-center">
+				Next {page.size} <ArrowRight />
+			</div>
+		</a>
+	</div>
+</div>

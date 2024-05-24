@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Button } from "~/components/ui/button";
+
+interface Props {
+	portfolioItem: CollectionEntry<"dev">;
+}
+
+const { portfolioItem } = Astro.props;
+
+const { Content } = await portfolioItem.render();
+---
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0">
+	<div class="flex flex-col items-center gap-4">
+		<a
+			class="text-5xl font-bold text-primary text-center"
+			href={portfolioItem.data.demoLink}
+		>
+			<h2>{portfolioItem.data.title}</h2>
+		</a>
+		<a class="w-full h-auto relative" href={portfolioItem.data.demoLink}>
+			<img
+				class="w-full h-auto"
+				width={600}
+				height={400}
+				src={portfolioItem.data.screenshot}
+				alt={`screenshot of ${portfolioItem.data.title}`}
+			/>
+		</a>
+		<p class="font-serif text-lg text-center">
+			{portfolioItem.data.description}
+		</p>
+	</div>
+	<div class="text-primary flex flex-col gap-4 px-16">
+		<h2 class="text-2xl font-semibold text-black">
+			Technologies Used:
+		</h2>
+		<div class="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc prose-li:my-0">
+			<Content />
+		</div>
+		<div class="flex gap-4 justify-center">
+			<Button variant="outline" color="secondary">
+				<a href={portfolioItem.data.demoLink}>Live Demo</a>
+			</Button>
+			<Button variant="outline" color="secondary">
+				<a href={portfolioItem.data.githubLink}>View Source</a>
+			</Button>
+		</div>
+	</div>
+</div>

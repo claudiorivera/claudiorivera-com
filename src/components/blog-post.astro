@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+interface Props {
+	post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+
+const [year, month, day] = post.data.date.toISOString().slice(0, 10).split("-");
+---
+<article class="flex flex-col gap-8">
+  <header class="flex flex-col gap-1 items-center">
+    <span class="uppercase text-xs">{post.data.category}</span>
+    <a
+      class="text-4xl font-bold text-primary text-center"
+      href={`/${year}/${month}/${day}/${post.slug}`}
+    >
+      <p>{post.data.title}</p>
+    </a>
+    <h4 class="text-sm">
+      {dayjs(post.data.date).format("MMMM D, YYYY")}
+    </h4>
+  </header>
+  <div class="w-full h-auto relative">
+    <img
+      class="w-full h-auto"
+      src={post.data.featuredImage}
+      width={600}
+      height={400}
+      alt=""
+    />
+  </div>
+  <div
+    class="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc prose-li:my-0"
+  >
+    <Content />
+  </div>
+
+</article>
