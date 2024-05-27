@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "~/components/ui/card";
+
+interface Props {
+	musicExperience: CollectionEntry<"music">;
+}
+
+const { musicExperience } = Astro.props;
+
+const { Content } = await musicExperience.render();
+---
+<Card className="shadow">
+	<CardHeader>
+		<CardTitle>
+			<a class="text-primary text-xl" href={musicExperience.data.link}>
+				{musicExperience.data.title}
+			</a>
+		</CardTitle>
+		<CardDescription>
+			<div class="flex flex-col gap-2">
+				<div class="uppercase text-xs">{musicExperience.data.label}</div>
+				<div class="font-semibold text-secondary-foreground">
+					{musicExperience.data.years}
+				</div>
+			</div>
+		</CardDescription>
+	</CardHeader>
+	<CardContent className="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc prose-li:my-0">
+		<Content />
+	</CardContent>
+</Card>

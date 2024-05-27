@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import dayjs from "dayjs";
+import Layout from "~/components/layout.astro";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog");
+
+	return posts
+		.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+		.map((post) => {
+			const [year, month, day] = post.data.date
+				.toISOString()
+				.slice(0, 10)
+				.split("-");
+
+			console.log({ year, month, day, date: post.data.date });
+
+			return {
+				params: { path: [year, month, day, post.slug].join("/") },
+				props: { post },
+			};
+		});
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+<Layout coverImage={post.data.featuredImage} title={post.data.title}>
+	<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-2 items-start">
+			<h2 class="text-3xl font-bold sm:hidden">{post.data.title}</h2>
+			<span class="uppercase text-xs">{post.data.category}</span>
+			<h3 class="font-bold text-xl">
+				{dayjs(post.data.date).format("MMMM d, YYYY")}
+			</h3>
+		</div>
+		<div
+			class="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc"
+		>
+			<Content />
+		</div>
+	</div>
+</Layout>

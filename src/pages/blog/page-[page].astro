@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import type { GetStaticPathsOptions } from "astro";
+import BlogPagination from "~/components/blog-pagination.astro";
+import BlogPost from "~/components/blog-post.astro";
+import Layout from "~/components/layout.astro";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+	const posts = (await getCollection("blog")).sort(
+		(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+	);
+
+	return paginate(posts, {
+		pageSize: 3,
+	});
+}
+
+const { page } = Astro.props;
+---
+<Layout
+	coverImage="/images/patrick-fore-0gkw_9fy0eQ-unsplash.jpg"
+	title="Blog"
+>
+	{page.data.map((post) => {
+		return (
+			<BlogPost post={post} />
+			<hr class="my-8 sm:my-16" />
+		);
+	})}
+	<BlogPagination page={page} />
+</Layout>

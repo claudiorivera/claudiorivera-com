@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = {
+	url: string;
+	title: string;
+	iframeProps: HTMLAttributes<"iframe">;
+};
+
+const { url, title, iframeProps } = Astro.props;
+---
+
+<div class="relative aspect-video">
+	<iframe
+		class="absolute inset-0 w-full h-full"
+		src={url}
+		title={title}
+		{...iframeProps}
+	/>
+</div>

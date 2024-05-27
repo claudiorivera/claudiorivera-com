@@ -1,0 +1,30 @@
+---
+
+import { getCollection } from "astro:content";
+import Layout from "~/components/layout.astro";
+import PortfolioItem from "~/components/portfolio-item.astro";
+
+const devCollection = await getCollection("dev");
+const portfolioItems = devCollection.sort(
+	(a, b) => a.data.order - b.data.order,
+);
+---
+<Layout
+	coverImage="/images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg"
+	title="Dev"
+>
+	<div class="flex flex-col gap-8 sm:gap-16">
+		<div class="flex flex-col gap-8 sm:gap-16">
+			{portfolioItems.map((portfolioItem) => (
+				<div class="border-b pb-8 sm:pb-16">
+					<PortfolioItem portfolioItem={portfolioItem} />
+				</div>
+			))}
+		</div>
+
+		<h1 class="font-semibold text-5xl">
+			For more, please visit{" "}
+			<a class="text-primary" href="https://github.com/claudiorivera">my GitHub profile</a>.
+		</h1>
+	</div>
+</Layout>

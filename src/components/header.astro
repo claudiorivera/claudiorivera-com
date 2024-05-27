@@ -1,0 +1,40 @@
+---
+import { MobileMenu } from "~/components/mobile-menu";
+import { Button } from "~/components/ui/button";
+import { MENU_LINKS, SITE_DESCRIPTION, SITE_TITLE } from "~/consts";
+---
+
+<header
+	color="transparent"
+	class="relative sm:p-4 text-primary-foreground w-full flex flex-col justify-center sm:justify-start"
+>
+	<div class="flex justify-between items-center">
+		<div class="flex items-baseline gap-2 flex-wrap">
+			<a href="/">
+				<h1 class="font-bold tracking-tighter text-xl sm:text-2xl">
+					{SITE_TITLE}
+				</h1>
+			</a>
+			<h2 class="tracking-tighter text-lg sm:text-xl font-medium">
+				{SITE_DESCRIPTION}
+			</h2>
+		</div>
+		<div class="flex">
+			<div class="sm:hidden">
+				<MobileMenu client:idle />
+			</div>
+			<div class="hidden sm:flex">
+				{MENU_LINKS.map(({ title, url }) => (
+					<Button
+						key={url}
+						variant="ghost"
+						size="sm"
+						className="uppercase"
+					>
+						<a href={url}>{title}</a>
+					</Button>
+				))}
+			</div>
+		</div>
+	</div>
+</header>
