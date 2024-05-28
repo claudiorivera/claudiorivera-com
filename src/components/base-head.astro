@@ -1,4 +1,5 @@
 ---
+import SpeedInsights from "@vercel/speed-insights/astro";
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import { SITE_DESCRIPTION, SITE_TITLE } from "~/consts";
@@ -34,3 +35,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="twitter:title" content={SITE_TITLE} />
 <meta property="twitter:description" content={SITE_DESCRIPTION} />
 <meta property="twitter:image" content={new URL("/joe-lemke-cr-cover-photo.jpg", Astro.url)} />
+
+<SpeedInsights />
