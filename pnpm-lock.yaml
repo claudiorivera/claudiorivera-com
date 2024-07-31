@@ -37,7 +37,7 @@ importers:
         version: 5.0.19
       '@fontsource-variable/inter':
         specifier: ^5.0.18
-        version: 5.0.19
+        version: 5.0.20
       '@radix-ui/react-dropdown-menu':
         specifier: 2.1.1
         version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -569,8 +569,8 @@ packages:
   '@fontsource-variable/eb-garamond@5.0.19':
     resolution: {integrity: sha512-CWMCwZ4jPipeKxA+0h33Ex08YggBjHJ1ubWFuOdNqa3lbuLmn/e+NInXbSvQcqFjV4M6QxGKiUfVC7CtVFmKAg==}
 
-  '@fontsource-variable/inter@5.0.19':
-    resolution: {integrity: sha512-V5KPpF5o0sI1uNWAdFArC87NDOb/ZJDPXLomEiKmDCYMlDUCTn2flkuAZkyME2rtGOKO7vzCuDJAND0m/5PhDA==}
+  '@fontsource-variable/inter@5.0.20':
+    resolution: {integrity: sha512-dhzG4Zls/tIrf8h0FhTNi8jT/uFwNhdTY2vKe6DYqoXDYOfEcTVZDyh1hKml1rlLT44Y7OoKoGz8w7czDW7twQ==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -3677,7 +3677,7 @@ snapshots:
 
   '@fontsource-variable/eb-garamond@5.0.19': {}
 
-  '@fontsource-variable/inter@5.0.19': {}
+  '@fontsource-variable/inter@5.0.20': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:
