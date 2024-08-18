@@ -34,7 +34,7 @@ importers:
         version: 1.8.3
       '@fontsource-variable/eb-garamond':
         specifier: ^5.0.19
-        version: 5.0.19
+        version: 5.0.20
       '@fontsource-variable/inter':
         specifier: ^5.0.18
         version: 5.0.20
@@ -500,8 +500,8 @@ packages:
   '@floating-ui/utils@0.2.2':
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
 
-  '@fontsource-variable/eb-garamond@5.0.19':
-    resolution: {integrity: sha512-CWMCwZ4jPipeKxA+0h33Ex08YggBjHJ1ubWFuOdNqa3lbuLmn/e+NInXbSvQcqFjV4M6QxGKiUfVC7CtVFmKAg==}
+  '@fontsource-variable/eb-garamond@5.0.20':
+    resolution: {integrity: sha512-/R+7ZH4Mr53ELhLt9u1riQHMftHKDPLU8qdDPNrhdy7C0vkQXTaMWTaTT3v+H5kpeNl7GdiuHPit93fXhuZkWg==}
 
   '@fontsource-variable/inter@5.0.20':
     resolution: {integrity: sha512-dhzG4Zls/tIrf8h0FhTNi8jT/uFwNhdTY2vKe6DYqoXDYOfEcTVZDyh1hKml1rlLT44Y7OoKoGz8w7czDW7twQ==}
@@ -3516,7 +3516,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.2': {}
 
-  '@fontsource-variable/eb-garamond@5.0.19': {}
+  '@fontsource-variable/eb-garamond@5.0.20': {}
 
   '@fontsource-variable/inter@5.0.20': {}
 
