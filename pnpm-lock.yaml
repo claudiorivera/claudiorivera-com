@@ -34,10 +34,10 @@ importers:
         version: 1.8.3
       '@fontsource-variable/eb-garamond':
         specifier: ^5.0.19
-        version: 5.0.21
+        version: 5.1.0
       '@fontsource-variable/inter':
         specifier: ^5.0.18
-        version: 5.0.21
+        version: 5.1.0
       '@radix-ui/react-dropdown-menu':
         specifier: 2.1.1
         version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -503,11 +503,11 @@ packages:
   '@floating-ui/utils@0.2.2':
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
 
-  '@fontsource-variable/eb-garamond@5.0.21':
-    resolution: {integrity: sha512-vXkXPjW9oAqx390WB0/FRKmeFUgKIfvRocVWQieipt8PefA/1NcmYs6UwGs9ahTqkt14jYweROGMKoQUmauVaQ==}
+  '@fontsource-variable/eb-garamond@5.1.0':
+    resolution: {integrity: sha512-tANn/iZHhgqzBPRHNW9JJV5ideqX6LiC5rzyS/0xgSFySPVnod0uMF6gLL6DzPK/uDf3Bo4JMDN/B8F+LQBaXg==}
 
-  '@fontsource-variable/inter@5.0.21':
-    resolution: {integrity: sha512-1spQ5vjooBWzUSdug8njhxi0lDpIDGVV4q9Piv32X5wIati/5OvESsIxOM0kDZVWzl0uSR8kHOmsqoP8A6WqVA==}
+  '@fontsource-variable/inter@5.1.0':
+    resolution: {integrity: sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -3556,9 +3556,9 @@ snapshots:
 
   '@floating-ui/utils@0.2.2': {}
 
-  '@fontsource-variable/eb-garamond@5.0.21': {}
+  '@fontsource-variable/eb-garamond@5.1.0': {}
 
-  '@fontsource-variable/inter@5.0.21': {}
+  '@fontsource-variable/inter@5.1.0': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:
