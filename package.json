@@ -12,7 +12,7 @@
 		"check:fix": "biome check --write src"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.9.3",
+		"@astrojs/check": "0.9.4",
 		"@astrojs/mdx": "3.1.5",
 		"@astrojs/react": "3.6.2",
 		"@astrojs/rss": "4.0.7",
