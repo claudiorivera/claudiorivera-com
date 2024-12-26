@@ -21,7 +21,7 @@ import { MENU_LINKS, SITE_DESCRIPTION, SITE_TITLE } from "~/consts";
 		</div>
 		<div class="flex">
 			<div class="sm:hidden">
-				<MobileMenu client:idle />
+				<MobileMenu client:load />
 			</div>
 			<div class="hidden sm:flex">
 				{MENU_LINKS.map(({ title, url }) => (
