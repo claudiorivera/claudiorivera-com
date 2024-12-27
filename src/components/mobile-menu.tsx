@@ -1,4 +1,5 @@
 import { AlignJustify } from "lucide-react";
+import { useState } from "react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -8,9 +9,15 @@ import {
 import { MENU_LINKS } from "~/consts";
 
 export function MobileMenu() {
+	const [dropdownOpen, setDropdownOpen] = useState(false);
+
 	return (
-		<DropdownMenu>
-			<DropdownMenuTrigger>
+		<DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
+			<DropdownMenuTrigger
+				onClick={() => {
+					setDropdownOpen((val) => !val);
+				}}
+			>
 				<AlignJustify />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent>
