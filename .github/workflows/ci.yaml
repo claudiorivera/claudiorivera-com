@@ -27,4 +27,4 @@ jobs:
       - name: 📦 Install Dependencies
         run: pnpm install
       - name: 🏷️ Check Types
-        run: pnpm typecheck
+        run: pnpm check-types
