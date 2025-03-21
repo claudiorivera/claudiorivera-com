@@ -13,7 +13,7 @@ importers:
         version: 0.9.4(typescript@5.8.2)
       '@astrojs/mdx':
         specifier: 4.2.1
-        version: 4.2.1(astro@5.5.3(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0))
+        version: 4.2.1(astro@5.5.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0))
       '@astrojs/react':
         specifier: 4.2.1
         version: 4.2.1(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(jiti@2.4.2)(lightningcss@1.29.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(yaml@2.7.0)
@@ -24,8 +24,8 @@ importers:
         specifier: 3.3.0
         version: 3.3.0
       '@astrojs/vercel':
-        specifier: 8.1.2
-        version: 8.1.2(astro@5.5.3(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0))(react@19.0.0)(rollup@4.34.8)
+        specifier: 8.1.3
+        version: 8.1.3(astro@5.5.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0))(react@19.0.0)(rollup@4.34.8)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -57,8 +57,8 @@ importers:
         specifier: 1.2.0
         version: 1.2.0(react@19.0.0)
       astro:
-        specifier: 5.5.3
-        version: 5.5.3(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0)
+        specifier: 5.5.4
+        version: 5.5.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0)
       class-variance-authority:
         specifier: 0.7.1
         version: 0.7.1
@@ -155,8 +155,8 @@ packages:
     resolution: {integrity: sha512-wxhSKRfKugLwLlr4OFfcqovk+LIFtKwLyGPqMsv+9/ibqqnW3Gv7tBhtKEb0gAyUAC4G9BTVQeQahqnQAhd6IQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
 
-  '@astrojs/vercel@8.1.2':
-    resolution: {integrity: sha512-Qps7oYfQVvXov/ucP5sjTqRAgqbY84ayf8zyz5lNqTy88As09KGaZJTW4qrxU2xO5GdoE3+AoMGDUkU2rVY+cg==}
+  '@astrojs/vercel@8.1.3':
+    resolution: {integrity: sha512-mHO28cc0FQbA6ncFteW5Hqf2l0gSthPNF8/dpM1sQAOD92Mbyi93/4EhTYj07Xhi3t37FU4tPtzyQoCAn4P4Kg==}
     peerDependencies:
       astro: ^5.0.0
 
@@ -1128,9 +1128,6 @@ packages:
   '@types/babel__traverse@7.20.6':
     resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
 
-  '@types/cookie@0.6.0':
-    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
-
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
@@ -1346,8 +1343,8 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro@5.5.3:
-    resolution: {integrity: sha512-FvqIo5jkunP5R6FkY5vuFYElTOqjnazuiN0x/yf1F+nvedsGDemm5K7mS6RTmFVB291mE9WWn1AbuJsFWEcHgg==}
+  astro@5.5.4:
+    resolution: {integrity: sha512-rc9Mj6dIKM9ylTSQ0/S1l5f1iSDNs0PEjRMnvVpZ0W+wfBCu99JEuXy+fiWDNT6gf60bC4dKQehZxZGdSJB9kg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1476,9 +1473,9 @@ packages:
   cookie-es@1.2.2:
     resolution: {integrity: sha512-+W7VmiVINB+ywl1HGXJXmrqkOhpKrIiVZV6tQuV54ZyQC7MMuBt81Vc336GMLoHBq5hV/F9eXgt5Mnx0Rha5Fg==}
 
-  cookie@0.7.2:
-    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
-    engines: {node: '>= 0.6'}
+  cookie@1.0.2:
+    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
+    engines: {node: '>=18'}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -3136,12 +3133,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.2.1(astro@5.5.3(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0))':
+  '@astrojs/mdx@4.2.1(astro@5.5.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.1
       '@mdx-js/mdx': 3.1.0(acorn@8.14.1)
       acorn: 8.14.1
-      astro: 5.5.3(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0)
+      astro: 5.5.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0)
       es-module-lexer: 1.6.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -3205,14 +3202,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@8.1.2(astro@5.5.3(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0))(react@19.0.0)(rollup@4.34.8)':
+  '@astrojs/vercel@8.1.3(astro@5.5.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0))(react@19.0.0)(rollup@4.34.8)':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
       '@vercel/analytics': 1.5.0(react@19.0.0)
       '@vercel/edge': 1.2.1
       '@vercel/nft': 0.29.2(rollup@4.34.8)
       '@vercel/routing-utils': 5.0.4
-      astro: 5.5.3(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0)
+      astro: 5.5.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0)
       esbuild: 0.25.0
       tinyglobby: 0.2.12
     transitivePeerDependencies:
@@ -4090,8 +4087,6 @@ snapshots:
     dependencies:
       '@babel/types': 7.26.9
 
-  '@types/cookie@0.6.0': {}
-
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 2.1.0
@@ -4299,7 +4294,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@5.5.3(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0):
+  astro@5.5.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.8.2)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -4307,7 +4302,6 @@ snapshots:
       '@astrojs/telemetry': 3.2.0
       '@oslojs/encoding': 1.1.0
       '@rollup/pluginutils': 5.1.4(rollup@4.34.8)
-      '@types/cookie': 0.6.0
       acorn: 8.14.1
       aria-query: 5.3.2
       axobject-query: 4.1.0
@@ -4315,7 +4309,7 @@ snapshots:
       ci-info: 4.2.0
       clsx: 2.1.1
       common-ancestor-path: 1.0.1
-      cookie: 0.7.2
+      cookie: 1.0.2
       cssesc: 3.0.0
       debug: 4.4.0
       deterministic-object-hash: 2.0.2
@@ -4507,7 +4501,7 @@ snapshots:
 
   cookie-es@1.2.2: {}
 
-  cookie@0.7.2: {}
+  cookie@1.0.2: {}
 
   cross-spawn@7.0.6:
     dependencies:
