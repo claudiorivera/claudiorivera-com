@@ -13,7 +13,7 @@ importers:
         version: 0.9.4(typescript@5.8.3)
       '@astrojs/mdx':
         specifier: 4.2.6
-        version: 4.2.6(astro@5.7.13(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))
+        version: 4.2.6(astro@5.7.14(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))
       '@astrojs/react':
         specifier: 4.2.7
         version: 4.2.7(@types/react-dom@19.1.5(@types/react@19.1.5))(@types/react@19.1.5)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yaml@2.7.1)
@@ -25,7 +25,7 @@ importers:
         version: 3.4.0
       '@astrojs/vercel':
         specifier: 8.1.4
-        version: 8.1.4(astro@5.7.13(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))(react@19.1.0)(rollup@4.39.0)
+        version: 8.1.4(astro@5.7.14(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))(react@19.1.0)(rollup@4.39.0)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -57,8 +57,8 @@ importers:
         specifier: 1.2.0
         version: 1.2.0(react@19.1.0)
       astro:
-        specifier: 5.7.13
-        version: 5.7.13(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)
+        specifier: 5.7.14
+        version: 5.7.14(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)
       class-variance-authority:
         specifier: 0.7.1
         version: 0.7.1
@@ -1375,8 +1375,8 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro@5.7.13:
-    resolution: {integrity: sha512-cRGq2llKOhV3XMcYwQpfBIUcssN6HEK5CRbcMxAfd9OcFhvWE7KUy50zLioAZVVl3AqgUTJoNTlmZfD2eG0G1w==}
+  astro@5.7.14:
+    resolution: {integrity: sha512-DfuDD49f7mbHB7ygLm8KXEC6QQtpLoNrmoylcMLKdl1ahXNdiw+mgW8ApEMyHTUyVrqEUnr4gZCKSlZ9POCHjQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3194,12 +3194,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.2.6(astro@5.7.13(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))':
+  '@astrojs/mdx@4.2.6(astro@5.7.14(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.1
       '@mdx-js/mdx': 3.1.0(acorn@8.14.1)
       acorn: 8.14.1
-      astro: 5.7.13(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)
+      astro: 5.7.14(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)
       es-module-lexer: 1.6.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -3263,14 +3263,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@8.1.4(astro@5.7.13(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))(react@19.1.0)(rollup@4.39.0)':
+  '@astrojs/vercel@8.1.4(astro@5.7.14(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))(react@19.1.0)(rollup@4.39.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
       '@vercel/analytics': 1.5.0(react@19.1.0)
       '@vercel/edge': 1.2.1
       '@vercel/nft': 0.29.2(rollup@4.39.0)
       '@vercel/routing-utils': 5.0.4
-      astro: 5.7.13(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)
+      astro: 5.7.14(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)
       esbuild: 0.25.2
       tinyglobby: 0.2.12
     transitivePeerDependencies:
@@ -4389,7 +4389,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@5.7.13(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1):
+  astro@5.7.14(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -4421,6 +4421,7 @@ snapshots:
       github-slugger: 2.0.0
       html-escaper: 3.0.3
       http-cache-semantics: 4.1.1
+      import-meta-resolve: 4.1.0
       js-yaml: 4.1.0
       kleur: 4.1.5
       magic-string: 0.30.17
