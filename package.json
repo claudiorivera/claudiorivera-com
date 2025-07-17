@@ -43,8 +43,11 @@
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
+			"@biomejs/biome",
+			"@tailwindcss/oxide",
 			"@vercel/speed-insights",
-			"esbuild"
+			"esbuild",
+			"sharp"
 		]
 	}
 }
