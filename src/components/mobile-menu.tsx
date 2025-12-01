@@ -5,8 +5,8 @@ import {
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import { MENU_LINKS } from "~/consts";
+} from "@/components/ui/dropdown-menu";
+import { MENU_LINKS } from "@/consts";
 
 export function MobileMenu() {
 	const [dropdownOpen, setDropdownOpen] = useState(false);

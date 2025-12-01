@@ -1,8 +1,8 @@
 ---
 
 import { getCollection } from "astro:content";
-import Layout from "~/components/layout.astro";
-import PortfolioItem from "~/components/portfolio-item.astro";
+import Layout from "@/components/layout.astro";
+import PortfolioItem from "@/components/portfolio-item.astro";
 
 const devCollection = await getCollection("dev");
 const portfolioItems = devCollection.sort(

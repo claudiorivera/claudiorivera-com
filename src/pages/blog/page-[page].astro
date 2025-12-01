@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import type { GetStaticPathsOptions } from "astro";
-import BlogPagination from "~/components/blog-pagination.astro";
-import BlogPost from "~/components/blog-post.astro";
-import Layout from "~/components/layout.astro";
+import BlogPagination from "@/components/blog-pagination.astro";
+import BlogPost from "@/components/blog-post.astro";
+import Layout from "@/components/layout.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 	const posts = (await getCollection("blog")).sort(

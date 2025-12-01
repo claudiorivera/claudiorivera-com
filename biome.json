@@ -1,15 +1,72 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
-	"organizeImports": {
-		"enabled": true
+	"$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
+	"vcs": {
+		"enabled": true,
+		"useIgnoreFile": true,
+		"clientKind": "git"
+	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"style": {
+				"noDefaultExport": "error",
+				"useConsistentArrayType": {
+					"fix": "safe",
+					"level": "warn",
+					"options": {
+						"syntax": "generic"
+					}
+				},
+				"useConsistentCurlyBraces": {
+					"fix": "safe",
+					"level": "error",
+					"options": {}
+				},
+				"noEnum": "error"
+			},
+			"nursery": {
+				"useSortedClasses": {
+					"fix": "safe",
+					"level": "warn",
+					"options": {
+						"functions": ["cn", "clsx", "cva"]
+					}
+				}
+			}
 		}
 	},
-	"javascript": {
-		"globals": ["Astro"]
-	}
+	"overrides": [
+		{
+			"includes": ["**/*.config.*"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					},
+					"correctness": {
+						"noUnusedVariables": "off",
+						"noUnusedImports": "off"
+					}
+				}
+			}
+		}
+	]
 }

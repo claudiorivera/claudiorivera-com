@@ -12,10 +12,11 @@
 			"automerge": true
 		},
 		{
-      "matchPackageNames": ["lucide-react"],
-			"matchUpdateTypes": ["minor","patch", "pin", "digest"],
-      "automerge": true
-    }
+			"matchPackageNames": ["lucide-react"],
+			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true
+		}
 	],
-	"commitMessagePrefix": "🤖"
+	"commitMessagePrefix": "🤖",
+	"prConcurrentLimit": 3
 }

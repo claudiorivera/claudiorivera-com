@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import IframeWrapper from "~/components/iframe-wrapper.astro";
-import Layout from "~/components/layout.astro";
-import MusicExperienceCard from "~/components/music-experience-card.astro";
+import IframeWrapper from "@/components/iframe-wrapper.astro";
+import Layout from "@/components/layout.astro";
+import MusicExperienceCard from "@/components/music-experience-card.astro";
 
 const musicCollection = await getCollection("music");
 const musicExperiences = musicCollection.sort(
