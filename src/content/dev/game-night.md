@@ -7,10 +7,7 @@ screenshot: "/images/game-night.png"
 order: 2
 ---
 
-- [TypeScript](https://www.typescriptlang.org)
 - [Next.js](https://nextjs.org)
-- [React](https://react.dev)
-- [PostgreSQL](https://www.postgresql.org)
 - [Drizzle ORM](https://orm.drizzle.team)
 - [TanStack Query](https://tanstack.com/query)
 - [Tailwind CSS](https://tailwindcss.com)

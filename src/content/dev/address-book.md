@@ -7,14 +7,9 @@ screenshot: "/images/address-book.png"
 order: 4
 ---
 
-- [TypeScript](https://www.typescriptlang.org)
 - [Next.js](https://nextjs.org)
-- [React](https://react.dev)
-- [PostgreSQL](https://www.postgresql.org)
-- [Drizzle ORM](https://orm.drizzle.team)
 - [tRPC](https://trpc.io)
-- [TanStack Query](https://tanstack.com/query)
 - [Tailwind CSS](https://tailwindcss.com)
-- [Vitest](https://vitest.dev)
+- [Drizzle ORM](https://orm.drizzle.team)
 - [React Hook Form](https://react-hook-form.com)
-- [Zod](https://zod.dev)
+- [Vitest](https://vitest.dev)
