@@ -7,11 +7,10 @@ screenshot: "/images/scavenger-hunt.png"
 order: 1
 ---
 
-- [Next.js](https://nextjs.org)
+- [TanStack Start](https://tanstack.com/start/latest)
 - [PostgreSQL](https://www.postgresql.org)
 - [Tailwind CSS](https://tailwindcss.com)
 - [Better Auth](https://www.better-auth.com)
-- [next-safe-action](https://next-safe-action.dev)
 - [React Hook Form](https://react-hook-form.com)
 - [Zod](https://zod.dev)
 - [Cloudinary](https://cloudinary.com)
