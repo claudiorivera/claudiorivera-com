@@ -35,7 +35,7 @@ jobs:
           git diff --quiet public/images/dev-portfolio/ || echo "has_changes=true" >> $GITHUB_OUTPUT
       - name: 📄 Create Pull Request
         if: steps.changes.outputs.has_changes == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "🤖 Update portfolio screenshots"
           title: "🤖 Update portfolio screenshots"
