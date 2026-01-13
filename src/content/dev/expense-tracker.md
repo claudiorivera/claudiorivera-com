@@ -3,7 +3,8 @@ title: "Expense Tracker"
 description: "A full-stack web app to track income and expenses."
 demoLink: "https://expense-tracker.claudiorivera.com/"
 githubLink: "https://github.com/claudiorivera/monorepo/tree/main/apps/expense-tracker"
-screenshot: "/images/expense-tracker.png"
+screenshotDesktop: "/images/dev-portfolio/expense-tracker-desktop.png"
+screenshotMobile: "/images/dev-portfolio/expense-tracker-mobile.png"
 order: 3
 ---
 

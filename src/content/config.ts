@@ -17,7 +17,9 @@ const devPortfolioItem = defineCollection({
 		description: z.string(),
 		demoLink: z.string().url(),
 		githubLink: z.string().url(),
-		screenshot: z.string(),
+		screenshotDesktop: z.string(),
+		screenshotMobile: z.string(),
+		requiresAuth: z.boolean().default(false),
 		order: z.number(),
 	}),
 });

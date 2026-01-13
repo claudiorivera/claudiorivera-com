@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import Screenshots from "@/components/screenshots.astro";
 import { Button } from "@/components/ui/button";
 
 interface Props {
@@ -10,32 +11,29 @@ const { portfolioItem } = Astro.props;
 
 const { Content } = await portfolioItem.render();
 ---
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
 	<div class="flex flex-col items-center gap-4">
 		<a
-			class="text-5xl font-bold text-primary text-center"
+			class="text-5xl font-bold text-primary"
 			href={portfolioItem.data.demoLink}
 		>
-			<h2>{portfolioItem.data.title}</h2>
+			<h2 class="text-center">{portfolioItem.data.title}</h2>
 		</a>
-		<a class="w-full h-auto relative" href={portfolioItem.data.demoLink}>
-			<img
-				class="w-full h-auto"
-				width={600}
-				height={400}
-				src={portfolioItem.data.screenshot}
-				alt={`screenshot of ${portfolioItem.data.title}`}
-			/>
-		</a>
+		<Screenshots
+			title={portfolioItem.data.title}
+			screenshotDesktop={portfolioItem.data.screenshotDesktop}
+			screenshotMobile={portfolioItem.data.screenshotMobile}
+		/>
 		<p class="font-serif text-lg text-center">
 			{portfolioItem.data.description}
 		</p>
 	</div>
-	<div class="text-primary flex flex-col gap-4 px-16">
-		<h2 class="text-2xl font-semibold text-black">
+
+	<div class="text-primary flex flex-col gap-4">
+		<h2 class="text-2xl font-semibold text-black text-center">
 			Technologies Used:
 		</h2>
-		<div class="font-serif prose-lg sm:prose-xl max-w-none prose-a:text-primary prose-li:list-disc prose-li:my-0">
+		<div class="font-serif sm:px-8 lg:px-16 prose-lg prose-a:text-primary prose-li:list-disc prose-li:my-0">
 			<Content />
 		</div>
 		<div class="flex gap-4 justify-center">

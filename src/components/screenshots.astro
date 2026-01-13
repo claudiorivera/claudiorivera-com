@@ -1,0 +1,46 @@
+---
+interface Props {
+	title: string;
+	screenshotDesktop: string;
+	screenshotMobile: string;
+}
+
+const { title, screenshotDesktop, screenshotMobile } = Astro.props;
+---
+
+<div class="relative scale-[.40] sm:scale-[.35] lg:scale-[.40] xl:scale-[.45] -m-30">
+  <div class="device device-macbook-pro">
+    <div class="device-frame">
+      <div class="device-screen">
+        <div class="pt-0 bg-black" />
+        <img
+          src={screenshotDesktop}
+          alt={`Desktop screenshot of ${title}`}
+          class="rounded-t-xl"
+        />
+      </div>
+    </div>
+    <div class="device-stripe"></div>
+    <div class="device-header"></div>
+    <div class="device-sensors"></div>
+    <div class="device-btns"></div>
+    <div class="device-power"></div>
+  </div>
+
+	<div class="device device-iphone-14-pro -top-30 -right-30 scale-[33%] absolute!">
+		<div class="device-frame">
+			<div class="device-screen">
+				<div class="h-13.5 pt-0" />
+				<img
+					src={screenshotMobile}
+					alt={`Mobile screenshot of ${title}`}
+				/>
+			</div>
+		</div>
+		<div class="device-stripe"></div>
+		<div class="device-header"></div>
+		<div class="device-sensors"></div>
+		<div class="device-btns"></div>
+		<div class="device-power"></div>
+	</div>
+</div>

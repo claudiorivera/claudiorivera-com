@@ -3,7 +3,8 @@ title: "Address Book"
 description: "It's an address book! It lets you add and manage your contacts."
 demoLink: "https://address-book.claudiorivera.com/"
 githubLink: "https://github.com/claudiorivera/monorepo/tree/main/apps/address-book"
-screenshot: "/images/address-book.png"
+screenshotDesktop: "/images/dev-portfolio/address-book-desktop.png"
+screenshotMobile: "/images/dev-portfolio/address-book-mobile.png"
 order: 4
 ---
 

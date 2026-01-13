@@ -3,7 +3,9 @@ title: "Game Night"
 description: "A full-stack web app to host or join board game nights."
 demoLink: "https://game-night.claudiorivera.com/"
 githubLink: "https://github.com/claudiorivera/monorepo/tree/main/apps/game-night"
-screenshot: "/images/game-night.png"
+screenshotDesktop: "/images/dev-portfolio/game-night-desktop.png"
+screenshotMobile: "/images/dev-portfolio/game-night-mobile.png"
+requiresAuth: true
 order: 2
 ---
 
