@@ -13,10 +13,10 @@ const portfolioItems = devCollection.sort(
 	coverImage="/images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg"
 	title="Dev"
 >
-	<div class="flex flex-col gap-8 sm:gap-16">
-		<div class="flex flex-col gap-8 sm:gap-16">
+	<div class="flex flex-col gap-8">
+		<div class="flex flex-col gap-8">
 			{portfolioItems.map((portfolioItem) => (
-				<div class="border-b pb-8 sm:pb-16">
+				<div class="border-b pb-8">
 					<PortfolioItem portfolioItem={portfolioItem} />
 				</div>
 			))}
