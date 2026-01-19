@@ -2,7 +2,7 @@
 	"name": "www",
 	"type": "module",
 	"version": "2.0.1",
-	"packageManager": "pnpm@10.28.0",
+	"packageManager": "pnpm@10.28.1",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
