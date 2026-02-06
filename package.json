@@ -44,7 +44,7 @@
 	},
 	"devDependencies": {
 		"gray-matter": "4.0.3",
-		"playwright": "1.58.1",
+		"playwright": "1.58.2",
 		"tsx": "4.21.0"
 	}
 }
