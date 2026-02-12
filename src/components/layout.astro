@@ -31,11 +31,9 @@ const { coverImage, title = "Home" } = Astro.props;
 				</div>
 			</HeroImageContainer>
 		
-			<div class="container mx-auto px-8 max-w-7xl">
-				<main id="main">
-					<slot />	
-				</main>
-			</div>
+			<main class="container mx-auto px-8 max-w-7xl grid gap-16">
+				<slot />	
+			</main>
 		
 			<Footer />
 		</div>

@@ -12,7 +12,7 @@ const { url, title, iframeProps } = Astro.props;
 
 <div class="relative aspect-video">
 	<iframe
-		class="absolute inset-0 w-full h-full"
+		class="absolute inset-0 w-full h-full rounded-lg"
 		src={url}
 		title={title}
 		{...iframeProps}

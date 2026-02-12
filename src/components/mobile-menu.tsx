@@ -22,7 +22,7 @@ export function MobileMenu() {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent>
 				{MENU_LINKS.map(({ url, title }) => (
-					<DropdownMenuItem key={url}>
+					<DropdownMenuItem key={url} asChild>
 						<a className="font-sans" href={url}>
 							{title}
 						</a>
