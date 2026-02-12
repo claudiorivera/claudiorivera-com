@@ -1,7 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import Screenshots from "@/components/screenshots.astro";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface Props {
 	portfolioItem: CollectionEntry<"dev">;
@@ -37,12 +38,8 @@ const { Content } = await portfolioItem.render();
 			<Content />
 		</div>
 		<div class="flex gap-4 justify-center">
-			<Button variant="outline" color="secondary">
-				<a href={portfolioItem.data.demoLink}>Live Demo</a>
-			</Button>
-			<Button variant="outline" color="secondary">
-				<a href={portfolioItem.data.githubLink}>View Source</a>
-			</Button>
+			<a class={cn(buttonVariants({variant: 'outline'}))} href={portfolioItem.data.demoLink}>Live Demo</a>
+			<a class={cn(buttonVariants({variant: 'outline'}))} href={portfolioItem.data.githubLink}>View Source</a>
 		</div>
 	</div>
 </div>
