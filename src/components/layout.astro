@@ -21,15 +21,15 @@ const { coverImage, title = "Home" } = Astro.props;
 	</head>
 	<body>
 		<div class="flex flex-col gap-8 sm:gap-16">
-			<HeroImageContainer image={coverImage} title="background">
-				<Header />
-				<div class="hidden sm:block bottom-0 text-primary-foreground absolute text-center">
-					<div class="flex flex-col items-center gap-1 p-4">
-						<h1 class="text-5xl font-bold">{title}</h1>
-						<ArrowDown className="w-10 h-10" />
-					</div>
+		<HeroImageContainer image={coverImage}>
+			<Header />
+			<div class="hidden sm:block bottom-0 text-primary-foreground absolute text-center">
+				<div class="flex flex-col items-center gap-1 p-4">
+					<h1 class="text-5xl font-bold">{title}</h1>
+					<ArrowDown className="w-10 h-10" aria-hidden="true" />
 				</div>
-			</HeroImageContainer>
+			</div>
+		</HeroImageContainer>
 		
 			<main class="container mx-auto px-8 max-w-7xl grid gap-16">
 				<slot />	

@@ -13,11 +13,7 @@ export function MobileMenu() {
 
 	return (
 		<DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
-			<DropdownMenuTrigger
-				onClick={() => {
-					setDropdownOpen((val) => !val);
-				}}
-			>
+			<DropdownMenuTrigger aria-label="Open mobile menu">
 				<AlignJustify />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent>
