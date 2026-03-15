@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, render } from "astro:content";
 import {
 	Card,
 	CardContent,
@@ -14,7 +14,7 @@ interface Props {
 
 const { musicExperience } = Astro.props;
 
-const { Content } = await musicExperience.render();
+const { Content } = await render(musicExperience);
 ---
 <Card className="gap-2">
 	<CardHeader>
