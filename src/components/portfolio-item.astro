@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, render } from "astro:content";
 import Screenshots from "@/components/screenshots.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ interface Props {
 
 const { portfolioItem } = Astro.props;
 
-const { Content } = await portfolioItem.render();
+const { Content } = await render(portfolioItem);
 ---
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
 	<div class="flex flex-col items-center gap-4">

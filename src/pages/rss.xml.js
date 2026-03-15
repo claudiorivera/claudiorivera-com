@@ -18,7 +18,7 @@ export async function GET(context) {
 			return {
 				...post.data,
 				pubDate: post.data.date.toUTCString(),
-				link: `/${year}/${month}/${day}/${post.slug}`,
+				link: `/${year}/${month}/${day}/${post.id}`,
 			};
 		}),
 	});
