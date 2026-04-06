@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,4 +18,16 @@ export default defineConfig({
 			enabled: true,
 		},
 	}),
+	fonts: [
+		{
+			provider: fontProviders.fontsource(),
+			name: "Inter",
+			cssVariable: "--font-inter",
+		},
+		{
+			provider: fontProviders.fontsource(),
+			name: "EB Garamond",
+			cssVariable: "--font-eb-garamond",
+		},
+	],
 });

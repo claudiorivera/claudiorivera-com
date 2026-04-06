@@ -4,6 +4,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 // all pages through the use of the <BaseHead /> component.
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
 import "@/styles/globals.css";
+import { Font } from "astro:assets";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -37,3 +38,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="twitter:image" content={new URL("/joe-lemke-cr-cover-photo.jpg", Astro.url)} />
 
 <SpeedInsights />
+
+<Font cssVariable="--font-inter" preload />
+<Font cssVariable="--font-eb-garamond" />
