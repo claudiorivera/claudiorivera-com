@@ -1,4 +1,5 @@
-onlyBuiltDependencies:
-  - '@vercel/speed-insights'
-  - esbuild
-  - sharp
+saveExact: true
+allowBuilds:
+  '@vercel/speed-insights': true
+  esbuild: true
+  sharp: true
