@@ -23,7 +23,7 @@
 		"@astrojs/vercel": "10.0.6",
 		"@tailwindcss/typography": "0.5.19",
 		"@tailwindcss/vite": "4.2.4",
-		"@types/react": "19.2.14",
+		"@types/react": "19.2.15",
 		"@types/react-dom": "19.2.3",
 		"@vercel/speed-insights": "2.0.0",
 		"astro": "6.1.10",
