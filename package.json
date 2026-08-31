@@ -42,7 +42,7 @@
 	"devDependencies": {
 		"gray-matter": "4.0.3",
 		"playwright": "1.62.1",
-		"tsx": "4.23.12",
+		"tsx": "4.23.13",
 		"typescript": "6.0.3"
 	}
 }
