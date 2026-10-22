@@ -13,12 +13,16 @@ export function MobileMenu() {
 
 	return (
 		<DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
-			<DropdownMenuTrigger aria-label="Open mobile menu">
+			<DropdownMenuTrigger
+				onClick={() => {
+					setDropdownOpen((val) => !val);
+				}}
+			>
 				<AlignJustify />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent>
 				{MENU_LINKS.map(({ url, title }) => (
-					<DropdownMenuItem key={url} asChild>
+					<DropdownMenuItem key={url}>
 						<a className="font-sans" href={url}>
 							{title}
 						</a>
