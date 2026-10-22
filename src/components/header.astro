@@ -1,6 +1,6 @@
 ---
 import { MobileMenu } from "@/components/mobile-menu";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { MENU_LINKS, SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
 ---
 
@@ -25,14 +25,12 @@ import { MENU_LINKS, SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
 			</div>
 			<div class="hidden sm:flex">
 				{MENU_LINKS.map(({ title, url }) => (
-					<Button
-						key={url}
-						variant="ghost"
-						size="sm"
-						className="uppercase"
+					<a
+						href={url}
+						class={buttonVariants({variant: 'ghost', className: "uppercase", size: "sm"})}
 					>
-						<a href={url}>{title}</a>
-					</Button>
+						{title}
+					</a>
 				))}
 			</div>
 		</div>
